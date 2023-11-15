@@ -21,7 +21,7 @@ def reformat_header(line):
         name_start_idx = _idx + 2
         name_end_idx = link_string.find("]")
         name = link_string[name_start_idx:name_end_idx]
-        url_start_idx = name_end_idx + 1
+        url_start_idx = name_end_idx + 2
         url_start = link_string[url_start_idx:]
         url_len = url_start.find(")")
         url = link_string[url_start_idx : url_start_idx + url_len]
@@ -31,20 +31,6 @@ def reformat_header(line):
 
     # What's left is the emojis
     emojis = link_string
-
-    # if "[[Code" in line:
-    #     # [[Code](https://princeton-sysml.github.io/jailbreak-llm/)]
-    #     code_url_start_idx = dropdown_header.find("[[Code](") + 8
-    #     end_idx = dropdown_header[code_url_start_idx:].find(")]")
-    #     code_url = dropdown_header[
-    #         code_url_start_idx : code_url_start_idx + end_idx
-    #     ]
-    #     code_link = f'[<a href="{code_url}">Code</a>]'
-    #     emojis = dropdown_header[code_url_start_idx + end_idx + 2 :]
-    #     return f"{title} {link} {code_link}{emojis}"
-    # emojis = dropdown_header[end_link_idx + 2 :]
-    # return f"{title} {link}{emojis}"
-
     links = " ".join(links)
     return f"{title}{links}{emojis}"
 
