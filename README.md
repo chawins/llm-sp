@@ -6,9 +6,9 @@
 
 **When?** *Updated whenever my willpower reaches a certain threshold (aka pretty frequent).*
 
-**Where?** [*GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/LLM-Security-Privacy-c1bca11f7bec40988b2ed7d997667f4d?pvs=21).*
+**Where?** *[GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/LLM-Security-Privacy-c1bca11f7bec40988b2ed7d997667f4d?pvs=21).*
 
-**Who?** [Me](https://chawins.github.io/) and you (see [Contribution](https://github.com/chawins/llm-sp?tab=readme-ov-file#contribution) below).
+**Who?** *[Me](https://chawins.github.io/) and you (see [Contribution](https://github.com/chawins/llm-sp?tab=readme-ov-file#contribution) below).*
 
 ---
 
