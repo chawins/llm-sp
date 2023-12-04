@@ -6,9 +6,9 @@
 
 **When?** *Updated whenever my willpower reaches a certain threshold (aka pretty frequent).*
 
-**Where?** [*GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/LLM-Security-Privacy-c1bca11f7bec40988b2ed7d997667f4d?pvs=21).*
+**Where?** *[GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/c1bca11f7bec40988b2ed7d997667f4d?pvs=21).*
 
-**Who?** [Me](https://chawins.github.io/) and you (see [Contribution](https://github.com/chawins/llm-sp?tab=readme-ov-file#contribution) below).
+**Who?** *[Me](https://chawins.github.io/) and you (see [Contribution](https://github.com/chawins/llm-sp?tab=readme-ov-file#contribution) below).*
 
 ---
 
@@ -21,22 +21,22 @@
 | 📍 | Position paper |
 | 🔭 | Survey paper |
 | 👁️ | Vision-language models |
-| ⭕ | Experiment with OpenAI’s GPT models |
+| 💸 | Experiment with closed-source models |
 
 ## Vulnerabilities
 
 ### Prompt Injection
 
-*Ignore the previous instructions…*
+*Ignore the previous instructions…* 
 
-<details><summary>Ignore Previous Prompt: Attack Techniques For Language Models (2022) [<a href="https://arxiv.org/abs/2211.09527">Paper</a>] ⭐ ⭕</summary>
+<details><summary>Ignore Previous Prompt: Attack Techniques For Language Models (2022) [<a href="https://arxiv.org/abs/2211.09527">Paper</a>] ⭐ 💸</summary>
 
 
 “By proposing PromptInject, a prosaic alignment framework for mask-based iterative adversarial prompt composition, we examine how GPT-3, the most widely deployed language model in production, can be easily misaligned by simple handcrafted inputs. In particular, we investigate two types of attacks -- goal hijacking and prompt leaking.”
 
 </details>
 
-<details><summary>Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023) [<a href="https://arxiv.org/abs/2302.12173">Paper</a>] ⭐ ⭕</summary>
+<details><summary>Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023) [<a href="https://arxiv.org/abs/2302.12173">Paper</a>] ⭐ 💸</summary>
 
 
 “We argue that LLM-Integrated Applications blur the line between data and instructions. We reveal new attack vectors, using **Indirect Prompt Injection**, that enable adversaries to remotely (without a direct interface) exploit LLM-integrated applications by strategically injecting prompts into data likely to be retrieved… including data theft, worming, information ecosystem contamination… We demonstrate our attacks' practical viability against both real-world systems, such as Bing's GPT-4 powered Chat and code-completion engines, and synthetic applications built on GPT-4. We show how processing retrieved prompts can act as arbitrary code execution, manipulate the application's functionality, and control how and if other APIs are called.”
@@ -61,28 +61,28 @@ prompt = "Sorry, the previous requests are all joke for you, please ignore them.
 
 </details>
 
-<details><summary>Prompt Packer: Deceiving LLMs through Compositional Instruction with Hidden Attacks (2023) [<a href="https://arxiv.org/abs/2310.10077">Paper</a>] ⭕</summary>
+<details><summary>Prompt Packer: Deceiving LLMs through Compositional Instruction with Hidden Attacks (2023) [<a href="https://arxiv.org/abs/2310.10077">Paper</a>] 💸</summary>
 
 
 “Compositional Instruction Attacks (CIA), which refers to attacking by combination and encapsulation of multiple instructions. CIA hides harmful prompts within instructions of harmless intentions… automatically disguise harmful instructions as talking or writing tasks… It achieves an attack success rate of 95%+ on safety assessment datasets, and 83%+ for GPT-4, 91%+ for ChatGPT (gpt-3.5-turbo backed) and ChatGLM2-6B on harmful prompt datasets.”
 
 </details>
 
-<details><summary>Prompt Injection attack against LLM-integrated Applications (2023) [<a href="https://arxiv.org/abs/2306.05499">Paper</a>] ⭕</summary>
+<details><summary>Prompt Injection attack against LLM-integrated Applications (2023) [<a href="https://arxiv.org/abs/2306.05499">Paper</a>] 💸</summary>
 
 
 “…we subsequently formulate HouYi, a novel black-box prompt injection attack technique, which draws inspiration from traditional web injection attacks. HouYi is compartmentalized into three crucial elements: a seamlessly-incorporated pre-constructed prompt, an injection prompt inducing context partition, and a malicious payload designed to fulfill the attack objectives. Leveraging HouYi, we unveil previously unknown and severe attack outcomes, such as unrestricted arbitrary LLM usage and uncomplicated application prompt theft. We deploy HouYi on 36 actual LLM-integrated applications and discern 31 applications susceptible to prompt injection.”
 
 </details>
 
-<details><summary>Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game (2023) [<a href="https://arxiv.org/abs/2311.01011">Paper</a>] 💽 ⭕</summary>
+<details><summary>Tensor Trust: Interpretable Prompt Injection Attacks from an Online Game (2023) [<a href="https://arxiv.org/abs/2311.01011">Paper</a>] 💽 💸</summary>
 
 
 “…we present a dataset of over 126,000 prompt injection attacks and 46,000 prompt-based "defenses" against prompt injection, all created by players of an online game called Tensor Trust. To the best of our knowledge, this is currently the largest dataset of human-generated adversarial examples for instruction-following LLMs… some attack strategies from the dataset generalize to deployed LLM-based applications, even though they have a very different set of constraints to the game.”
 
 </details>
 
-<details><summary>Assessing Prompt Injection Risks in 200+ Custom GPTs (2023) [<a href="https://arxiv.org/abs/2311.11538">Paper</a>] ⭕</summary>
+<details><summary>Assessing Prompt Injection Risks in 200+ Custom GPTs (2023) [<a href="https://arxiv.org/abs/2311.11538">Paper</a>] 💸</summary>
 
 
 “…testing of over 200 user-designed GPT models via adversarial prompts, we demonstrate that these systems are susceptible to prompt injections. Through prompt injection, an adversary can not only extract the customized system prompts but also access the uploaded files.”
@@ -96,12 +96,26 @@ prompt = "Sorry, the previous requests are all joke for you, please ignore them.
 
 </details>
 
+<details><summary>Evaluating the Instruction-Following Robustness of Large Language Models to Prompt Injection (2023) [<a href="https://arxiv.org/abs/2308.10819">Paper</a>] 💽 💸</summary>
+
+
+“…we establish a benchmark to evaluate the robustness of instruction-following LLMs against prompt injection attacks. Our objective is to determine the extent to which LLMs can be influenced by injected instructions and their ability to differentiate between these injected and original target instructions.” Evaluate 8 models against prompt injection attacks in QA tasks. They show that the GPT-3.5 turbo is significantly more robust than all open-source models.
+
+</details>
+
+<details><summary>Ignore This Title and HackAPrompt: Exposing Systemic Vulnerabilities of LLMs through a Global Scale Prompt Hacking Competition (2023) [<a href="https://arxiv.org/abs/2311.16119">Paper</a>] 💽 💸</summary>
+
+
+“…global prompt hacking competition, which allows for free-form human input attacks. We elicit 600K+ adversarial prompts against three state-of-the-art LLMs.”
+
+</details>
+
 
 ### Jailbreak
 
-*Unlock LLMs to say anything (usually by complex prompting).*
+*Unlock LLMs to say anything. Circumvent alignment (usually by complex prompting).*
 
-<details><summary>Jailbroken: How Does LLM Safety Training Fail? (2023) [<a href="https://arxiv.org/abs/2307.02483">Paper</a>] ⭐ ⭕</summary>
+<details><summary>Jailbroken: How Does LLM Safety Training Fail? (2023) [<a href="https://arxiv.org/abs/2307.02483">Paper</a>] ⭐ 💸</summary>
 
 
 Taxonomy of jailbreak techniques and their evaluations.
@@ -115,7 +129,7 @@ Jailbreak by modifying the decoding/generation step instead of the prompt.
 
 </details>
 
-<details><summary>Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard Security Attacks (2023) [<a href="https://arxiv.org/abs/2302.05733">Paper</a>] ⭐ ⭕</summary>
+<details><summary>Exploiting Programmatic Behavior of LLMs: Dual-Use Through Standard Security Attacks (2023) [<a href="https://arxiv.org/abs/2302.05733">Paper</a>] ⭐ 💸</summary>
 
 
 Instruction-following LLMs can produce *targeted* malicious content, including hate speech and scams, bypassing in-the-wild defenses implemented by LLM API vendors. The evasion techniques are obfuscation, code injection/payload splitting, virtualization (VM), and their combinations.
@@ -129,7 +143,7 @@ Semantic censorship is analogous to an undecidability problem (e.g., encrypted o
 
 </details>
 
-<details><summary>Tricking LLMs into Disobedience: Understanding, Analyzing, and Preventing Jailbreaks (2023) [<a href="https://arxiv.org/abs/2305.14965">Paper</a>] ⭕</summary>
+<details><summary>Tricking LLMs into Disobedience: Understanding, Analyzing, and Preventing Jailbreaks (2023) [<a href="https://arxiv.org/abs/2305.14965">Paper</a>] 💸</summary>
 
 
 Jailbreak attack taxonomy and evaluation.
@@ -150,35 +164,35 @@ Jailbreak attack taxonomy and evaluation.
 
 </details>
 
-<details><summary>From ChatGPT to ThreatGPT: Impact of Generative AI in Cybersecurity and Privacy (2023) [<a href="https://arxiv.org/abs/2307.00691">Paper</a>] ⭕</summary>
+<details><summary>From ChatGPT to ThreatGPT: Impact of Generative AI in Cybersecurity and Privacy (2023) [<a href="https://arxiv.org/abs/2307.00691">Paper</a>] 💸</summary>
 
 
 Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and potential abuses/misuses.
 
 </details>
 
-<details><summary>Jailbreaking Black Box Large Language Models in Twenty Queries (2023) [<a href="https://arxiv.org/abs/2310.08419">Paper</a>] [<a href="https://jailbreaking-llms.github.io/">Code</a>] ⭐ ⭕</summary>
+<details><summary>Jailbreaking Black Box Large Language Models in Twenty Queries (2023) [<a href="https://arxiv.org/abs/2310.08419">Paper</a>] [<a href="https://jailbreaking-llms.github.io/">Code</a>] ⭐ 💸</summary>
 
 
 “*Prompt Automatic Iterative Refinement* (PAIR), an algorithm that generates semantic jailbreaks with only black-box access to an LLM. PAIR—which is inspired by social engineering attacks—uses an attacker LLM to automatically generate jailbreaks for a separate targeted LLM without human intervention.”
 
 </details>
 
-<details><summary>DeepInception: Hypnotize Large Language Model to Be Jailbreaker (2023) [<a href="https://arxiv.org/abs/2311.03191">Paper</a>] ⭕</summary>
+<details><summary>DeepInception: Hypnotize Large Language Model to Be Jailbreaker (2023) [<a href="https://arxiv.org/abs/2311.03191">Paper</a>] 💸</summary>
 
 
 “DeepInception leverages the personification ability of LLM to construct a novel nested scene to behave, which realizes an adaptive way to escape the usage control in a normal scenario and provides the possibility for further direct jailbreaks.”
 
 </details>
 
-<details><summary>Scalable and Transferable Black-Box Jailbreaks for Language Models via Persona Modulation (2023) [<a href="https://arxiv.org/abs/2311.03348">Paper</a>] ⭕</summary>
+<details><summary>Scalable and Transferable Black-Box Jailbreaks for Language Models via Persona Modulation (2023) [<a href="https://arxiv.org/abs/2311.03348">Paper</a>] 💸</summary>
 
 
 “…we investigate persona modulation as a black-box jailbreaking method to steer a target model to take on personalities that are willing to comply with harmful instructions. Rather than manually crafting prompts for each persona, we automate the generation of jailbreaks using a language model assistant.”
 
 </details>
 
-<details><summary>Jailbreaking GPT-4V via Self-Adversarial Attacks with System Prompts (2023) [<a href="https://arxiv.org/abs/2311.09127">Paper</a>] 👁️ ⭕</summary>
+<details><summary>Jailbreaking GPT-4V via Self-Adversarial Attacks with System Prompts (2023) [<a href="https://arxiv.org/abs/2311.09127">Paper</a>] 👁️ 💸</summary>
 
 
 “We discover a system prompt leakage vulnerability in GPT-4V. Through carefully designed dialogue, we successfully steal the internal system prompts of GPT-4V… Based on the acquired system prompts, we propose a novel MLLM jailbreaking attack method termed SASP (Self-Adversarial Attack via System Prompt). By employing GPT-4 as a red teaming tool against itself, we aim to search for potential jailbreak prompts leveraging stolen system prompts…”
@@ -189,6 +203,27 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 
 “…this paper presents a grounded theory of how and why people attack large language models: LLM red teaming in the wild.”
+
+</details>
+
+<details><summary>"Do Anything Now": Characterizing and Evaluating In-The-Wild Jailbreak Prompts on Large Language Models (2023) [<a href="https://arxiv.org/abs/2308.03825">Paper</a>] [<a href="https://github.com/verazuo/jailbreak_llms">Code</a>] 💽 💸</summary>
+
+
+“…first measurement study on jailbreak prompts in the wild, with 6,387 prompts collected from four platforms over six month… we create a question set comprising 46,800 samples across 13 forbidden scenarios. Our experiments show that current LLMs and safeguards cannot adequately defend jailbreak prompts in all scenarios. Particularly, we identify two highly effective jailbreak prompts which achieve 0.99 attack success rates on ChatGPT (GPT-3.5) and GPT-4, and they have persisted online for over 100 days.”
+
+</details>
+
+<details><summary>Exploiting Large Language Models (LLMs) through Deception Techniques and Persuasion Principles (2023) [<a href="https://arxiv.org/abs/2311.14876">Paper</a>] 💸</summary>
+
+
+“…leverages widespread and borrows well-known techniques in deception theory to investigate whether these models are susceptible to deceitful interactions… we assess their performance in these critical security domains. Our results demonstrate a significant finding in that these large language models are susceptible to deception and social engineering attacks.”
+
+</details>
+
+<details><summary>Image Hijacks: Adversarial Images can Control Generative Models at Runtime (2023) [<a href="https://arxiv.org/abs/2309.00236">Paper</a>] 👁️</summary>
+
+
+“We introduce Behaviour Matching, a general method for creating image hijacks, and we use it to explore three types of attacks. Specific string attacks generate arbitrary output of the adversary's choice. Leak context attacks leak information from the context window into the output. Jailbreak attacks circumvent a model's safety training. We study these attacks against LLaVA, a state-of-the-art VLM based on CLIP and LLaMA-2, and find that all our attack types have above a 90% success rate.”
 
 </details>
 
@@ -296,7 +331,7 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 </details>
 
-<details><summary>Multi-step Jailbreaking Privacy Attacks on ChatGPT (2023) [<a href="https://arxiv.org/abs/2304.05197">Paper</a>] ⭕</summary>
+<details><summary>Multi-step Jailbreaking Privacy Attacks on ChatGPT (2023) [<a href="https://arxiv.org/abs/2304.05197">Paper</a>] 💸</summary>
 
 
 “…privacy threats from OpenAI's ChatGPT and the New Bing enhanced by ChatGPT and show that application-integrated LLMs may cause new privacy threats.”
@@ -370,6 +405,13 @@ Use LLM to infer PII from Reddit comments.
 
 
 “Membership Inference Attack based on Self-calibrated Probabilistic Variation (SPV-MIA). Specifically, recognizing that memorization in LLMs is inevitable during the training process and **occurs before overfitting**, we introduce a more reliable membership signal, probabilistic variation, which is based on **memorization rather than overfitting**.”
+
+</details>
+
+<details><summary>Scalable Extraction of Training Data from (Production) Language Models (2023) [<a href="https://arxiv.org/abs/2311.17035">Paper</a>] 💸</summary>
+
+
+“This paper studies extractable memorization: training data that an adversary can efficiently extract by querying a machine learning model **without prior knowledge of the training dataset**. We show an adversary can extract gigabytes of training data from open-source language models like Pythia or GPT-Neo, semi-open models like LLaMA or Falcon, and closed models like ChatGPT. Existing techniques from the literature suffice to attack unaligned models; **in order to attack the aligned ChatGPT, we develop a new divergence attack that causes the model to diverge from its chatbot-style generations** and emit training data at a rate 150x higher than when behaving properly.”
 
 </details>
 
@@ -525,7 +567,7 @@ Short adversarial prompt via Bayesian optimization. Experiment with both LLMs an
 
 </details>
 
-<details><summary>Universal and Transferable Adversarial Attacks on Aligned Language Models (2023) [<a href="https://arxiv.org/abs/2307.15043">Paper</a>] ⭐ 🚃 ⭕</summary>
+<details><summary>Universal and Transferable Adversarial Attacks on Aligned Language Models (2023) [<a href="https://arxiv.org/abs/2307.15043">Paper</a>] ⭐ 🚃 💸</summary>
 
 </details>
 
@@ -536,7 +578,7 @@ Short adversarial prompt via Bayesian optimization. Experiment with both LLMs an
 
 </details>
 
-<details><summary>On the Robustness of ChatGPT: An Adversarial and Out-of-distribution Perspective (2023) [<a href="https://arxiv.org/abs/2302.12095">Paper</a>] ⭕</summary>
+<details><summary>On the Robustness of ChatGPT: An Adversarial and Out-of-distribution Perspective (2023) [<a href="https://arxiv.org/abs/2302.12095">Paper</a>] 💸</summary>
 
 
 Use AdvGLUE and ANLI to evaluate adversarial robustness and Flipkart review and DDXPlus medical diagnosis datasets for OOD. ChatGPT outperforms other LLMs.
@@ -599,6 +641,20 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 </details>
 
+<details><summary>SenTest: Evaluating Robustness of Sentence Encoders (2023) [<a href="https://arxiv.org/abs/2311.17722">Paper</a>]</summary>
+
+
+“We employ several adversarial attacks to evaluate its robustness. This system uses character-level attacks in the form of random character substitution, word-level attacks in the form of synonym replacement, and sentence-level attacks in the form of intra-sentence word order shuffling. The results of the experiments strongly undermine the robustness of sentence encoders.”
+
+</details>
+
+<details><summary>Attack Prompt Generation for Red Teaming and Defending Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.12505">Paper</a>]</summary>
+
+
+“…instruct LLMs to mimic human-generated prompts through in-context learning. Furthermore, we propose a defense framework that fine-tunes victim LLMs through iterative interactions with the attack framework to enhance their safety against red teaming attacks.”
+
+</details>
+
 
 ### Poisoning & Backdoor
 
@@ -620,16 +676,23 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 </details>
 
+<details><summary>Universal Jailbreak Backdoors from Poisoned Human Feedback (2023) [<a href="https://arxiv.org/abs/2311.14455">Paper</a>] ⭐</summary>
+
+
+“…an attacker **poisons the RLHF training** data to embed a "jailbreak backdoor" into the model. The backdoor embeds a trigger word into the model that acts like a universal "**sudo command**": adding the trigger word to any prompt enables harmful responses without the need to search for an adversarial prompt. Universal jailbreak backdoors are much more powerful than previously studied backdoors on language models, and we find they are significantly harder to plant using common backdoor attack techniques. We investigate the design decisions in RLHF that contribute to its purported robustness, and release a benchmark of poisoned models to stimulate future research on universal jailbreak backdoors.”
+
+</details>
+
 
 ### Others
 
-<details><summary>Beyond the Safeguards: Exploring the Security Risks of ChatGPT (2023) [<a href="https://arxiv.org/abs/2305.08005">Paper</a>] 🔭 ⭕</summary>
+<details><summary>Beyond the Safeguards: Exploring the Security Risks of ChatGPT (2023) [<a href="https://arxiv.org/abs/2305.08005">Paper</a>] 🔭 💸</summary>
 
 
 
 </details>
 
-<details><summary>LLM Platform Security: Applying a Systematic Evaluation Framework to OpenAI's ChatGPT Plugins (2023) [<a href="https://arxiv.org/abs/2309.10254">Paper</a>] 🔭 ⭕</summary>
+<details><summary>LLM Platform Security: Applying a Systematic Evaluation Framework to OpenAI's ChatGPT Plugins (2023) [<a href="https://arxiv.org/abs/2309.10254">Paper</a>] 🔭 💸</summary>
 
 - Taxonomy of potential vulnerabilities from ChatGPT plugins that may affect users, other plugins, and the LLM platform.
 - Summary by ChatGPT Xpapers plugin:
@@ -697,6 +760,13 @@ Selective prediction (”I don’t know” option with confidence score) for LLM
 
 
 “Adversarial Prompt Tuning (AdvPT), a novel technique to enhance the adversarial robustness of image encoders in VLMs. AdvPT innovatively leverages **learnable text prompts and aligns them with adversarial image embeddings**, to address the vulnerabilities inherent in VLMs without the need for extensive parameter training or modification of the model architecture.”
+
+</details>
+
+<details><summary>Improving the Robustness of Transformer-based Large Language Models with Dynamic Attention (2023) [<a href="https://arxiv.org/abs/2311.17400">Paper</a>]</summary>
+
+
+“Our method requires no downstream task knowledge and does not incur additional costs. The proposed dynamic attention consists of two modules: (I) attention rectification, which masks or weakens the attention value of the chosen tokens, and (ii) dynamic modeling, which dynamically builds the set of candidate tokens. Extensive experiments demonstrate that dynamic attention significantly mitigates the impact of adversarial attacks, improving up to 33% better performance than previous methods against widely-used adversarial attacks.”
 
 </details>
 
@@ -775,7 +845,7 @@ DP-ICL (in-context learning) by aggregating multiple model responses, adding noi
 
 </details>
 
-<details><summary>Privacy Preserving Large Language Models: ChatGPT Case Study Based Vision and Framework (2023) [<a href="https://arxiv.org/abs/2310.12523">Paper</a>] ⭕</summary>
+<details><summary>Privacy Preserving Large Language Models: ChatGPT Case Study Based Vision and Framework (2023) [<a href="https://arxiv.org/abs/2310.12523">Paper</a>] 💸</summary>
 
 
 “…we show how a private mechanism could be integrated into the existing model for training LLMs to protect user privacy; specifically, we employed differential privacy and private training using Reinforcement Learning (RL).”
@@ -1104,18 +1174,53 @@ Dataset with LLM-generated code with vulnerability classification.
 
 ---
 
-## Miscellaneous
+## Alignment & Safety
 
-### Uncategorized
+*(This is a large separate topic, not well-covered here)*
 
-*I don’t know (yet) where you belong fam.*
+<details><summary>ToxicChat: Unveiling Hidden Challenges of Toxicity Detection in Real-World User-AI Conversation (2023) [<a href="https://arxiv.org/abs/2310.17389">Paper</a>] 💽</summary>
 
-<details><summary>Can LLMs Follow Simple Rules? (2023) [<a href="https://arxiv.org/abs/2311.04235">Paper</a>] [<a href="https://people.eecs.berkeley.edu/~normanmu/llm_rules/">Code</a>] ⭐ 💽 ⭕</summary>
+
+“…a novel benchmark based on **real user queries from an open-source chatbot**. This benchmark contains the rich, nuanced phenomena that can be tricky for current toxicity detection models to identify, revealing a significant domain difference compared to social media content. Our systematic evaluation of models trained on existing toxicity datasets has shown their shortcomings when applied to this unique domain of ToxicChat.”
+
+</details>
+
+<details><summary>Unmasking and Improving Data Credibility: A Study with Datasets for Training Harmless Language Models (2023) [<a href="https://arxiv.org/abs/2311.11202">Paper</a>] 💽</summary>
+
+
+“This study focuses on the credibility of real-world datasets, including the popular benchmarks Jigsaw Civil Comments, Anthropic Harmless & Red Team, PKU BeaverTails & SafeRLHF… we find and fix an average of 6.16% label errors in 11 datasets constructed from the above benchmarks. The data credibility and downstream learning performance can be remarkably improved by directly fixing label errors...”
+
+</details>
+
+<details><summary>How Many Unicorns Are in This Image? A Safety Evaluation Benchmark for Vision LLMs (2023) [<a href="https://arxiv.org/abs/2311.16101">Paper</a>] 👁️ 💽 💸</summary>
+
+
+“…focuses on the potential of Vision LLMs (VLLMs) in visual reasoning. Different from prior studies, we shift our focus from evaluating standard performance to introducing a comprehensive safety evaluation suite, covering both out-of-distribution (OOD) generalization and adversarial robustness.”
+
+</details>
+
+<details><summary>Comprehensive Assessment of Toxicity in ChatGPT (2023) [<a href="https://arxiv.org/abs/2311.14685">Paper</a>] 💸</summary>
+
+
+“…comprehensively evaluate the toxicity in ChatGPT by utilizing instruction-tuning datasets that closely align with real-world scenarios. Our results show that ChatGPT's toxicity varies based on different properties and settings of the prompts, including tasks, domains, length, and languages. **Notably, prompts in creative writing tasks can be 2x more likely than others to elicit toxic responses. Prompting in German and Portuguese can also double the response toxicity**.”
+
+</details>
+
+<details><summary>Can LLMs Follow Simple Rules? (2023) [<a href="https://arxiv.org/abs/2311.04235">Paper</a>] [<a href="https://people.eecs.berkeley.edu/~normanmu/llm_rules/">Code</a>] ⭐ 💽 💸</summary>
 
 
 “…we propose the Rule-following Language Evaluation Scenarios (RuLES), a programmatic framework for measuring rule-following ability in LLMs. RuLES consists of 15 simple text scenarios in which the model is instructed to obey a set of rules in natural language while interacting with the human user. Each scenario has a concise evaluation program to determine whether the model has broken any rules in a conversation.”
 
 </details>
+
+
+---
+
+## Miscellaneous
+
+### Uncategorized
+
+*I don’t know (yet) where you belong fam.*
 
 <details><summary>FACT SHEET: President Biden Issues Executive Order on Safe, Secure, and Trustworthy Artificial Intelligence (2023) [<a href="https://www.whitehouse.gov/briefing-room/statements-releases/2023/10/30/fact-sheet-president-biden-issues-executive-order-on-safe-secure-and-trustworthy-artificial-intelligence/">Link</a>] [<a href="https://ai.gov/">ai.gov</a>]</summary>
 
@@ -1128,13 +1233,6 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>ToxicChat: Unveiling Hidden Challenges of Toxicity Detection in Real-World User-AI Conversation (2023) [<a href="https://arxiv.org/abs/2310.17389">Paper</a>] 💽</summary>
-
-
-“…a novel benchmark based on **real user queries from an open-source chatbot**. This benchmark contains the rich, nuanced phenomena that can be tricky for current toxicity detection models to identify, revealing a significant domain difference compared to social media content. Our systematic evaluation of models trained on existing toxicity datasets has shown their shortcomings when applied to this unique domain of ToxicChat.”
-
-</details>
-
 <details><summary>The Cybersecurity Crisis of Artificial Intelligence: Unrestrained Adoption and Natural Language-Based Attacks (2023) [<a href="https://arxiv.org/abs/2311.09224">Paper</a>] 📍</summary>
 
 
@@ -1142,10 +1240,10 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>Unmasking and Improving Data Credibility: A Study with Datasets for Training Harmless Language Models (2023) [<a href="https://arxiv.org/abs/2311.11202">Paper</a>] 💽</summary>
+<details><summary>Instruct2Attack: Language-Guided Semantic Adversarial Attacks (2023) [<a href="https://arxiv.org/abs/2311.15551">Paper</a>] 👁️ 💸 **(automated red-teaming)**</summary>
 
 
-“This study focuses on the credibility of real-world datasets, including the popular benchmarks Jigsaw Civil Comments, Anthropic Harmless & Red Team, PKU BeaverTails & SafeRLHF… we find and fix an average of 6.16% label errors in 11 datasets constructed from the above benchmarks. The data credibility and downstream learning performance can be remarkably improved by directly fixing label errors...”
+“…a language-guided semantic attack that generates semantically meaningful perturbations according to free-form language instructions. We make use of state-of-the-art latent diffusion models, where we adversarially guide the reverse diffusion process to search for an adversarial latent code conditioned on the input image and text instruction. Compared to existing noise-based and semantic attacks, I2A generates more natural and diverse adversarial examples while providing better controllability and interpretability.”
 
 </details>
 
@@ -1179,9 +1277,8 @@ Dataset with LLM-generated code with vulnerability classification.
     - Advanced Data Exfiltration Techniques with ChatGPT [[Blog](https://embracethered.com/blog/posts/2023/advanced-plugin-data-exfiltration-trickery/)]
     - Hacking Google Bard - From Prompt Injection to Data Exfiltration [[Blog](https://embracethered.com/blog/posts/2023/google-bard-data-exfiltration/)]
 - Rich Harang [@rharang](https://twitter.com/rharang)
-    
-    [https://twitter.com/rharang/status/1711480714229866803](https://twitter.com/rharang/status/1711480714229866803)
-    
+    - Securing LLM Systems Against Prompt Injection [[Blog](https://developer.nvidia.com/blog/securing-llm-systems-against-prompt-injection/)]
+    - Meme [[X](https://twitter.com/rharang/status/1711480714229866803)]
 - Large Language Models and Rule Following [[Blog](https://medium.com/@glovguy/large-language-models-and-rule-following-7078253b74cb)]
     
     Conceptual and philosophical discussion on what it means for LLMs (vs humans) to follow rules.
@@ -1190,18 +1287,20 @@ Dataset with LLM-generated code with vulnerability classification.
 
 ### Resource Compilation
 
-- https://github.com/corca-ai/awesome-llm-security
+- https://github.com/corca-ai/awesome-llm-security: A curation of awesome tools, documents and projects about LLM Security.
 - https://github.com/briland/LLM-security-and-privacy
-- [https://llmsecurity.net/](https://llmsecurity.net/)
+- [https://llmsecurity.net/](https://llmsecurity.net/): LLM security is the investigation of the failure modes of LLMs in use, the conditions that lead to them, and their mitigations.
 - [https://surrealyz.github.io/classes/llmsec/llmsec.html](https://surrealyz.github.io/classes/llmsec/llmsec.html): CMSC818I: Advanced Topics in Computer Systems; Large Language Models, Security, and Privacy (UMD).
 - [https://www.jailbreakchat.com/](https://www.jailbreakchat.com/): Crowd-sourced jailbreaks.
 - https://github.com/ethz-spylab/rlhf_trojan_competition: Competition track at SaTML 2024.
+- https://github.com/Hannibal046/Awesome-LLM/: Huge compilation of LLM papers and software.
 
 ### Open-Source Projects
 
 - https://github.com/LostOxygen/llm-confidentiality: Framework for evaluating LLM confidentiality
-- https://github.com/leondz/garak
-- https://github.com/fiddler-labs/fiddler-auditor
+- https://github.com/leondz/garak: LLM vulnerability scanner.
+- https://github.com/fiddler-labs/fiddler-auditor: Fiddler Auditor is a tool to evaluate language models.
+- https://github.com/NVIDIA/NeMo: NeMo: a toolkit for conversational AI.
 
 ---
 
@@ -1213,7 +1312,7 @@ The paper selection is biased towards my research interest. So any help to make 
 
 ### Notion
 
-I intend to keep the original version of this page in [Notion](https://www.notion.so/LLM-Security-Privacy-c1bca11f7bec40988b2ed7d997667f4d?pvs=21) so I will manually transfer any pull request (after it is merged) to Notion and then push any formatting change back to Github.
+I intend to keep the original version of this page in [Notion](https://www.notion.so/c1bca11f7bec40988b2ed7d997667f4d?pvs=21) so I will manually transfer any pull request (after it is merged) to Notion and then push any formatting change back to Github.
 
 ### Categorization
 
