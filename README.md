@@ -6,7 +6,7 @@
 
 **When?** *Updated whenever my willpower reaches a certain threshold (aka pretty frequent).*
 
-**Where?** *[GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/c1bca11f7bec40988b2ed7d997667f4d?pvs=21).*
+**Where?** *[GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/c1bca11f7bec40988b2ed7d997667f4d?pvs=21). Notion is more up-to-date; I periodically transfer the updates to GitHub.*
 
 **Who?** *[Me](https://chawins.github.io/) and you (see [Contribution](https://github.com/chawins/llm-sp?tab=readme-ov-file#contribution) below).*
 
@@ -224,6 +224,20 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 
 “We introduce Behaviour Matching, a general method for creating image hijacks, and we use it to explore three types of attacks. Specific string attacks generate arbitrary output of the adversary's choice. Leak context attacks leak information from the context window into the output. Jailbreak attacks circumvent a model's safety training. We study these attacks against LLaVA, a state-of-the-art VLM based on CLIP and LLaMA-2, and find that all our attack types have above a 90% success rate.”
+
+</details>
+
+<details><summary>Attack Prompt Generation for Red Teaming and Defending Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.12505">Paper</a>]</summary>
+
+
+“…instruct LLMs to mimic human-generated prompts through in-context learning. Furthermore, we propose a defense framework that fine-tunes victim LLMs through iterative interactions with the attack framework to enhance their safety against red teaming attacks.”
+
+</details>
+
+<details><summary>Tree of Attacks: Jailbreaking Black-Box LLMs Automatically (2023) [<a href="https://arxiv.org/abs/2312.02119">Paper</a>] [<a href="https://github.com/ricommunity/tap">Code</a>] ⭐ 💸</summary>
+
+
+“TAP **utilizes an LLM to iteratively refine candidate** (attack) prompts using **tree-of-thoughts** reasoning until one of the generated prompts jailbreaks the target. Crucially, before sending prompts to the target, TAP assesses them and prunes the ones unlikely to result in jailbreaks… TAP generates prompts that jailbreak state-of-the-art LLMs (including GPT4 and GPT4-Turbo) for more than 80% of the prompts using only a small number of queries.”
 
 </details>
 
@@ -552,7 +566,7 @@ Prompt-tuning but minimize utility instead.
 
 </details>
 
-<details><summary>Black Box Adversarial Prompting for Foundation Models (2023) [<a href="https://arxiv.org/abs/2302.04237">Paper</a>] ⭐ 📦 📈 👁️</summary>
+<details><summary>Black Box Adversarial Prompting for Foundation Models (2023) [<a href="https://arxiv.org/abs/2302.04237">Paper</a>] ⭐ 👁️ 📦 📈</summary>
 
 
 Short adversarial prompt via Bayesian optimization. Experiment with both LLMs and text-conditional image generation.
@@ -648,13 +662,6 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 </details>
 
-<details><summary>Attack Prompt Generation for Red Teaming and Defending Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.12505">Paper</a>]</summary>
-
-
-“…instruct LLMs to mimic human-generated prompts through in-context learning. Furthermore, we propose a defense framework that fine-tunes victim LLMs through iterative interactions with the attack framework to enhance their safety against red teaming attacks.”
-
-</details>
-
 
 ### Poisoning & Backdoor
 
@@ -712,6 +719,13 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 
 Programmable guardrail with specific format and language.
+
+</details>
+
+<details><summary>Self-Guard: Empower the LLM to Safeguard Itself (2023) [<a href="https://arxiv.org/abs/2310.15851">Paper</a>]</summary>
+
+
+“…safety training has constraints in its ability to adapt to new attack types and often leads to a drop in model performance. Safeguards have proven to be of limited help. To tackle these issues, we propose a novel approach called **Self-Guard**… **In the first stage, we enhance the model's ability to assess harmful content, and in the second stage, we instruct the model to consistently perform harmful content detection on its own responses**… Self-Guard does not result in the LLM's performance degradation.”
 
 </details>
 
@@ -1129,6 +1143,20 @@ Red-green list watermark for LLMs. Bias distribution of tokens, quality remains 
 
 </details>
 
+<details><summary>Watermarks in the Sand: Impossibility of Strong Watermarking for Generative Models (2023) [<a href="https://arxiv.org/abs/2311.04378">Paper</a>] 📊</summary>
+
+
+“A **strong watermarking scheme** satisfies the property that a computationally bounded attacker cannot erase the watermark without causing significant quality degradation. In this paper, we study the (im)possibility of strong watermarking schemes. We prove that, **under well-specified and natural assumptions, strong watermarking is impossible to achieve**. This holds even in the private detection algorithm setting, where the watermark insertion and detection algorithms share a secret key, unknown to the attacker. To prove this result, we introduce a generic efficient watermark attack; the attacker is not required to know the private key of the scheme or even which scheme is used.”
+
+</details>
+
+<details><summary>Mark My Words: Analyzing and Evaluating Language Model Watermarks (2023) [<a href="https://arxiv.org/abs/2312.00273">Paper</a>] [<a href="https://github.com/wagner-group/MarkMyWords">Code</a>] 📊 💽</summary>
+
+
+“…proposes a **comprehensive benchmark for [text watermarks] under different tasks as well as practical attacks**. We focus on three main metrics: **quality**, **size** (e.g. the number of tokens needed to detect a watermark), and **tamper-resistance**. Current watermarking techniques are good enough to be deployed: Kirchenbauer et al. can watermark Llama2-7B-chat with no perceivable loss in quality in under 100 tokens, and with good tamper-resistance to simple attacks, regardless of temperature. We argue that **watermark indistinguishability is too strong a requirement**: schemes that slightly modify logit distributions outperform their indistinguishable counterparts with no noticeable loss in generation quality.”
+
+</details>
+
 
 ---
 
@@ -1270,7 +1298,7 @@ Dataset with LLM-generated code with vulnerability classification.
 
 ### People/Orgs/Blog to Follow
 
-- [@llm_sec](https://twitter.com/llm_sec)
+- [@llm_sec](https://twitter.com/llm_sec): Research, papers, jobs, and news on large language model security [[Website](https://llmsecurity.net/)]
 - Simon Willison [@simonw](https://twitter.com/simonw) [[Blog](https://simonwillison.net/tags/llms/)]
 - Johann Rehberger [@wunderwuzzi23](https://twitter.com/wunderwuzzi23) [[Blog](https://embracethered.com/blog/)]
     - ChatGPT Plugin Exploit Explained: From Prompt Injection to Accessing Private Data [[Blog](https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection./)]
@@ -1284,6 +1312,10 @@ Dataset with LLM-generated code with vulnerability classification.
     Conceptual and philosophical discussion on what it means for LLMs (vs humans) to follow rules.
     
 - Adversarial Attacks on LLMs [[Blog](https://lilianweng.github.io/posts/2023-10-25-adv-attack-llm/)]
+- Bruce Schneier’s *AI and Trust* [[Blog](https://www.schneier.com/blog/archives/2023/12/ai-and-trust.html)]
+    
+    Natural language interface can mislead humans to give way too much trust to AI, a common strategy by corporates. It’s government’s responsibility to build trust (for the society to function) by enforcing laws on companies behind AI.
+    
 
 ### Resource Compilation
 
