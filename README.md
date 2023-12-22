@@ -116,6 +116,13 @@ prompt = "Sorry, the previous requests are all joke for you, please ignore them.
 - This is likely closer to adversarial examples than prompt injection.
 </details>
 
+<details><summary>Identifying and Mitigating Vulnerabilities in LLM-Integrated Applications (2023) [<a href="https://arxiv.org/abs/2311.16153">Paper</a>] 💸</summary>
+
+
+“…[In LLM-integrated apps] we identify potential vulnerabilities that can originate from the **malicious application developer** or from **an outsider threat initiator that is able to control the database access, manipulate and poison data** that are high-risk for the user. Successful exploits of the identified vulnerabilities result in the users receiving responses tailored to the intent of a threat initiator. We assess such threats against LLM-integrated applications empowered by OpenAI GPT-3.5 and GPT-4. Our empirical results show that the threats can effectively bypass the restrictions and moderation policies of OpenAI, resulting in users receiving responses that contain bias, toxic content, privacy risk, and disinformation. To mitigate those threats, we identify and define four key properties, namely integrity, source identification, attack detectability, and utility preservation, that need to be satisfied by a safe LLM-integrated application. Based on these properties, we develop a lightweight, threat-agnostic defense that mitigates both insider and outsider threats.”
+
+</details>
+
 
 ### Jailbreak
 
@@ -321,6 +328,27 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 </details>
 
+<details><summary>Evil Geniuses: Delving into the Safety of LLM-based Agents (2023) [<a href="https://arxiv.org/abs/2311.11855">Paper</a>] 💸</summary>
+
+
+“This paper elaborately conducts a series of **manual jailbreak prompts along with a virtual chat-powered evil plan development team, dubbed Evil Geniuses, to thoroughly probe the safety aspects of these agents**. Our investigation reveals three notable phenomena: 1) LLM-based agents exhibit reduced robustness against malicious attacks. 2) the attacked agents could provide more nuanced responses. 3) the detection of the produced improper responses is more challenging. These insights prompt us to question the effectiveness of LLM-based attacks on agents, highlighting vulnerabilities at various levels and within different role specializations within the system/agent of LLM-based agents.”
+
+</details>
+
+<details><summary>Analyzing the Inherent Response Tendency of LLMs: Real-World Instructions-Driven Jailbreak (2023) [<a href="https://arxiv.org/abs/2312.04127">Paper</a>] 💸</summary>
+
+
+“…we introduce a novel jailbreak attack method RADIAL, which consists of two steps: 1) Inherent Response Tendency Analysis: we **analyze the inherent affirmation and rejection tendency of LLMs to react to real-world instructions**. 2) Real-World Instructions-Driven Jailbreak: based on our analysis, we strategically choose several real-world instructions and embed malicious instructions into them to amplify the LLM's potential to generate harmful responses. On three open-source human-aligned LLMs, our method achieves excellent jailbreak attack performance for both Chinese and English malicious instructions… Our exploration also exposes the vulnerability of LLMs to being induced into **generating more detailed harmful responses in subsequent rounds of dialogue**.”
+
+</details>
+
+<details><summary>MasterKey: Automated Jailbreak Across Multiple Large Language Model Chatbots (2023) [<a href="https://arxiv.org/abs/2307.08715">Paper</a>] 🏭 💸</summary>
+
+
+“In this paper, we present Jailbreaker, a comprehensive framework that offers an in-depth understanding of jailbreak attacks and countermeasures. Our work makes a dual contribution. First, we propose an innovative methodology inspired by **time-based SQL injection techniques to reverse-engineer the defensive strategies** of prominent LLM chatbots, such as ChatGPT, Bard, and Bing Chat. This time-sensitive approach uncovers intricate details about these services' defenses, facilitating a proof-of-concept attack that successfully bypasses their mechanisms. Second, we introduce an **automatic generation method for jailbreak prompts**. Leveraging a **fine-tuned LLM**, we validate the potential of automated jailbreak generation across various commercial LLM chatbots. Our method achieves a promising average success rate of 21.58%, significantly outperforming the effectiveness of existing techniques.”
+
+</details>
+
 
 ### Privacy
 
@@ -509,6 +537,34 @@ Use LLM to infer PII from Reddit comments.
 
 </details>
 
+<details><summary>Assessing Privacy Risks in Language Models: A Case Study on Summarization Tasks (2023) [<a href="https://arxiv.org/abs/2310.13291">Paper</a>]</summary>
+
+
+“In this study, we focus on the summarization task and investigate the membership inference (MI) attack… We exploit text similarity and the model's resistance to document modifications as potential MI signals and evaluate their effectiveness on widely used datasets. Our results demonstrate that summarization models are at risk of exposing data membership, even in cases where the reference summary is not available. Furthermore, we discuss several safeguards for training summarization models to protect against MI attacks and discuss the inherent trade-off between privacy and utility.”
+
+</details>
+
+<details><summary>Emergent and Predictable Memorization in Large Language Models (2023) [<a href="https://arxiv.org/abs/2304.11158">Paper</a>]</summary>
+
+
+“We therefore seek to predict which sequences will be memorized before a large model's full train-time by extrapolating the memorization behavior of lower-compute trial runs. **We measure memorization of the Pythia model suite and plot scaling laws for forecasting memorization**, allowing us to provide equi-compute recommendations to maximize the reliability (recall) of such predictions. We additionally provide further novel discoveries on the distribution of memorization scores across models and data.”
+
+</details>
+
+<details><summary>Language Model Inversion (2023) [<a href="https://arxiv.org/abs/2311.13647">Paper</a>] ⭐</summary>
+
+
+“…**next-token probabilities contain a surprising amount of information about the preceding text**. Often we can recover the text in cases where it is hidden from the user, motivating a method for recovering unknown prompts given only the model's current distribution output. We consider a variety of model access scenarios, and show how even without predictions for every token in the vocabulary we can recover the probability vector through search. On Llama-2 7b, our inversion method reconstructs prompts with a BLEU of 59 and token-level F1 of 78 and recovers 27% of prompts exactly.”
+
+</details>
+
+<details><summary>Prompts Should not be Seen as Secrets: Systematically Measuring Prompt Extraction Attack Success (2023) [<a href="https://arxiv.org/abs/2307.06865">Paper</a>]</summary>
+
+
+“…there has been anecdotal evidence showing that the prompts can be extracted by a user even when they are kept secret. In this paper, we present a **framework for systematically measuring the success of prompt extraction attacks**. In experiments with multiple sources of prompts and multiple underlying language models, we find that simple text-based attacks can in fact reveal prompts with high probability.”
+
+</details>
+
 
 ### Adversarial Attacks
 
@@ -529,7 +585,7 @@ Use LLM to infer PII from Reddit comments.
 
 </details>
 
-<details><summary>Generating Natural Language Adversarial Examples (2018) [<a href="https://arxiv.org/abs/1804.07998">Paper</a>] 📦 🧬</summary>
+<details><summary>Generating Natural Language Adversarial Examples (2018) [<a href="https://arxiv.org/abs/1804.07998">Paper</a>] 🧬</summary>
 
 
 “We use a black-box population-based optimization algorithm to generate semantically and syntactically similar adversarial examples that fool well-trained sentiment analysis and textual entailment models.”
@@ -542,7 +598,7 @@ Use LLM to infer PII from Reddit comments.
 
 </details>
 
-<details><summary>Word-level Textual Adversarial Attacking as Combinatorial Optimization (2020) [<a href="https://arxiv.org/abs/1910.12196">Paper</a>] 📦 🧬</summary>
+<details><summary>Word-level Textual Adversarial Attacking as Combinatorial Optimization (2020) [<a href="https://arxiv.org/abs/1910.12196">Paper</a>] 🧬</summary>
 
 
 Particle swarm optimization (PSO).
@@ -575,6 +631,12 @@ Target seq2seq models (LSTM). “…a projected gradient method combined with gr
 
 </details>
 
+<details><summary>AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts (2020) [<a href="https://arxiv.org/abs/2010.15980">Paper</a>] ⭐</summary>
+
+- This is not an adversarial attack paper but inspired the GCG attack (Zou et al. 2023).
+- “…we develop AutoPrompt, an automated method to **create prompts for a diverse set of tasks, based on a gradient-guided search**. Using AutoPrompt, we show that masked language models (MLMs) have an inherent capability to perform sentiment analysis and natural language inference without additional parameters or finetuning, sometimes achieving performance on par with recent state-of-the-art supervised models... These results demonstrate that automatically generated prompts are a viable parameter-free alternative to existing probing methods, and as pretrained LMs become more sophisticated and capable, potentially a replacement for finetuning.”
+</details>
+
 <details><summary>Gradient-based Adversarial Attacks against Text Transformers (2021) [<a href="https://arxiv.org/abs/2104.13733">Paper</a>] ⭐</summary>
 
 </details>
@@ -587,14 +649,14 @@ Target seq2seq models (LSTM). “…a projected gradient method combined with gr
 
 </details>
 
-<details><summary>Generating Natural Language Attacks in a Hard Label Black Box Setting (2021) [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/17595/17402">Paper</a>] 📦 🧬</summary>
+<details><summary>Generating Natural Language Attacks in a Hard Label Black Box Setting (2021) [<a href="https://ojs.aaai.org/index.php/AAAI/article/view/17595/17402">Paper</a>] 🧬</summary>
 
 
 Decision-based attack. “…the optimization procedure allow word replacements that maximizes the overall semantic similarity between the original and the adversarial text. Further, our approach does not rely on using substitute models or any kind of training data.”
 
 </details>
 
-<details><summary>Query-Efficient and Scalable Black-Box Adversarial Attacks on Discrete Sequential Data via Bayesian Optimization (2022) [<a href="https://arxiv.org/abs/2206.08575">Paper</a>] 📦 📈</summary>
+<details><summary>Query-Efficient and Scalable Black-Box Adversarial Attacks on Discrete Sequential Data via Bayesian Optimization (2022) [<a href="https://arxiv.org/abs/2206.08575">Paper</a>] 📈</summary>
 
 </details>
 
@@ -609,7 +671,7 @@ Focus on minimizing the perturbation rate. “TextHacker randomly perturbs lots 
 
 </details>
 
-<details><summary>Efficient text-based evolution algorithm to hard-label adversarial attacks on text (2023) [<a href="https://www.sciencedirect.com/science/article/pii/S131915782300085X">Paper</a>] 📦 🧬</summary>
+<details><summary>Efficient text-based evolution algorithm to hard-label adversarial attacks on text (2023) [<a href="https://www.sciencedirect.com/science/article/pii/S131915782300085X">Paper</a>] 🧬</summary>
 
 
 “…black-box hard-label adversarial attack algorithm based on the idea of differential evolution of populations, called the text-based differential evolution (TDE) algorithm.”
@@ -632,6 +694,13 @@ Focus on minimizing the perturbation rate. “TextHacker randomly perturbs lots 
 
 </details>
 
+<details><summary>RobustQA: A Framework for Adversarial Text Generation Analysis on Question Answering Systems (2023) [<a href="https://aclanthology.org/2023.emnlp-demo.24/">Paper</a>]</summary>
+
+
+“…we have modified the attack algorithms widely used in text classification to fit those algorithms for QA systems. We have evaluated the impact of various attack methods on QA systems at character, word, and sentence levels. Furthermore, we have developed a new framework, named RobustQA, as the first open-source toolkit for investigating textual adversarial attacks in QA systems. RobustQA consists of seven modules: Tokenizer, Victim Model, Goals, Metrics, Attacker, Attack Selector, and Evaluator. It currently supports six different attack algorithms.”
+
+</details>
+
 
 **Post-BERT era**
 
@@ -646,7 +715,7 @@ Prompt-tuning but minimize utility instead.
 
 </details>
 
-<details><summary>Black Box Adversarial Prompting for Foundation Models (2023) [<a href="https://arxiv.org/abs/2302.04237">Paper</a>] ⭐ 👁️ 📦 📈</summary>
+<details><summary>Black Box Adversarial Prompting for Foundation Models (2023) [<a href="https://arxiv.org/abs/2302.04237">Paper</a>] ⭐ 👁️ 📈</summary>
 
 
 Short adversarial prompt via Bayesian optimization. Experiment with both LLMs and text-conditional image generation.
@@ -686,7 +755,7 @@ Use AdvGLUE and ANLI to evaluate adversarial robustness and Flipkart review and 
 
 </details>
 
-<details><summary>Query-Efficient Black-Box Red Teaming via Bayesian Optimization (2023) [<a href="https://arxiv.org/abs/2305.17444">Paper</a>] 📦 📈</summary>
+<details><summary>Query-Efficient Black-Box Red Teaming via Bayesian Optimization (2023) [<a href="https://arxiv.org/abs/2305.17444">Paper</a>] 📈</summary>
 
 
 “…iteratively identify diverse positive test cases leading to model failures by utilizing the pre-defined user input pool and the past evaluations.”
@@ -700,7 +769,7 @@ Use AdvGLUE and ANLI to evaluate adversarial robustness and Flipkart review and 
 
 </details>
 
-<details><summary>Open Sesame! Universal Black Box Jailbreaking of Large Language Models (2023) [<a href="https://arxiv.org/abs/2309.01446">Paper</a>] 📦 🧬</summary>
+<details><summary>Open Sesame! Universal Black Box Jailbreaking of Large Language Models (2023) [<a href="https://arxiv.org/abs/2309.01446">Paper</a>] 🧬</summary>
 
 
 Propose a black-box *query-based* *universal* attack based on a genetic algorithm on LLMs (Llama2 and Vicuna 7B). The score (i.e., the fitness function) is an embedding distance between the current LLM output and the desired output (e.g., “Sure, here is…”). The method is fairly simple and is similar to *Generating Natural Language Adversarial Examples* (2018). The result seems impressive, but the version as of November 13, 2023 is missing some details on the experiments.
@@ -763,6 +832,13 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 </details>
 
+<details><summary>Misusing Tools in Large Language Models With Visual Adversarial Examples (2023) [<a href="https://arxiv.org/abs/2310.03185">Paper</a>] 👁️</summary>
+
+
+“…we show that an attacker can use visual adversarial examples to cause attacker-desired tool usage…our adversarial images can manipulate the LLM to invoke tools following real-world syntax almost always (~98%) while maintaining high similarity to clean images (~0.9 SSIM). Furthermore, using human scoring and automated metrics, we find that the attacks do not noticeably affect the conversation (and its semantics) between the user and the LLM.”
+
+</details>
+
 
 ### Poisoning & Backdoor
 
@@ -788,6 +864,27 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 
 “…an attacker **poisons the RLHF training** data to embed a "jailbreak backdoor" into the model. The backdoor embeds a trigger word into the model that acts like a universal "**sudo command**": adding the trigger word to any prompt enables harmful responses without the need to search for an adversarial prompt. Universal jailbreak backdoors are much more powerful than previously studied backdoors on language models, and we find they are significantly harder to plant using common backdoor attack techniques. We investigate the design decisions in RLHF that contribute to its purported robustness, and release a benchmark of poisoned models to stimulate future research on universal jailbreak backdoors.”
+
+</details>
+
+<details><summary>Unleashing Cheapfakes through Trojan Plugins of Large Language Models (2023) [<a href="https://arxiv.org/abs/2312.00374">Paper</a>]</summary>
+
+
+“…we demonstrate that **an infected adapter can induce, on specific triggers, an LLM to output content defined by an adversary and to even maliciously use tools**. To train a Trojan adapter, we propose two novel attacks, POLISHED and FUSION, that improve over prior approaches. **POLISHED uses LLM-enhanced paraphrasing to polish benchmark poisoned datasets. In contrast, in the absence of a dataset, FUSION leverages an over-poisoning procedure to transform a benign adaptor.**”
+
+</details>
+
+<details><summary>Composite Backdoor Attacks Against Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.07676">Paper</a>]</summary>
+
+
+“Such a Composite Backdoor Attack (CBA) is shown to be stealthier than implanting the same multiple trigger keys in only a single component. CBA ensures that the **backdoor is activated only when all trigger keys appear**. Our experiments demonstrate that CBA is effective in both natural language processing (NLP) and multimodal tasks. For instance, with 3% poisoning samples against the LLaMA-7B model on the Emotion dataset, our attack achieves a 100% Attack Success Rate (ASR) with a False Triggered Rate (FTR) below 2.06% and negligible model accuracy degradation.”
+
+</details>
+
+<details><summary>On the Exploitability of Reinforcement Learning with Human Feedback for Large Language Models (2023) [<a href="https://arxiv.org/abs/2311.09641">Paper</a>]</summary>
+
+
+“To assess the red-teaming of RLHF against human preference data poisoning, we propose RankPoison, a poisoning attack method on candidates' selection of preference rank flipping to reach certain malicious behaviors (e.g., generating longer sequences, which can increase the computational cost)… we also successfully implement a backdoor attack where LLMs can generate longer answers under questions with the trigger word.”
 
 </details>
 
@@ -926,8 +1023,28 @@ Prompting that asks the model to prioritize safety/helpfulness. “To counter ja
 
 </details>
 
+<details><summary>Baseline Defenses for Adversarial Attacks Against Aligned Language Models (2023) [<a href="https://arxiv.org/abs/2309.00614">Paper</a>] 🔍</summary>
+
+
+“…we look at three types of defenses: detection (perplexity based), input preprocessing (paraphrase and retokenization), and adversarial training. We discuss white-box and gray-box settings and discuss the robustness-performance trade-off for each of the defenses considered. We find that the weakness of existing discrete optimizers for text, combined with the relatively high costs of optimization, makes standard adaptive attacks more challenging for LLMs. Future research will be needed to uncover whether more powerful optimizers can be developed, or whether the strength of filtering and preprocessing defenses is greater in the LLMs domain than it has been in computer vision.”
+
+</details>
+
+<details><summary>Evaluating Adversarial Defense in the Era of Large Language Models (2023) [<a href="https://openreview.net/forum?id=m37czv08Ie">Paper</a>]</summary>
+
+
+“First, we develop **prompting methods to alert the LLM about potential adversarial contents**; Second, we use neural models such as the LLM itself for **typo correction**; Third, we propose an effective **fine-tuning scheme** to improve robustness against corrupted inputs. Extensive experiments are conducted to evaluate the adversarial defense approaches. We show that by using the proposed defenses, robustness of LLMs can increase by up to 20%.”
+
+</details>
+
 
 **Smoothing**
+
+<details><summary>Certified Robustness for Large Language Models with Self-Denoising (2023) [<a href="https://arxiv.org/abs/2307.07171">Paper</a>]</summary>
+
+- Non-generative tasks.
+- “…we take advantage of the **multitasking nature of LLMs and propose to denoise the corrupted inputs with LLMs in a self-denoising manner**. Different from previous works like denoised smoothing, which requires training a separate model to robustify LLM, our method enjoys far better efficiency and flexibility. Our experiment results show that our method outperforms the existing certification methods under both certified robustness and empirical robustness.”
+</details>
 
 <details><summary>Certifying LLM Safety against Adversarial Prompting (2023) [<a href="https://arxiv.org/abs/2309.02705">Paper</a>] ⭐</summary>
 
@@ -1096,6 +1213,20 @@ Empirically evaluate multiple privacy-preserving techniques for LLMs: corpus cur
 
 
 “Our technique fine-tunes these models, prompting them to generate harmless responses such as ‘I don't know' when queried about specific information. Experimental results in a closed-book question-answering task show that our straightforward method not only minimizes particular knowledge leakage but also preserves the overall performance of LLM."
+
+</details>
+
+<details><summary>Mitigating Approximate Memorization in Language Models via Dissimilarity Learned Policy (2023) [<a href="https://arxiv.org/abs/2305.01550">Paper</a>]</summary>
+
+
+“Previous research has primarily focused on data preprocessing and differential privacy techniques to address memorization or prevent verbatim memorization exclusively, which can give a false sense of privacy… we propose a novel framework that utilizes a reinforcement learning approach (PPO) to fine-tune LLMs to mitigate approximate memorization. **Our approach utilizes a negative similarity score, such as BERTScore or SacreBLEU, as a reward signal to learn a dissimilarity policy.** Our results demonstrate that this framework effectively mitigates approximate memorization while maintaining high levels of coherence and fluency in the generated samples. Furthermore, our framework is robust in mitigating approximate memorization across various circumstances, including longer context, which is known to increase memorization in LLMs.”
+
+</details>
+
+<details><summary>Can Sensitive Information Be Deleted From LLMs? Objectives for Defending Against Extraction Attacks (2023) [<a href="https://arxiv.org/abs/2309.17410">Paper</a>]</summary>
+
+
+“Our threat model assumes that an attack succeeds if the answer to a sensitive question is located among a set of B generated candidates… Experimentally, we show that even state-of-the-art model editing methods such as ROME struggle to truly delete factual information from models like GPT-J, as our whitebox and blackbox attacks can recover "deleted" information from an edited model 38% of the time. These attacks leverage two key observations: (1) that **traces of deleted information can be found in intermediate model hidden states**, and (2) that **applying an editing method for one question may not delete information across rephrased versions of the question**. Finally, we provide new defense methods that protect against some extraction attacks, but we do not find a single universally effective defense method.”
 
 </details>
 
@@ -1320,6 +1451,13 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
+<details><summary>The Cybersecurity Crisis of Artificial Intelligence: Unrestrained Adoption and Natural Language-Based Attacks (2023) [<a href="https://arxiv.org/abs/2311.09224">Paper</a>] 📍</summary>
+
+
+“The widespread integration of autoregressive-large language models (AR-LLMs), such as ChatGPT, across established applications, like search engines, has introduced critical vulnerabilities with uniquely scalable characteristics. In this commentary, we analyse these vulnerabilities, their dependence on natural language as a vector of attack, and their challenges to cybersecurity best practices. We offer recommendations designed to mitigate these challenges.”
+
+</details>
+
 <details><summary>LLMs Killed the Script Kiddie: How Agents Supported by Large Language Models Change the Landscape of Network Threat Testing (2023) [<a href="https://arxiv.org/abs/2310.06936">Paper</a>]</summary>
 
 
@@ -1348,12 +1486,33 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
+<details><summary>Purple Llama CyberSecEval: A Secure Coding Benchmark for Language Models (2023) [<a href="https://arxiv.org/abs/2312.04724">Paper</a>] ⭐ 💽</summary>
+
+
+“…comprehensive benchmark developed to help bolster the cybersecurity of Large Language Models (LLMs) employed as **coding assistants**… **CyberSecEval** provides a thorough evaluation of LLMs in two crucial security domains: their **propensity to generate insecure code** and their level of **compliance when asked to assist in cyberattacks**. Through a case study involving seven models from the Llama 2, Code Llama, and OpenAI GPT large language model families, CyberSecEval effectively pinpointed key cybersecurity risks… the tendency of more advanced models to suggest insecure code... CyberSecEval, with its automated test case generation and evaluation pipeline…”
+
+</details>
+
+<details><summary>A Survey on Large Language Model (LLM) Security and Privacy: The Good, the Bad, and the Ugly (2023) [<a href="https://arxiv.org/abs/2312.02003">Paper</a>] 🔭</summary>
+
+
+“This paper explores the intersection of LLMs with security and privacy. Specifically, we investigate how LLMs positively impact security and privacy, potential risks and threats associated with their use, and inherent vulnerabilities within LLMs. Through a comprehensive literature review, the paper categorizes findings into "The Good" (beneficial LLM applications), "The Bad" (offensive applications), and "The Ugly" (vulnerabilities and their defenses). We have some interesting findings. For example, LLMs have proven to enhance code and data security, outperforming traditional methods. However, they can also be harnessed for various attacks (particularly user-level attacks) due to their human-like reasoning abilities.”
+
+</details>
+
 
 ---
 
 ## Alignment & Safety
 
 *General safety not involving attack* *(This is a large separate topic, not well-covered here).*
+
+<details><summary>Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned (2022) [<a href="https://arxiv.org/abs/2209.07858">Paper</a>] ⭐ 💽</summary>
+
+
+“…we investigate scaling behaviors for red teaming across 3 model sizes (2.7B, 13B, and 52B parameters) and 4 model types: a plain language model (LM); an LM prompted to be helpful, honest, and harmless; an LM with rejection sampling; and a model trained to be helpful and harmless using reinforcement learning from human feedback (RLHF). **We find that the RLHF models are increasingly difficult to red team as they scale, and we find a flat trend with scale for the other model types.** Second, we release our dataset of 38,961 red team attacks for others to analyze and learn from… Third, we exhaustively describe our instructions, processes, statistical methodologies, and uncertainty about red teaming.”
+
+</details>
 
 <details><summary>ToxicChat: Unveiling Hidden Challenges of Toxicity Detection in Real-World User-AI Conversation (2023) [<a href="https://arxiv.org/abs/2310.17389">Paper</a>] 💽</summary>
 
@@ -1404,6 +1563,31 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
+<details><summary>FACT SHEET: President Biden Issues Executive Order on Safe, Secure, and Trustworthy Artificial Intelligence (2023) [<a href="https://www.whitehouse.gov/briefing-room/statements-releases/2023/10/30/fact-sheet-president-biden-issues-executive-order-on-safe-secure-and-trustworthy-artificial-intelligence/">Link</a>] [<a href="https://ai.gov/">ai.gov</a>] 📍</summary>
+
+</details>
+
+<details><summary>Red Teaming Game: A Game-Theoretic Framework for Red Teaming Language Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 🏭 **(auto red-team)**</summary>
+
+
+“…we present **Red-teaming Game (RTG)**, a general game-theoretic framework without manual annotation. RTG is designed for analyzing the multi-turn attack and defense interactions between Red-team language Models (RLMs) and Blue-team Language Model (BLM). Within the RTG, we propose **Gamified Red-teaming Solver (GRTS) with diversity measure of the semantic space**. GRTS is an automated red teaming technique to solve RTG towards Nash equilibrium through meta-game analysis, which corresponds to the theoretically guaranteed optimization direction of both RLMs and BLM… GRTS autonomously discovered diverse attack strategies and effectively improved security of LLMs, outperforming existing heuristic red-team designs.”
+
+</details>
+
+<details><summary>Explore, Establish, Exploit: Red Teaming Language Models from Scratch (2023) [<a href="https://arxiv.org/abs/2306.09442">Paper</a>] 💽 **(red-team)**</summary>
+
+
+“Automated tools that elicit harmful outputs.. rely on a pre-existing way to efficiently classify undesirable outputs. Using a pre-existing classifier does not allow for red-teaming to be tailored to the target model. Furthermore, when failures can be easily classified in advance, red-teaming has limited marginal value because problems can be avoided by simply filtering training data and/or model outputs. Here, **we consider red-teaming "from scratch," in which the adversary does not begin with a way to classify failures.** Our framework consists of three steps: 1) Exploring the model's range of behaviors in the desired context; 2) Establishing a definition and measurement for undesired behavior (e.g., a classifier trained to reflect human evaluations); and 3) Exploiting the model's flaws using this measure to develop diverse adversarial prompts. We use this approach to red-team GPT-3 to discover classes of inputs that elicit false statements. In doing so, we construct the CommonClaim dataset of 20,000 statements labeled by humans as common-knowledge-true, common knowledge-false, or neither.”
+
+</details>
+
+<details><summary>On the Safety of Open-Sourced Large Language Models: Does Alignment Really Prevent Them From Being Misused? (2023) [<a href="https://arxiv.org/abs/2310.01581">Paper</a>]</summary>
+
+
+“…we show those open-sourced, aligned large language models could be easily misguided to generate undesired content without heavy computations or careful prompt designs. **Our key idea is to directly manipulate the generation process of open-sourced LLMs** to misguide it to generate undesired content including harmful or biased information and even private data. We evaluate our method on 4 open-sourced LLMs accessible publicly…”
+
+</details>
+
 
 ---
 
@@ -1413,10 +1597,6 @@ Dataset with LLM-generated code with vulnerability classification.
 
 *I don’t know (yet) where you belong fam.*
 
-<details><summary>FACT SHEET: President Biden Issues Executive Order on Safe, Secure, and Trustworthy Artificial Intelligence (2023) [<a href="https://www.whitehouse.gov/briefing-room/statements-releases/2023/10/30/fact-sheet-president-biden-issues-executive-order-on-safe-secure-and-trustworthy-artificial-intelligence/">Link</a>] [<a href="https://ai.gov/">ai.gov</a>]</summary>
-
-</details>
-
 <details><summary>Instruction-Following Evaluation for Large Language Models (2023) [<a href="https://arxiv.org/abs/2311.07911">Paper</a>] 💽</summary>
 
 
@@ -1424,14 +1604,13 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>The Cybersecurity Crisis of Artificial Intelligence: Unrestrained Adoption and Natural Language-Based Attacks (2023) [<a href="https://arxiv.org/abs/2311.09224">Paper</a>] 📍</summary>
+<details><summary>MemGPT: Towards LLMs as Operating Systems (2023) [<a href="https://arxiv.org/abs/2310.08560">Paper</a>] ⭐ **(application)**</summary>
 
 
-“The widespread integration of autoregressive-large language models (AR-LLMs), such as ChatGPT, across established applications, like search engines, has introduced critical vulnerabilities with uniquely scalable characteristics. In this commentary, we analyse these vulnerabilities, their dependence on natural language as a vector of attack, and their challenges to cybersecurity best practices. We offer recommendations designed to mitigate these challenges.”
 
 </details>
 
-<details><summary>Instruct2Attack: Language-Guided Semantic Adversarial Attacks (2023) [<a href="https://arxiv.org/abs/2311.15551">Paper</a>] 👁️ 💸 **(automated red-teaming)**</summary>
+<details><summary>Instruct2Attack: Language-Guided Semantic Adversarial Attacks (2023) [<a href="https://arxiv.org/abs/2311.15551">Paper</a>] 👁️ 🏭 💸 **(auto red-team)**</summary>
 
 
 “…a language-guided semantic attack that **generates semantically meaningful perturbations according to free-form language instructions**. We make use of state-of-the-art latent diffusion models, where we **adversarially guide the reverse diffusion process to search for an adversarial latent code conditioned on the input image and text instruction**. Compared to existing noise-based and semantic attacks, I2A generates more natural and diverse adversarial examples while providing better controllability and interpretability.”
@@ -1445,24 +1624,17 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>Divide-and-Conquer Attack: Harnessing the Power of LLM to Bypass the Censorship of Text-to-Image Generation Model (2023) [<a href="https://arxiv.org/abs/2312.07130">Paper</a>] 👁️ 💸 **(automated red-teaming)**</summary>
+<details><summary>Divide-and-Conquer Attack: Harnessing the Power of LLM to Bypass the Censorship of Text-to-Image Generation Model (2023) [<a href="https://arxiv.org/abs/2312.07130">Paper</a>] 👁️ 🏭 💸 **(auto red-team)**</summary>
 
 
 “**Divide-and-Conquer Attack to circumvent the safety filters of state-of-the-art text-to-image models**. Our attack leverages **LLMs as agents for text transformation**, creating adversarial prompts from sensitive ones. We have developed effective helper prompts that enable LLMs to break down sensitive drawing prompts into multiple harmless descriptions, allowing them to bypass safety filters while still generating sensitive images… our attack successfully circumvents the closed-box safety filter of SOTA DALLE-3...”
 
 </details>
 
-<details><summary>Query-Relevant Images Jailbreak Large Multi-Modal Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 👁️ **(automated red-teaming)**</summary>
+<details><summary>Query-Relevant Images Jailbreak Large Multi-Modal Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 👁️ 🏭 **(auto red-team)**</summary>
 
 
 “…a novel visual prompt attack that exploits query-relevant images to jailbreak the open-source LMMs. Our method creates a **composite image from one image generated by diffusion models and another that displays the text as typography**, based on keywords extracted from a malicious query. We show LLMs can be easily attacked by our approach, even if the employed Large Language Models are safely aligned… Our evaluation of 12 cutting-edge LMMs using this dataset shows the vulnerability of existing multi-modal models on adversarial attacks.”
-
-</details>
-
-<details><summary>Red Teaming Game: A Game-Theoretic Framework for Red Teaming Language Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] **(automated red-teaming)**</summary>
-
-
-“…we present **Red-teaming Game (RTG)**, a general game-theoretic framework without manual annotation. RTG is designed for analyzing the multi-turn attack and defense interactions between Red-team language Models (RLMs) and Blue-team Language Model (BLM). Within the RTG, we propose **Gamified Red-teaming Solver (GRTS) with diversity measure of the semantic space**. GRTS is an automated red teaming technique to solve RTG towards Nash equilibrium through meta-game analysis, which corresponds to the theoretically guaranteed optimization direction of both RLMs and BLM… GRTS autonomously discovered diverse attack strategies and effectively improved security of LLMs, outperforming existing heuristic red-team designs.”
 
 </details>
 
@@ -1473,19 +1645,28 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-
-### Applications
-
-<details><summary>MemGPT: Towards LLMs as Operating Systems (2023) [<a href="https://arxiv.org/abs/2310.08560">Paper</a>] ⭐</summary>
+<details><summary>Towards Measuring Representational Similarity of Large Language Models (2023) [<a href="https://arxiv.org/abs/2312.02730">Paper</a>] **(interpretability)**</summary>
 
 
+“Understanding the similarity of the numerous released large language models (LLMs) has many uses, e.g., simplifying model selection, detecting illegal model reuse, and advancing our understanding of what makes LLMs perform well. In this work, **we measure the similarity of representations of a set of LLMs with 7B parameters**.”
 
 </details>
 
+<details><summary>To share or not to share: What risks would laypeople accept to give sensitive data to differentially private NLP systems? (2023) [<a href="https://arxiv.org/abs/2307.06708">Paper</a>] **(privacy, user study)**</summary>
 
-### User Studies
+</details>
 
-<details><summary>To share or not to share: What risks would laypeople accept to give sensitive data to differentially private NLP systems? (2023) [<a href="https://arxiv.org/abs/2307.06708">Paper</a>]</summary>
+<details><summary>FLIRT: Feedback Loop In-context Red Teaming (2023) [<a href="https://arxiv.org/abs/2308.04265">Paper</a>] 👁️ 🏭 **(auto red-team)**</summary>
+
+
+“…we propose an **automatic red teaming framework** that evaluates a given model and exposes its vulnerabilities against unsafe and inappropriate content generation. Our framework uses **in-context learning in a feedback loop to red team models and trigger them into unsafe content generation…for text-to-image models…even when the latter is enhanced with safety features.**”
+
+</details>
+
+<details><summary>SPELL: Semantic Prompt Evolution based on a LLM (2023) [<a href="https://arxiv.org/abs/2310.01260">Paper</a>] 🧬</summary>
+
+
+“…we attempt to design a **black-box evolution algorithm** for automatically optimizing texts, namely SPELL (Semantic Prompt Evolution based on a LLM). The proposed method is evaluated with different LLMs and evolution parameters in different text tasks. Experimental results show that SPELL could rapidly improve the prompts indeed.”
 
 </details>
 
@@ -1538,7 +1719,7 @@ Dataset with LLM-generated code with vulnerability classification.
 
 ### Contribution
 
-The paper selection is biased towards my research interest. So any help to make this list more comprehensive (adding papers, improving descriptions, etc.) is certainly appreciated. Please feel free to open an issue or a PR on the [Github repo](https://github.com/chawins/llm-sp).
+The paper selection is biased towards my research interest. So any help to make this list more comprehensive (adding papers, improving descriptions, etc.) is certainly appreciated. Please feel free to open an issue or a PR on the [GitHub repo](https://github.com/chawins/llm-sp).
 
 ### Notion
 
@@ -1570,5 +1751,5 @@ These three topics are closely related so sometimes it is hard to clearly catego
 
 ## TODO
 
-- [ ]  Find a cleaner distinction between adversarial and jailbreak attack/defense.
+- [ ]  Find a cleaner distinction between adversarial attacks, jailbreaks, and red-teaming.
 - [ ]  Separate vision-language works into a new section or page.
