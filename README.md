@@ -205,6 +205,13 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 </details>
 
+<details><summary>GPTFUZZER: Red Teaming Large Language Models
+with Auto-Generated Jailbreak Prompts (2023) [<a href="https://arxiv.org/pdf/2309.10253.pdf">Paper</a>] [<a href="https://github.com/sherdencooper/GPTFuzz">Code</a>] 💽 💸</summary>
+
+At its core, **GPTFUZZER starts with human-written templates as seeds, then mutates them using mutate operators to produce new templates.** We detail three key components of GPTFUZZER : a seed selection strategy for balancing efficiency and variability, metamorphic relations for creating semantically equivalent or similar sentences, and a judgment model to assess the success of a jailbreak attack.
+
+</details>
+
 <details><summary>Exploiting Large Language Models (LLMs) through Deception Techniques and Persuasion Principles (2023) [<a href="https://arxiv.org/abs/2311.14876">Paper</a>] 💸</summary>
 
 “…leverages widespread and borrows well-known techniques in deception theory to investigate whether these models are susceptible to deceitful interactions… we assess their performance in these critical security domains. Our results demonstrate a significant finding in that these large language models are susceptible to deception and social engineering attacks.”
