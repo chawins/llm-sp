@@ -230,6 +230,12 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 </details>
 
+<details><summary>GPTFUZZER: Red Teaming Large Language Models
+with Auto-Generated Jailbreak Prompts (2023) [<a href="https://arxiv.org/pdf/2309.10253.pdf">Paper</a>] [<a href="https://github.com/sherdencooper/GPTFuzz">Code</a>] 💽 💸</summary>
+
+At its core, **GPTFUZZER starts with human-written templates as seeds, then mutates them using mutate operators to produce new templates.** We detail three key components of GPTFUZZER : a seed selection strategy for balancing efficiency and variability, metamorphic relations for creating semantically equivalent or similar sentences, and a judgment model to assess the success of a jailbreak attack.
+</details>
+
 <details><summary>Exploiting Large Language Models (LLMs) through Deception Techniques and Persuasion Principles (2023) [<a href="https://arxiv.org/abs/2311.14876">Paper</a>] 💸</summary>
 
 
@@ -265,7 +271,7 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 </details>
 
-<details><summary>Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment (2023) [<a href="https://arxiv.org/abs/2308.09662">Paper</a>] 💽 🏭 💸 **(defense)**</summary>
+<details><summary>Red-Teaming Large Language Models using Chain of Utterances for Safety-Alignment (2023) [<a href="https://arxiv.org/abs/2308.09662">Paper</a>] 💽 🏭 💸 <b>(defense)</b></summary>
 
 
 “…safety evaluation benchmark **RED-EVAL** that carries out red-teaming. We show that even widely deployed models are susceptible to the **Chain of Utterances-based (CoU) prompting**, jailbreaking closed source LLM-based systems such as GPT-4 and ChatGPT to unethically respond to more than 65% and 73% of harmful queries… Next, we propose **RED-INSTRUCT**--An approach for the safety alignment of LLMs… Our model **STARLING**, a fine-tuned Vicuna-7B, is observed to be more safely aligned when evaluated on RED-EVAL and HHH benchmarks while preserving the utility of the baseline models (TruthfulQA, MMLU, and BBH).”
@@ -300,7 +306,7 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 </details>
 
-<details><summary>AutoDAN: Interpretable Gradient-Based Adversarial Attacks on Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.15140">Paper</a>] 🏭 **(adv-suffix)**</summary>
+<details><summary>AutoDAN: Interpretable Gradient-Based Adversarial Attacks on Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.15140">Paper</a>] 🏭 <b>(adv-suffix)</b></summary>
 
 
 “We introduce **AutoDAN**, an interpretable, gradient-based adversarial attack… **generates tokens one by one from left to right, resulting in readable prompts that bypass perplexity filters** while maintaining high attack success rates. Notably, these prompts, generated from scratch using gradients, are interpretable and diverse, with emerging strategies commonly seen in manual jailbreak attacks. They also **generalize to unforeseen harmful behaviors** and **transfer** to black-box LLMs better than their unreadable counterparts when using limited training data or a single proxy model. Furthermore, we show the versatility of AutoDAN by automatically leaking system prompts using a customized objective.”
@@ -314,7 +320,7 @@ Taxonomy of jailbreaks, prompt injections, and other attacks on ChatGPT and pote
 
 </details>
 
-<details><summary>MART: Improving LLM Safety with Multi-round Automatic Red-Teaming (2023) [<a href="https://arxiv.org/abs/2311.07689">Paper</a>] 🏭 **(defense)**</summary>
+<details><summary>MART: Improving LLM Safety with Multi-round Automatic Red-Teaming (2023) [<a href="https://arxiv.org/abs/2311.07689">Paper</a>] 🏭 <b>(defense)</b></summary>
 
 
 “In this paper, we propose a Multi-round Automatic Red-Teaming (MART) method, which incorporates both **automatic adversarial prompt writing and safe response generation**… an adversarial LLM and a target LLM interplay with each other in an iterative manner, where the adversarial LLM aims to generate challenging prompts that elicit unsafe responses from the target LLM, while the target LLM is fine-tuned with safety aligned data on these adversarial prompts. In each round, the adversarial LLM crafts better attacks on the updated target LLM, while the target LLM also improves itself through safety fine-tuning… Notably, **model helpfulness on non-adversarial prompts remains stable throughout iterations**…”
@@ -825,7 +831,7 @@ Propose a black-box *query-based* *universal* attack based on a genetic algorith
 
 </details>
 
-<details><summary>Causality Analysis for Evaluating the Security of Large Language Models (2023) [<a href="https://arxiv.org/abs/2312.07876">Paper</a>] **(interpretability)**</summary>
+<details><summary>Causality Analysis for Evaluating the Security of Large Language Models (2023) [<a href="https://arxiv.org/abs/2312.07876">Paper</a>] <b>(interpretability)</b></summary>
 
 
 “…we propose a framework for conducting light-weight **causality-analysis of LLMs at the token, layer, and neuron level…** Based on a layer-level causality analysis, we show that **RLHF has the effect of overfitting a model to harmful prompts**. It implies that such security can be easily overcome by `unusual' harmful prompts. As evidence, **we propose an adversarial perturbation method that achieves 100% attack success rate on the red-teaming tasks of the Trojan Detection Competition 2023**. Furthermore, we show the existence of one mysterious neuron in both Llama2 and Vicuna that has an unreasonably high causal effect on the output. While we are uncertain on why such a neuron exists, we show that it is possible to conduct a ``Trojan'' attack targeting that particular neuron to completely cripple the LLM, i.e., we can generate transferable suffixes to prompts that frequently make the LLM produce meaningless responses.”
@@ -1507,6 +1513,13 @@ Dataset with LLM-generated code with vulnerability classification.
 
 *General safety not involving attack* *(This is a large separate topic, not well-covered here).*
 
+<details><summary>Red Teaming Language Models with Language Models
+(2022) [<a href="https://arxiv.org/abs/2202.03286">Paper</a>] <b>(auto red-team)</b></summary>
+
+we automatically find cases where a target LM behaves in a harmful way, by generating test cases ("red teaming") using another LM.
+
+</details>
+
 <details><summary>Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned (2022) [<a href="https://arxiv.org/abs/2209.07858">Paper</a>] ⭐ 💽</summary>
 
 
@@ -1567,14 +1580,14 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>Red Teaming Game: A Game-Theoretic Framework for Red Teaming Language Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 🏭 **(auto red-team)**</summary>
+<details><summary>Red Teaming Game: A Game-Theoretic Framework for Red Teaming Language Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 🏭 <b>(auto red-team)</b></summary>
 
 
 “…we present **Red-teaming Game (RTG)**, a general game-theoretic framework without manual annotation. RTG is designed for analyzing the multi-turn attack and defense interactions between Red-team language Models (RLMs) and Blue-team Language Model (BLM). Within the RTG, we propose **Gamified Red-teaming Solver (GRTS) with diversity measure of the semantic space**. GRTS is an automated red teaming technique to solve RTG towards Nash equilibrium through meta-game analysis, which corresponds to the theoretically guaranteed optimization direction of both RLMs and BLM… GRTS autonomously discovered diverse attack strategies and effectively improved security of LLMs, outperforming existing heuristic red-team designs.”
 
 </details>
 
-<details><summary>Explore, Establish, Exploit: Red Teaming Language Models from Scratch (2023) [<a href="https://arxiv.org/abs/2306.09442">Paper</a>] 💽 **(red-team)**</summary>
+<details><summary>Explore, Establish, Exploit: Red Teaming Language Models from Scratch (2023) [<a href="https://arxiv.org/abs/2306.09442">Paper</a>] 💽 <b>(auto red-team)</b></summary>
 
 
 “Automated tools that elicit harmful outputs.. rely on a pre-existing way to efficiently classify undesirable outputs. Using a pre-existing classifier does not allow for red-teaming to be tailored to the target model. Furthermore, when failures can be easily classified in advance, red-teaming has limited marginal value because problems can be avoided by simply filtering training data and/or model outputs. Here, **we consider red-teaming "from scratch," in which the adversary does not begin with a way to classify failures.** Our framework consists of three steps: 1) Exploring the model's range of behaviors in the desired context; 2) Establishing a definition and measurement for undesired behavior (e.g., a classifier trained to reflect human evaluations); and 3) Exploiting the model's flaws using this measure to develop diverse adversarial prompts. We use this approach to red-team GPT-3 to discover classes of inputs that elicit false statements. In doing so, we construct the CommonClaim dataset of 20,000 statements labeled by humans as common-knowledge-true, common knowledge-false, or neither.”
@@ -1588,7 +1601,11 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
+<details><summary>Curiosity-driven Red-teaming for Large Language Models (2023) [<a href="https://openreview.net/forum?id=4KqkizXgXU">Paper</a>] <b>(auto red-team)</b></summary>
 
+“However, while effective at provoking undesired responses, current RL methods lack test case diversity as RL-based methods tend to consistently generate the same few successful test cases once found. To overcome this limitation, we introduce curiosity-driven exploration to train red team models. **This approach jointly maximizes the test case effectiveness and novelty. Maximizing novelty motivates the red-team model to search for new and diverse test cases.** We evaluate our method by performing red teaming against LLMs in text continuation and instruction following tasks.”
+
+</details>
 ---
 
 ## Miscellaneous
@@ -1604,34 +1621,34 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>MemGPT: Towards LLMs as Operating Systems (2023) [<a href="https://arxiv.org/abs/2310.08560">Paper</a>] ⭐ **(application)**</summary>
+<details><summary>MemGPT: Towards LLMs as Operating Systems (2023) [<a href="https://arxiv.org/abs/2310.08560">Paper</a>] ⭐ <b>(application)</b></summary>
 
 
 
 </details>
 
-<details><summary>Instruct2Attack: Language-Guided Semantic Adversarial Attacks (2023) [<a href="https://arxiv.org/abs/2311.15551">Paper</a>] 👁️ 🏭 💸 **(auto red-team)**</summary>
+<details><summary>Instruct2Attack: Language-Guided Semantic Adversarial Attacks (2023) [<a href="https://arxiv.org/abs/2311.15551">Paper</a>] 👁️ 🏭 💸 <b>(auto red-team)</b></summary>
 
 
 “…a language-guided semantic attack that **generates semantically meaningful perturbations according to free-form language instructions**. We make use of state-of-the-art latent diffusion models, where we **adversarially guide the reverse diffusion process to search for an adversarial latent code conditioned on the input image and text instruction**. Compared to existing noise-based and semantic attacks, I2A generates more natural and diverse adversarial examples while providing better controllability and interpretability.”
 
 </details>
 
-<details><summary>Forbidden Facts: An Investigation of Competing Objectives in Llama-2 (2023) [<a href="https://arxiv.org/abs/2312.08793">Paper</a>] **(interpretability)**</summary>
+<details><summary>Forbidden Facts: An Investigation of Competing Objectives in Llama-2 (2023) [<a href="https://arxiv.org/abs/2312.08793">Paper</a>] <b>(interpretability)</b></summary>
 
 
 “LLMs often face competing pressures (for example helpfulness vs. harmlessness). To understand how models resolve such conflicts, we study Llama-2-chat models on the **forbidden fact task**. Specifically, we instruct Llama-2 to truthfully complete a factual recall statement while forbidding it from saying the correct answer. This often makes the model give incorrect answers. We decompose Llama-2 into 1000+ components, and rank each one with respect to how useful it is for forbidding the correct answer. **We find that in aggregate, around 35 components are enough to reliably implement the full suppression behavior**… We discover that one of these heuristics can be exploited via a manually designed adversarial attack which we call The California Attack.”
 
 </details>
 
-<details><summary>Divide-and-Conquer Attack: Harnessing the Power of LLM to Bypass the Censorship of Text-to-Image Generation Model (2023) [<a href="https://arxiv.org/abs/2312.07130">Paper</a>] 👁️ 🏭 💸 **(auto red-team)**</summary>
+<details><summary>Divide-and-Conquer Attack: Harnessing the Power of LLM to Bypass the Censorship of Text-to-Image Generation Model (2023) [<a href="https://arxiv.org/abs/2312.07130">Paper</a>] 👁️ 🏭 💸 <b>(auto red-team)</b></summary>
 
 
 “**Divide-and-Conquer Attack to circumvent the safety filters of state-of-the-art text-to-image models**. Our attack leverages **LLMs as agents for text transformation**, creating adversarial prompts from sensitive ones. We have developed effective helper prompts that enable LLMs to break down sensitive drawing prompts into multiple harmless descriptions, allowing them to bypass safety filters while still generating sensitive images… our attack successfully circumvents the closed-box safety filter of SOTA DALLE-3...”
 
 </details>
 
-<details><summary>Query-Relevant Images Jailbreak Large Multi-Modal Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 👁️ 🏭 **(auto red-team)**</summary>
+<details><summary>Query-Relevant Images Jailbreak Large Multi-Modal Models (2023) [<a href="https://arxiv.org/abs/2311.17600">Paper</a>] 👁️ 🏭 <b>(auto red-team)</b></summary>
 
 
 “…a novel visual prompt attack that exploits query-relevant images to jailbreak the open-source LMMs. Our method creates a **composite image from one image generated by diffusion models and another that displays the text as typography**, based on keywords extracted from a malicious query. We show LLMs can be easily attacked by our approach, even if the employed Large Language Models are safely aligned… Our evaluation of 12 cutting-edge LMMs using this dataset shows the vulnerability of existing multi-modal models on adversarial attacks.”
@@ -1645,18 +1662,18 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
-<details><summary>Towards Measuring Representational Similarity of Large Language Models (2023) [<a href="https://arxiv.org/abs/2312.02730">Paper</a>] **(interpretability)**</summary>
+<details><summary>Towards Measuring Representational Similarity of Large Language Models (2023) [<a href="https://arxiv.org/abs/2312.02730">Paper</a>] <b>(interpretability)</b></summary>
 
 
 “Understanding the similarity of the numerous released large language models (LLMs) has many uses, e.g., simplifying model selection, detecting illegal model reuse, and advancing our understanding of what makes LLMs perform well. In this work, **we measure the similarity of representations of a set of LLMs with 7B parameters**.”
 
 </details>
 
-<details><summary>To share or not to share: What risks would laypeople accept to give sensitive data to differentially private NLP systems? (2023) [<a href="https://arxiv.org/abs/2307.06708">Paper</a>] **(privacy, user study)**</summary>
+<details><summary>To share or not to share: What risks would laypeople accept to give sensitive data to differentially private NLP systems? (2023) [<a href="https://arxiv.org/abs/2307.06708">Paper</a>] <b>(privacy, user study)</b></summary>
 
 </details>
 
-<details><summary>FLIRT: Feedback Loop In-context Red Teaming (2023) [<a href="https://arxiv.org/abs/2308.04265">Paper</a>] 👁️ 🏭 **(auto red-team)**</summary>
+<details><summary>FLIRT: Feedback Loop In-context Red Teaming (2023) [<a href="https://arxiv.org/abs/2308.04265">Paper</a>] 👁️ 🏭 <b>(auto red-team)</b></summary>
 
 
 “…we propose an **automatic red teaming framework** that evaluates a given model and exposes its vulnerabilities against unsafe and inappropriate content generation. Our framework uses **in-context learning in a feedback loop to red team models and trigger them into unsafe content generation…for text-to-image models…even when the latter is enhanced with safety features.**”
