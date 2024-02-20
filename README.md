@@ -863,6 +863,20 @@ This paper uses PGD to find adversarial suffixes on LLMs by directly optimizing 
 
 </details>
 
+<details><summary>PAL: Proxy-Guided Black-Box Attack on Large Language Models (2024) [<a href="https://arxiv.org/abs/2402.09674">Paper</a>] ⭐ 💸</summary>
+
+
+*Disclaimer: I co-authored this paper.* We demonstrate a query-based attack on LLM APIs (adversarial suffix, harmful behavior) by (1) extending the white-box GCG attack with a proxy/surrogate model and (2) introducing techniques for computing the loss over OpenAI Chat API. One technique is to recover the true logprob of the desired target token by using the logit bias, and another heuristic to quickly prune unpromising candidates. Our attack finds successful jailbreaks up to 84% on GPT-3.5-Turbo and 48% on Llama-2-7B-chat-hf under 25k queries (median number of queries is as low as 1.1k and cost of $0.24 per attack).
+
+</details>
+
+<details><summary>Query-Based Adversarial Prompt Generation (2024) [<a href="https://arxiv.org/abs/2402.12329">Paper</a>] ⭐ 💸</summary>
+
+
+Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *string*). They improve on the GCG attack in two ways: (1) Proxy-based attack: keeping a buffer of candidates, select only the top-k based on proxy loss to query target model; (2) Proxy-free attack: changing how the candidates are selected — find one promising coordinate and sample from it rather than uniform random like GCG. Other interesting techniques: initialization with target strings and a way to recover true logprob using logit bias in one query. Evaluate on `gpt-3.5-turbo-instruct-0914` with OpenAI completion API and OpenAI content moderation API. Overall, this paper shares some similarities to a concurrent work “PAL: Proxy-Guided Black-Box Attack on Large Language Models”.
+
+</details>
+
 
 ### Poisoning & Backdoor
 
@@ -1261,6 +1275,21 @@ Empirically evaluate multiple privacy-preserving techniques for LLMs: corpus cur
 
 </details>
 
+<details><summary>Teach Large Language Models to Forget Privacy (2023) [<a href="https://arxiv.org/abs/2401.00870">Paper</a>]</summary>
+
+
+“Traditional privacy-preserving methods, such as Differential Privacy and Homomorphic Encryption, are inadequate for black-box API-only settings, demanding either model transparency or heavy computational resources. We propose **Prompt2Forget (P2F)**, the first framework designed to tackle the LLM local privacy challenge by teaching LLM to forget. The method involves **decomposing full questions into smaller segments, generating fabricated answers, and obfuscating the model’s memory of the original input.** A benchmark dataset was crafted with questions containing privacy-sensitive information from diverse fields. P2F achieves zero-shot generalization, allowing adaptability across a wide range of use cases without manual adjustments. Experimental results indicate P2F’s robust capability to obfuscate LLM’s memory, attaining a forgetfulness score of around 90% without any utility loss.”
+
+</details>
+
+<details><summary>Text Embedding Inversion Security for Multilingual Language Models (2023) [<a href="https://arxiv.org/abs/2401.12192">Paper</a>]</summary>
+
+
+“…storing sensitive information as embeddings can be vulnerable to security breaches, as research shows that text can be
+reconstructed from embeddings, even without knowledge of the underlying model. While defence mechanisms have been explored, these are exclusively **focused on English, leaving other languages vulnerable to attacks**. This work explores LLM security through *multilingual* embedding inversion… Our findings suggest that multilingual LLMs may be more vulnerable to inversion attacks, in part because English-based defences may be ineffective. To alleviate this, we propose a simple masking defense effective for both monolingual and multilingual models.”
+
+</details>
+
 
 **Unlearning (post-training intervention)**
 
@@ -1645,6 +1674,13 @@ Automatically find cases where a target LM behaves in a harmful way, by generati
 
 “In this paper, we propose a **theoretical approach called Behavior Expectation Bounds (BEB)** which allows us to formally investigate several inherent characteristics and limitations of alignment in large language models. Importantly, we prove that within the limits of this framework, for any behavior that has a finite probability of being exhibited by the model, there exist prompts that can trigger the model into outputting this behavior, with probability that increases with the length of the prompt. **This implies that any alignment process that attenuates an undesired behavior but does not remove it altogether, is not safe against adversarial prompting attacks**.”
 
+</details>
+
+<details><summary>AI Control: Improving Safety Despite Intentional Subversion (2024) [<a href="https://arxiv.org/abs/2312.06942">Paper</a>] 💸</summary>
+
+- In my understanding, this paper is concerned with an *untrusted LLM*, not involving any human adversary at test time. The technique should be applicable to backdoored models.
+- “…In this paper, we develop and evaluate pipelines of safety techniques (“protocols”) that are robust to **intentional subversion**.
+We investigate a scenario in which we want to solve a sequence of programming problems, using access to a powerful but untrusted model (in our case, GPT-4), access to a less powerful trusted model (in our case, GPT-3.5), and limited access to high-quality trusted labor. We investigate protocols that aim to never submit solutions containing backdoors, which we operationalize here as logical errors that are not caught by test cases…”
 </details>
 
 
