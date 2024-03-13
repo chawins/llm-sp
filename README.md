@@ -356,6 +356,20 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
+<details><summary>AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.04451">Paper</a>] 🏭 🧬</summary>
+
+
+“…existing jailbreak techniques suffer from either (1) scalability issues, where attacks heavily rely on manual crafting of prompts, or (2) stealthiness problems, as attacks depend on token-based algorithms to generate prompts that are often semantically meaningless, making them susceptible to detection through basic perplexity testing… AutoDAN can automatically generate **stealthy** jailbreak prompts by the carefully designed **hierarchical genetic algorithm**. …preserving semantic meaningfulness, but also demonstrates superior attack strength in cross-model transferability, and cross-sample universality compared with the baseline. Moreover, we also compare AutoDAN with perplexity-based defense methods and show that AutoDAN can bypass them effectively.”
+
+</details>
+
+<details><summary>DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers (2024) [<a href="https://arxiv.org/abs/2402.16914">Paper</a>] 🏭 💸</summary>
+
+
+“…decomposing a malicious prompt into separated sub-prompts can effectively obscure its underlying malicious intent by presenting it in a fragmented, less detectable form, thereby addressing these limitations. We introduce an automatic prompt **D**ecomposition and **R**econstruction framework for jailbreak Attack (DrAttack). DrAttack includes three key components: (a) Decomposition of the original prompt into sub-prompts, (b) Reconstruction of these sub-prompts implicitly by in-context learning with semantically similar but harmless reassembling demo, and (c) a Synonym Search of sub-prompts, aiming to find sub-prompts' synonyms that maintain the original intent while jailbreaking LLMs. An extensive empirical study across multiple open-source and closed-source LLMs demonstrates that, with a significantly reduced number of queries, DrAttack obtains a substantial gain of success rate over prior SOTA prompt-only attackers. Notably, the success rate of 78.0% on GPT-4 with merely 15 queries surpassed previous art by 33.1%.”
+
+</details>
+
 
 ### Privacy
 
@@ -1008,6 +1022,20 @@ Prompting that asks the model to prioritize safety/helpfulness. “To counter ja
 
 </details>
 
+<details><summary>Jatmo: Prompt Injection Defense by Task-Specific Finetuning (2023) [<a href="https://arxiv.org/abs/2312.17673">Paper</a>]</summary>
+
+
+*Disclaimer: I co-authored this paper.* “In this work, we introduce Jatmo, **a method for generating task-specific models resilient to prompt- injection attacks**. Jatmo leverages the fact that **LLMs can only follow instructions once they have undergone instruction tuning**… Our experiments on six tasks show that Jatmo models provide the same quality of outputs on their specific task as standard LLMs, while being resilient to prompt injections. The best attacks succeeded in less than 0.5% of cases against our models, versus over 90% success rate against GPT-3.5-Turbo.”
+
+</details>
+
+<details><summary>StruQ: Defending Against Prompt Injection with Structured Queries (2024) [<a href="https://arxiv.org/abs/2402.06363">Paper</a>] ⭐</summary>
+
+
+*Disclaimer: I co-authored this paper. “*We introduce *structured queries*, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a **secure front-end that formats a prompt and user data into a special format**, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, **we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these**. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility.”
+
+</details>
+
 
 ### Robustness
 
@@ -1320,7 +1348,7 @@ reconstructed from embeddings, even without knowledge of the underlying model. W
 
 ---
 
-## Watermarking
+## Machine-Text Detection
 
 *Watermarking and detecting LLM-generated texts.*
 
@@ -1483,10 +1511,17 @@ Red-green list watermark for LLMs. Bias distribution of tokens, quality remains 
 
 </details>
 
-<details><summary>Mark My Words: Analyzing and Evaluating Language Model Watermarks (2023) [<a href="https://arxiv.org/abs/2312.00273">Paper</a>] [<a href="https://github.com/wagner-group/MarkMyWords">Code</a>] 📊 💽</summary>
+<details><summary>Mark My Words: Analyzing and Evaluating Language Model Watermarks (2023) [<a href="https://arxiv.org/abs/2312.00273">Paper</a>] [<a href="https://github.com/wagner-group/MarkMyWords">Code</a>] ⭐ 📊 💽</summary>
 
 
-“…proposes a **comprehensive benchmark for [text watermarks] under different tasks as well as practical attacks**. We focus on three main metrics: **quality**, **size** (e.g. the number of tokens needed to detect a watermark), and **tamper-resistance**. Current watermarking techniques are good enough to be deployed: Kirchenbauer et al. can watermark Llama2-7B-chat with no perceivable loss in quality in under 100 tokens, and with good tamper-resistance to simple attacks, regardless of temperature. We argue that **watermark indistinguishability is too strong a requirement**: schemes that slightly modify logit distributions outperform their indistinguishable counterparts with no noticeable loss in generation quality.”
+*Disclaimer: I co-authored this paper.* “…proposes a **comprehensive benchmark for [text watermarks] under different tasks as well as practical attacks**. We focus on three main metrics: **quality**, **size** (e.g. the number of tokens needed to detect a watermark), and **tamper-resistance**. Current watermarking techniques are good enough to be deployed: Kirchenbauer et al. can watermark Llama2-7B-chat with no perceivable loss in quality in under 100 tokens, and with good tamper-resistance to simple attacks, regardless of temperature. We argue that **watermark indistinguishability is too strong a requirement**: schemes that slightly modify logit distributions outperform their indistinguishable counterparts with no noticeable loss in generation quality.”
+
+</details>
+
+<details><summary>Spotting LLMs With Binoculars: Zero-Shot Detection of Machine-Generated Text (2024) [<a href="https://arxiv.org/abs/2401.12070">Paper</a>]</summary>
+
+
+Propose using two LLMs, instead of one, to compute a score for detecting machine-generated texts. This paper raises a convincing argument that using perplexity alone as a score is impossible because it depends heavily on the prompt, i.e., some weird/unusual prompt would make the model generate a high-perplexity text (when the perplexity is not computed together with the prompt which is often the case in the real world). This score is given by perplexity of the text computed on model 1 divided by “cross-perplexity” (basically cross-entropy loss computed by model 1 and 2). The empirical result is impressive.
 
 </details>
 
