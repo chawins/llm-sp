@@ -598,7 +598,7 @@ Simple method for reconstructing (potentially sensitive like PII) training data 
 
 <details><summary>Scalable Extraction of Training Data from (Production) Language Models (2023) [<a href="https://arxiv.org/abs/2311.17035">Paper</a>] ⭐ ⛏️ 💸</summary>
 
-- This paper makes so many interesting about empirical memorization measurement.
+- This paper makes so many interesting observations about empirical memorization measurement.
 - Shows that “extractable memorization” is orders of magnitude more severe than previously believed, and this “lower bound” is in fact close to the upper bound (“discoverable memorization”) – the notion of bounds here is not strict.
 - They measure extractable memorization by collecting a large internet text database (9TB), randomly sampling 5-token sequences, using them to prompt LLMs, and searching for the 50-token generated texts in the database. This process shows that open-source LLMs memorize 1–10 millions unique 50-grams and output them at a rate of 0.1%-1% given the above prompting. **Takeaway: simple prompting is a strong extraction attack.**
 - The number of extractably memorized samples is now about *half* of the discoverably memorized, and there are some extractable memorization not captured by discoverable memorization. There are several implications:
