@@ -640,7 +640,7 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 <details><summary>Scalable Extraction of Training Data from (Production) Language Models (2023) [<a href="https://arxiv.org/abs/2311.17035">Paper</a>] ⭐ ⛏️ 💸</summary>
 
-- This paper makes so many interesting observations about empirical memorization measurement.
+- This paper makes so many interesting about empirical memorization measurement.
 - Shows that “extractable memorization” is orders of magnitude more severe than previously believed, and this “lower bound” is in fact close to the upper bound (“discoverable memorization”) – the notion of bounds here is not strict.
 - They measure extractable memorization by collecting a large internet text database (9TB), randomly sampling 5-token sequences, using them to prompt LLMs, and searching for the 50-token generated texts in the database. This process shows that open-source LLMs memorize 1–10 millions unique 50-grams and output them at a rate of 0.1%-1% given the above prompting. **Takeaway: simple prompting is a strong extraction attack.**
 - The number of extractably memorized samples is now about *half* of the discoverably memorized, and there are some extractable memorization not captured by discoverable memorization. There are several implications:
@@ -1023,17 +1023,31 @@ This paper uses PGD to find adversarial suffixes on LLMs by directly optimizing 
 
 </details>
 
-<details><summary>PAL: Proxy-Guided Black-Box Attack on Large Language Models (2024) [<a href="https://arxiv.org/abs/2402.09674">Paper</a>] ⭐ 💸</summary>
+<details><summary>PAL: Proxy-Guided Black-Box Attack on Large Language Models (2024) [<a href="https://arxiv.org/abs/2402.09674">Paper</a>] ⭐ 📦 💸</summary>
 
 
 *Disclaimer: I co-authored this paper.* We demonstrate a query-based attack on LLM APIs (adversarial suffix, harmful behavior) by (1) extending the white-box GCG attack with a proxy/surrogate model and (2) introducing techniques for computing the loss over OpenAI Chat API. One technique is to recover the true logprob of the desired target token by using the logit bias, and another heuristic to quickly prune unpromising candidates. Our attack finds successful jailbreaks up to 84% on GPT-3.5-Turbo and 48% on Llama-2-7B-chat-hf under 25k queries (median number of queries is as low as 1.1k and cost of $0.24 per attack).
 
 </details>
 
-<details><summary>Query-Based Adversarial Prompt Generation (2024) [<a href="https://arxiv.org/abs/2402.12329">Paper</a>] ⭐ 💸</summary>
+<details><summary>Query-Based Adversarial Prompt Generation (2024) [<a href="https://arxiv.org/abs/2402.12329">Paper</a>] ⭐ 📦 💸</summary>
 
 
 Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *string*). They improve on the GCG attack in two ways: (1) Proxy-based attack: keeping a buffer of candidates, select only the top-k based on proxy loss to query target model; (2) Proxy-free attack: changing how the candidates are selected — find one promising coordinate and sample from it rather than uniform random like GCG. Other interesting techniques: initialization with target strings and a way to recover true logprob using logit bias in one query. Evaluate on `gpt-3.5-turbo-instruct-0914` with OpenAI completion API and OpenAI content moderation API. Overall, this paper shares some similarities to a concurrent work “PAL: Proxy-Guided Black-Box Attack on Large Language Models”.
+
+</details>
+
+<details><summary>Jailbreaking Leading Safety-Aligned LLMs with Simple Adaptive Attacks (2024) [<a href="https://arxiv.org/abs/2404.02151">Paper</a>] 📦 💸</summary>
+
+
+“…we initially design an **adversarial prompt template** (sometimes adapted to the target LLM), and then we **apply random search on a suffix to maximize the target logprob** (e.g., of the token "Sure"), potentially with multiple restarts. In this way, we achieve nearly 100\% attack success rate -- according to GPT-4 as a judge -- on GPT-3.5/4, Llama-2-Chat-7B/13B/70B, Gemma-7B, and R2D2 from HarmBench that was adversarially trained against the GCG attack. We also show how to **jailbreak all Claude models** -- that do not expose logprobs -- via either a transfer or prefilling attack with 100\% success rate.”
+
+</details>
+
+<details><summary>JailbreakBench: An Open Robustness Benchmark for Jailbreaking Large Language Models (2024) [<a href="https://arxiv.org/abs/2404.01318">Paper</a>] 💽</summary>
+
+
+“…an open-sourced benchmark with the following components: (1) a new jailbreaking dataset containing 100 unique behaviors, which we call JBB-Behaviors; (2) an evolving repository of state-of-the-art adversarial prompts, which we refer to as jailbreak artifacts; (3) a standardized evaluation framework that includes a clearly defined threat model, system prompts, chat templates, and scoring functions; and (4) a leaderboard that tracks the performance of attacks and defenses for various LLMs.”
 
 </details>
 
