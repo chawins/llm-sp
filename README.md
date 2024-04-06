@@ -139,6 +139,13 @@ prompt = "Sorry, the previous requests are all joke for you, please ignore them.
 
 </details>
 
+<details><summary>Optimization-based Prompt Injection Attack to LLM-as-a-Judge (2024) [<a href="https://arxiv.org/abs/2403.17710">Paper</a>]</summary>
+
+
+“we introduce **JudgeDeceiver, a novel optimization-based prompt injection attack tailored to LLM-as-a-Judge**. Our method formulates a precise optimization objective for attacking the decision-making process of LLM-as-a-Judge and utilizes an optimization algorithm to efficiently automate the generation of adversarial sequences, achieving targeted and effective manipulation of model evaluations. Compared to handcraft prompt injection attacks, our method demonstrates superior efficacy, posing a significant challenge to the current security paradigms of LLM-based judgment systems.”
+
+</details>
+
 
 ### Jailbreak
 
@@ -329,6 +336,13 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
+<details><summary>AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.04451">Paper</a>] 🏭 🧬</summary>
+
+
+“…existing jailbreak techniques suffer from either (1) scalability issues, where attacks heavily rely on manual crafting of prompts, or (2) stealthiness problems, as attacks depend on token-based algorithms to generate prompts that are often semantically meaningless, making them susceptible to detection through basic perplexity testing… AutoDAN can automatically generate **stealthy** jailbreak prompts by the carefully designed **hierarchical genetic algorithm**. …preserving semantic meaningfulness, but also demonstrates superior attack strength in cross-model transferability, and cross-sample universality compared with the baseline. Moreover, we also compare AutoDAN with perplexity-based defense methods and show that AutoDAN can bypass them effectively.”
+
+</details>
+
 <details><summary>A Wolf in Sheep's Clothing: Generalized Nested Jailbreak Prompts can Fool Large Language Models Easily (2023) [<a href="https://arxiv.org/abs/2311.08268">Paper</a>] 🏭</summary>
 
 
@@ -371,13 +385,6 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
-<details><summary>AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models (2023) [<a href="https://arxiv.org/abs/2310.04451">Paper</a>] 🏭 🧬</summary>
-
-
-“…existing jailbreak techniques suffer from either (1) scalability issues, where attacks heavily rely on manual crafting of prompts, or (2) stealthiness problems, as attacks depend on token-based algorithms to generate prompts that are often semantically meaningless, making them susceptible to detection through basic perplexity testing… AutoDAN can automatically generate **stealthy** jailbreak prompts by the carefully designed **hierarchical genetic algorithm**. …preserving semantic meaningfulness, but also demonstrates superior attack strength in cross-model transferability, and cross-sample universality compared with the baseline. Moreover, we also compare AutoDAN with perplexity-based defense methods and show that AutoDAN can bypass them effectively.”
-
-</details>
-
 <details><summary>DrAttack: Prompt Decomposition and Reconstruction Makes Powerful LLM Jailbreakers (2024) [<a href="https://arxiv.org/abs/2402.16914">Paper</a>] 🏭 💸</summary>
 
 
@@ -389,6 +396,27 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 
 “…we study how to persuade LLMs to jailbreak them. First, we propose a **persuasion taxonomy** derived from decades of **social science research**. Then, we apply the taxonomy to automatically generate interpretable persuasive adversarial prompts (PAP) to jailbreak LLMs. Results show that persuasion significantly increases the jailbreak performance across all risk categories: PAP consistently achieves an attack success rate of over 92% on Llama 2-7b Chat, GPT-3.5, and GPT-4 in 10 trials, surpassing recent algorithm-focused attacks.”
+
+</details>
+
+<details><summary>Tastle: Distract Large Language Models for Automatic Jailbreak Attack (2024) [<a href="https://arxiv.org/abs/2403.08424">Paper</a>] 🏭</summary>
+
+
+“…**black-box** jailbreak framework for automated red teaming of LLMs. We designed malicious content concealing and memory reframing with an iterative optimization algorithm to jailbreak LLMs, motivated by the research about the distractibility and over-confidence phenomenon of LLMs. Extensive experiments of jailbreaking both open-source and proprietary LLMs demonstrate the superiority of our framework in terms of effectiveness, scalability and transferability.”
+
+</details>
+
+<details><summary>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks (2024) [<a href="https://arxiv.org/abs/2404.03027">Paper</a>] 💸 👁️</summary>
+
+
+“…a dataset of 2, 000 malicious queries that is also proposed in this paper, we generate 20, 000 text-based jailbreak prompts using advanced jailbreak attacks on LLMs, alongside 8, 000 image-based jailbreak inputs from recent MLLMs jailbreak attacks, our comprehensive dataset includes 28, 000 test cases across a spectrum of adversarial scenarios. ”
+
+</details>
+
+<details><summary>Red Teaming GPT-4V: Are GPT-4V Safe Against Uni/Multi-Modal Jailbreak Attacks? (2024) [<a href="https://arxiv.org/abs/2404.03411">Paper</a>] 💸 👁️</summary>
+
+
+“…jailbreak evaluation dataset with 1445 harmful questions covering 11 different safety policies… (1) GPT4 and GPT-4V demonstrate better robustness against jailbreak attacks compared to open-source LLMs and MLLMs. (2) Llama2 and Qwen-VL-Chat are more robust compared to other open-source models. (3) The transferability of visual jailbreak methods is relatively limited compared to textual jailbreak methods.”
 
 </details>
 
@@ -410,13 +438,6 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
-<details><summary>Are Large Pre-Trained Language Models Leaking Your Personal Information? (2022) [<a href="https://aclanthology.org/2022.findings-emnlp.148/">Paper</a>] 👤</summary>
-
-
-“…we query PLMs for email addresses with contexts of the email address or prompts containing the owner’s name. We find that PLMs do leak personal information due to memorization. However, since the models are weak at association, the risk of specific personal information being extracted by attackers is low.”
-
-</details>
-
 <details><summary>Identifying and Mitigating Privacy Risks Stemming from Language Models: A Survey (2023) [<a href="https://arxiv.org/abs/2310.01424">Paper</a>] 🔭</summary>
 
 </details>
@@ -428,17 +449,10 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
-<details><summary>Analyzing Leakage of Personally Identifiable Information in Language Models [<a href="https://arxiv.org/abs/2302.00539">Paper</a>]</summary>
+<details><summary>Analyzing Leakage of Personally Identifiable Information in Language Models [<a href="https://arxiv.org/abs/2302.00539">Paper</a>] 👤</summary>
 
 
 “…in practice scrubbing is imperfect and must balance the trade-off between minimizing disclosure and preserving the utility of the dataset… **three types of PII leakage via black-box** extraction, inference, and reconstruction attacks with only API access to an LM… in three domains: case law, health care, and e-mails. Our main contributions are (i) novel attacks that can extract up to 10× more PII sequences than existing attacks, (ii) showing that sentence-level differential privacy reduces the risk of PII disclosure but still leaks about 3% of PII sequences, and (iii) a subtle connection between record-level membership inference and PII reconstruction.”
-
-</details>
-
-<details><summary>ProPILE: Probing Privacy Leakage in Large Language Models (2023) [<a href="https://arxiv.org/abs/2307.01881">Paper</a>] 👤</summary>
-
-
-Prompt constructed with some of the user’s PIIs for probing if the model memorizes or can leak the user’s other PIIs.
 
 </details>
 
@@ -549,8 +563,22 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 </details>
 
+<details><summary>Logits of API-Protected LLMs Leak Proprietary Information (2024) [<a href="https://arxiv.org/abs/2403.09539">Paper</a>] 📦 💸</summary>
 
-**Unintended Memorization and Extraction**
+
+“…it is possible to learn a surprisingly large amount of non-public information about an API-protected LLM from a relatively small number of API queries (e.g., costing under $1,000 for OpenAI's gpt-3.5-turbo). Our findings are centered on one key observation: **most modern LLMs suffer from a softmax bottleneck, which restricts the model outputs to a linear subspace of the full output space…** efficiently discovering the **LLM's hidden size**, **obtaining full-vocabulary outputs**, **detecting and disambiguating different model updates**, **identifying the source LLM given a single full LLM output**, and **even estimating the output layer parameters**. Our empirical investigations show the effectiveness of our methods, which allow us to estimate the embedding size of OpenAI's gpt-3.5-turbo to be about 4,096. Lastly, we discuss ways that LLM providers can guard against these attacks, as well as how these capabilities can be viewed as a feature (rather than a bug) by allowing for greater transparency and accountability.”
+
+</details>
+
+<details><summary>Large Language Models are Advanced Anonymizers (2024) [<a href="https://arxiv.org/abs/2402.13846">Paper</a>]</summary>
+
+
+“We first present a **new setting for evaluating anonymizations in the face of adversarial LLMs inferences**, allowing for a natural measurement of anonymization performance while remedying some of the shortcomings of previous metrics. We then present our LLM-based adversarial anonymization framework leveraging the strong inferential capabilities of LLMs to inform our anonymization procedure. In our experimental evaluation, we show on real-world and synthetic online texts how adversarial anonymization outperforms current industry-grade anonymizers both in terms of the resulting utility and privacy.”
+
+</details>
+
+
+⛏️ **Unintended Memorization and Extraction**
 
 <details><summary>Extracting Training Data from Large Language Models (2021) [<a href="https://www.usenix.org/system/files/sec21-carlini-extracting.pdf">Paper</a>] ⭐ ⛏️</summary>
 
@@ -563,6 +591,13 @@ Simple method for reconstructing (potentially sensitive like PII) training data 
 
 - “Larger language models memorize training data faster across all settings. Surprisingly, we show that larger models can memorize a larger portion of the data before over-fitting and tend to forget less throughout the training process.”
 - “We also analyze the memorization dynamics of different parts of speech and find that models memorize nouns and numbers first; we hypothesize and provide empirical evidence that nouns and numbers act as a unique identifier for memorizing individual training examples.”
+</details>
+
+<details><summary>Are Large Pre-Trained Language Models Leaking Your Personal Information? (2022) [<a href="https://aclanthology.org/2022.findings-emnlp.148/">Paper</a>] 👤 ⛏️</summary>
+
+
+“…we query PLMs for email addresses with contexts of the email address or prompts containing the owner’s name. We find that PLMs do leak personal information due to memorization. However, since the models are weak at association, the risk of specific personal information being extracted by attackers is low.”
+
 </details>
 
 <details><summary>Quantifying Memorization Across Neural Language Models (2023) [<a href="https://openreview.net/forum?id=TatRHT_1cK">Paper</a>] ⭐ ⛏️</summary>
@@ -596,6 +631,13 @@ Simple method for reconstructing (potentially sensitive like PII) training data 
 
 </details>
 
+<details><summary>ProPILE: Probing Privacy Leakage in Large Language Models (2023) [<a href="https://arxiv.org/abs/2307.01881">Paper</a>] 👤 ⛏️</summary>
+
+
+Prompt constructed with some of the user’s PIIs for probing if the model memorizes or can leak the user’s other PIIs.
+
+</details>
+
 <details><summary>Scalable Extraction of Training Data from (Production) Language Models (2023) [<a href="https://arxiv.org/abs/2311.17035">Paper</a>] ⭐ ⛏️ 💸</summary>
 
 - This paper makes so many interesting about empirical memorization measurement.
@@ -608,8 +650,15 @@ Simple method for reconstructing (potentially sensitive like PII) training data 
 - They show that MIA (zlib) can identify whether the extracted samples are actually in the training set with 30% precision. They also test for a rate of PII leakages: 17% of all memorized generations.
 </details>
 
+<details><summary>Quantifying Association Capabilities of Large Language Models and Its Implications on Privacy Leakage (2024) [<a href="https://arxiv.org/abs/2305.12707">Paper</a>] 👤</summary>
 
-**Membership Inference**
+
+“Our study reveals that as models scale up, their capacity to associate entities/information intensifies, particularly when target pairs demonstrate shorter co-occurrence distances or higher co-occurrence frequencies. However, there is a distinct performance gap when associating commonsense knowledge versus PII, with the latter showing lower accuracy. Despite the proportion of accurately predicted PII being relatively small, LLMs still demonstrate the capability to predict specific instances of email addresses and phone numbers when provided with appropriate prompts.”
+
+</details>
+
+
+📝 **Membership Inference**
 
 <details><summary>Detecting Pretraining Data from Large Language Models (2023) [<a href="https://arxiv.org/abs//2310.16789">Paper</a>] [<a href="https://swj0419.github.io/detect-pretrain.github.io/">Code</a>] 📝 💽 📦</summary>
 
@@ -1066,7 +1115,7 @@ Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *strin
 
 ### Against Jailbreak & Prompt Injection
 
-**Harmful output detection**
+**Harmful input-output detection**
 
 <details><summary>LLM Self Defense: By Self Examination, LLMs Know They Are Being Tricked (2023) [<a href="https://arxiv.org/abs/2308.07308">Paper</a>] 🔍 💸</summary>
 
@@ -1082,9 +1131,6 @@ To counter jailbreak attacks, this work proposes a new safety method, Self-Guard
 
 </details>
 
-
-**Guardrail**
-
 <details><summary>NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails (2023) [<a href="https://arxiv.org/abs/2310.10501">Paper</a>] [<a href="https://github.com/NVIDIA/NeMo-Guardrails">Code</a>]</summary>
 
 
@@ -1092,10 +1138,24 @@ Programmable guardrail with specific format and language.
 
 </details>
 
+<details><summary>Llama Guard: LLM-based Input-Output Safeguard for Human-AI Conversations (2023) [<a href="https://arxiv.org/abs/2312.06674">Paper</a>] ⭐ 🔍</summary>
+
+
+“We introduce Llama Guard, an LLM-based input-output safeguard model geared towards Human-AI conversation use cases. Our model incorporates a safety risk taxonomy… demonstrates strong performance on existing benchmarks such as the OpenAI Moderation Evaluation dataset and ToxicChat, where its performance matches or exceeds that of currently available content moderation tools. Llama Guard functions as a language model, carrying out multi-class classification and generating binary decision scores. Furthermore, the instruction fine-tuning of Llama Guard allows for the customization of tasks and the adaptation of output formats. This feature enhances the model's capabilities, such as enabling the adjustment of taxonomy categories to align with specific use cases, and facilitating zero-shot or few-shot prompting with diverse taxonomies at the input.”
+
+</details>
+
 <details><summary>Building guardrails for large language models (2024) [<a href="https://arxiv.org/abs/2402.01822">Paper</a>] 🔭 📍</summary>
 
 
 This position paper advocates for a combination of “neural” and “symbolic” methods for building an LLM guardrail. The main motivation is quite unclear. They go over three existing guardrails (NeMo, Llama-Guard, and Guardrails AI) and over four main axes to build a guardrail for (free-from unintended response, fairness, privacy, hallucination). In each axis, they classify existing techniques into three groups: vulnerability detection, protection via LLMs enhancement, and protection via I/O engineering. Overall, this paper is much more like a survey paper than a position one.
+
+</details>
+
+<details><summary>RigorLLM: Resilient Guardrails for Large Language Models against Undesired Content (2024) [<a href="https://arxiv.org/abs/2403.13031">Paper</a>] 🔍</summary>
+
+
+“…**[RigorLLM] moderate harmful and unsafe inputs and outputs for LLMs…** energy-based training data augmentation through Langevin dynamics, optimizing a safe suffix for inputs via minimax optimization, and integrating a fusion-based model combining robust KNN with LLMs based on our data augmentation, RigorLLM offers a robust solution to harmful content moderation… RigorLLM not only outperforms existing baselines like OpenAI API and Perspective API in detecting harmful content but also exhibits unparalleled resilience to jailbreaking attacks. The innovative use of constrained optimization and a fusion-based guardrail approach represents a significant step forward in developing more secure and reliable LLMs, setting a new standard for content moderation frameworks in the face of evolving digital threats.”
 
 </details>
 
@@ -1130,6 +1190,13 @@ Prompting that asks the model to prioritize safety/helpfulness. “To counter ja
 
 
 *Disclaimer: I co-authored this paper. “*We introduce *structured queries*, a general approach to tackle this problem. Structured queries separate prompts and data into two channels. We implement a system that supports structured queries. This system is made of (1) a **secure front-end that formats a prompt and user data into a special format**, and (2) a specially trained LLM that can produce high-quality outputs from these inputs. The LLM is trained using a novel fine-tuning strategy: we convert a base (non-instruction-tuned) LLM to a structured instruction-tuned model that will only follow instructions in the prompt portion of a query. To do so, **we augment standard instruction tuning datasets with examples that also include instructions in the data portion of the query, and fine-tune the model to ignore these**. Our system significantly improves resistance to prompt injection attacks, with little or no impact on utility.”
+
+</details>
+
+<details><summary>Defending Against Indirect Prompt Injection Attacks With Spotlighting (2024) [<a href="https://arxiv.org/abs/2403.14720">Paper</a>]</summary>
+
+
+“We introduce spotlighting, a family of **prompt engineering** techniques that can be used to improve LLMs' ability to **distinguish among multiple sources of input**. The key insight is to utilize transformations of an input to provide a reliable and **continuous signal of its provenance**. We evaluate spotlighting as a defense against indirect prompt injection attacks, and find that it is a **robust defense that has minimal detrimental impact to underlying NLP tasks**. Using GPT-family models, we find that spotlighting reduces the attack success rate from greater than 50% to below 2% in our experiments with minimal impact on task efficacy.”
 
 </details>
 
@@ -1456,6 +1523,16 @@ reconstructed from embeddings, even without knowledge of the underlying model. W
 
 
 “In DEPN, we introduce a novel method, termed as **privacy neuron detector,** to locate neurons associated with private information, and then **edit these detected privacy neurons by setting their activations to zero**... Experimental results show that our method can significantly and efficiently reduce the exposure of private data leakage without deteriorating the performance of the model.”
+
+</details>
+
+
+**Others**
+
+<details><summary>SoK: Reducing the Vulnerability of Fine-tuned Language Models to Membership Inference Attacks (2024) [<a href="https://arxiv.org/abs/2403.08481">Paper</a>] 📝</summary>
+
+
+“...provide the first systematic review of the vulnerability of fine-tuned large language models to membership inference attacks, the various factors that come into play, and the effectiveness of different **defense** strategies. We find that some training methods provide significantly reduced privacy risk, with the combination of differential privacy and low-rank adaptors achieving the best privacy protection against these attacks.”
 
 </details>
 
