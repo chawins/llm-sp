@@ -420,6 +420,14 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
+<details><summary>AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs (2024) [<a href="https://arxiv.org/abs/2404.16873">Paper</a>] ⭐ 🏭 (defense)</summary>
+
+- On a high level, the idea is similar to the [red-teaming LLM with LLM paper](https://arxiv.org/abs/2202.03286). They train an LLM (called AdvPrompter) to automatically jailbreak a target LLM. AdvPrompter is trained on rewards (logprob of "Sure, here is...") of the target model. The result is good but maybe not as good as the [SOTA](https://arxiv.org/abs/2404.02151) at the time. However, there are a lot of interesting technical contributions.
+- They use controlled generation to get stronger jailbreak from AdvPrompter than just normal sampling.
+- They found that when training AdvPrompter, taking end-to-end gradients through the reward model (i.e., the target model) directly with gradient unrolling is too noisy and doesn't work well. So they construct a two-step optimization approach that alternately optimizes the AdvPrompter's weights AND also its output.
+- They also try adversarial training using their AdvPrompter because generation is fast. The defense works well against new attacks from AdvPrompter — I doubt it withstands white-box GCG.
+</details>
+
 
 ### Privacy
 
@@ -631,6 +639,13 @@ Simple method for reconstructing (potentially sensitive like PII) training data 
 
 </details>
 
+<details><summary>Bag of Tricks for Training Data Extraction from Language Models (2023) [<a href="https://arxiv.org/abs/2302.04460">Paper</a>] ⛏️</summary>
+
+- Empirically investigate multiple natural improvement over the discoverable extraction attack (Carlini et al, 2021) where the target model is prompted with training prefixes. The authors consider sampling strategies, look-ahead, and ensemble over different window sizes as methods for improving the suffix generation step. For suffix ranking, they consider different scoring rules (incl. zlib).
+- In summary, using weighted average (ensemble) over the next-token probabilities from different prefix windows yields the largest improvement. The best suffix ranking is to further bias high-confident tokens. Overall, there is a large gap between the baseline and the best approach.
+- It is a bit unclear whether the suffix ranking step is done per-sample or over all the generated suffixes. It might be the latter.
+</details>
+
 <details><summary>ProPILE: Probing Privacy Leakage in Large Language Models (2023) [<a href="https://arxiv.org/abs/2307.01881">Paper</a>] 👤 ⛏️</summary>
 
 
@@ -655,6 +670,26 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 “Our study reveals that as models scale up, their capacity to associate entities/information intensifies, particularly when target pairs demonstrate shorter co-occurrence distances or higher co-occurrence frequencies. However, there is a distinct performance gap when associating commonsense knowledge versus PII, with the latter showing lower accuracy. Despite the proportion of accurately predicted PII being relatively small, LLMs still demonstrate the capability to predict specific instances of email addresses and phone numbers when provided with appropriate prompts.”
 
+</details>
+
+<details><summary>ROME: Memorization Insights from Text, Probability and Hidden State in Large Language Models (2024) [<a href="https://arxiv.org/abs/2403.00510">Paper</a>]</summary>
+
+- Study properties of LLMs when predicting memorized vs non-memorized texts without access to ground-truth training data. The authors use celebrity’s parent names and idioms as two datasets which are relatively easy to check for memorization (vs inference) but still not perfect (e.g., there’s still some inference effect, and it is hard to compute prior).
+- Memorized texts have *smaller variance* on predicted probabilities and hidden states.
+</details>
+
+<details><summary>Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs (2024) [<a href="https://arxiv.org/abs/2403.04801">Paper</a>]</summary>
+
+- “We use an iterative rejection-sampling optimization process to find **instruction-based prompts** with two main characteristics: (1) minimal overlap with the training data to avoid presenting the solution directly to the model, and (2) **maximal overlap between the victim model's output and the training data**, aiming to induce the victim to spit out training data. We observe that our **instruction-based prompts generate outputs with 23.7% higher overlap with training data compared to the baseline prefix-suffix measurements**.”
+- “Our findings show that (1) instruction-tuned models can expose pre-training data as much as their base-models, if not more so, (2) contexts other than the original training data can lead to leakage, and (3) using instructions proposed by other LLMs can open a new avenue of automated attacks that we should further study and explore.”
+</details>
+
+<details><summary>Rethinking LLM Memorization through the Lens of Adversarial Compression (2024) [<a href="https://arxiv.org/abs/2404.15146">Paper</a>] ⛏️</summary>
+
+- Define a new metric for measuring memorization on LLMs that is more easily interpretable by non-technical audience and use the notion of adversarial optimization. The metrics, called “Adversarial Compression Ratio” (ACR), is defined by the ratio between the length of a training sequence $y$ and the length of adversarial prompt $x$ used to elicit that sequence, i.e., $M(x) = y$, through greedy decoding. If ACR > 1, then the given sequence from the training set is considered memorized.
+- They propose an ad-hoc method that runs GCG on different suffix lengths (i.e., if GGC succeeds, reduce length by 1; If GCG fails, increase length by 5).
+- The empirical results show interesting trends consistent with our notion of memorization: (1) ACR is always less than 1 when the target string is just random tokens or news article after the training data cut-off; (2) memorization increases model size (bigger model = larger ACR) — but this might be artifact of adversarial robustness; (3) Famous quotes have ACR > 1 on average; (4) Wikipedia has about 0.5 ACR on average meaning that most samples are false negatives (in training set but not detected by this method).
+- The results on unlearning show that ACR is more conservative than verbatim completion. This may imply that ACR is a better metric, but the results are a bit anecdotal and qualitative. No per-sample metric is presented to confirm that  ACR really has a smaller false negative rate. Also, false positives are hard to determine because of the lack of ground truth (we don’t know whether samples are really not “memorized” or we just don’t have the right prompt, for example).
 </details>
 
 
@@ -692,6 +727,12 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 </details>
 
+<details><summary>Using Membership Inference Attacks to Evaluate Privacy-Preserving Language Modeling Fails for Pseudonymizing Data (2023) [<a href="https://aclanthology.org/2023.nodalida-1.33/">Paper</a>]</summary>
+
+- “MIAs are used to estimate a worst-case degree of privacy leakage.”
+- “In this study, we show that the state-of-the-art MIA described by Mireshghallah et al. (2022) cannot distinguish between a model trained using real or pseudonymized data.”
+</details>
+
 <details><summary>Do Membership Inference Attacks Work on Large Language Models? (2024) [<a href="https://arxiv.org/abs/2402.07841">Paper</a>] ⭐ 📝</summary>
 
 - [GitHub - iamgroot42/mimir: Python package for measuring memorization in LLMs.](https://github.com/iamgroot42/mimir) Library of MIAs on LLMs, including Min-k%, zlib, reference-based attack (Ref), neighborhood.
@@ -724,6 +765,12 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 - Measure document-level MIA on synthetically generated “traps” inserted in a document during training. Overall, existing MIAs are not sufficient; 100-token traps with 1000 repeats only reach AUC of 0.75.
 - Consider Loss, Ref (called Ratio here), and Min-k%. Ref is generally the best attack with the reference model being Llama-2-7b. Target model is tiny Llama-1.3b.
 - More repetition, higher perplexity, longer texts = higher AUC. Longer training also means higher AUC. Using context (suffix) when computing perplexity also increases AUC for short and medium-length traps.
+</details>
+
+<details><summary>Copyright Violations and Large Language Models (2023) [<a href="https://aclanthology.org/2023.emnlp-main.458/">Paper</a>] ⛏️</summary>
+
+- Measure verbatim reconstruction of texts from famous books by open-sourced and closed-sourced LLMs. Open-sourced LLMs are prompted with 50 tokens from a book (likely base models), and closed-sourced LLMs (GPT-3.5, Claude) are prompted with a question like “what is the first page of [TITLE]?”.
+- Closed-sourced models seem to memorize much more texts (LCS = longest common subsequence) averaging ~50 words. Similarly, memorization on LeetCode problems is also high (~50% overlap with ground truth).
 </details>
 
 
@@ -1184,7 +1231,7 @@ Selective prediction (”I don’t know” option with confidence score) for LLM
 </details>
 
 
-**Others**
+**Instruction Priority/Hierarchy**
 
 <details><summary>Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization (2023) [<a href="https://arxiv.org/abs/2311.09096">Paper</a>] 💸</summary>
 
@@ -1212,6 +1259,13 @@ Prompting that asks the model to prioritize safety/helpfulness. “To counter ja
 
 “We introduce spotlighting, a family of **prompt engineering** techniques that can be used to improve LLMs' ability to **distinguish among multiple sources of input**. The key insight is to utilize transformations of an input to provide a reliable and **continuous signal of its provenance**. We evaluate spotlighting as a defense against indirect prompt injection attacks, and find that it is a **robust defense that has minimal detrimental impact to underlying NLP tasks**. Using GPT-family models, we find that spotlighting reduces the attack success rate from greater than 50% to below 2% in our experiments with minimal impact on task efficacy.”
 
+</details>
+
+<details><summary>The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions (2024) [<a href="https://arxiv.org/abs/2404.13208">Paper</a>] 💸</summary>
+
+- Identify several settings where it is important to implement a hierarchy of instructions (e.g., system, user, data): direction prompt injection in open/closed-domain tasks, indirect prompt injection, system message extraction, and jailbreak. They identify what instructions may be considered “aligned” and “misaligned” with respect to the privileged instruction in each setting.
+- For the defense, they first synthetically generate fine-tuning data for each of the setting by creating a hierarchy of instructions and then fine-tune GPT-3.5-Turbo to behave in the desired manner (ignore misaligned instructions or output a refusal) —  there is not a lot of detail on how the data are generated, and it seems mostly ad-hoc. It likely does not cover a large attack space.
+- The defense shows decent improvement over different datasets (several prompt injection and jailbreaks, TensorTrust, Gandalf Game,  Jailbreakchat, etc.) compared to an undefended model — No comparison to any baseline defense, even ones that use an improved system prompt. No strong adaptive attack considered.
 </details>
 
 
@@ -1298,6 +1352,13 @@ efficiency of sample utilization. Extensive experiments on five datasets from th
 
 - Likely not white-box attack (pre-generated texts).
 - Focus on classification task.
+</details>
+
+<details><summary>Protecting Your LLMs with Information Bottleneck (2024) [<a href="https://arxiv.org/abs/2404.13968">Paper</a>]</summary>
+
+
+“…introduce the **Information Bottleneck Protector (IBProtector)**… **selectively compresses and perturbs prompts, facilitated by a lightweight and trainable extractor, preserving only essential information for the target LLMs to respond with the expected answer.** Moreover, we further consider a situation where the gradient is not visible to be compatible with any LLM. Our empirical evaluations show that IBProtector outperforms current defense methods in mitigating jailbreak attempts, without overly affecting response quality or inference speed.”
+
 </details>
 
 
