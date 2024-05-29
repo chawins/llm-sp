@@ -406,6 +406,15 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
+<details><summary>Coercing LLMs to Do and Reveal (Almost) Anything (2024) [<a href="https://arxiv.org/abs/2402.14020">Paper</a>] ⭐</summary>
+
+- Demonstrate multiple attacks against LLM systems that can be realized with an optimizer like GCG.
+- The target string length as a function of the attack string length is likely not linear, “…as the target string grows, the attack string must grow at a faster pace.” To generate a random number of length 4 (8) to 80% ASR, one needs an attack string of length 25 (5). See Figure 10:
+    
+    ![Untitled](figures/0.png)
+    
+</details>
+
 <details><summary>JailBreakV-28K: A Benchmark for Assessing the Robustness of MultiModal Large Language Models against Jailbreak Attacks (2024) [<a href="https://arxiv.org/abs/2404.03027">Paper</a>] 💸 👁️</summary>
 
 
@@ -639,7 +648,7 @@ Simple method for reconstructing (potentially sensitive like PII) training data 
 
 </details>
 
-<details><summary>Bag of Tricks for Training Data Extraction from Language Models (2023) [<a href="https://arxiv.org/abs/2302.04460">Paper</a>] ⛏️</summary>
+<details><summary>Bag of Tricks for Training Data Extraction from Language Models (2023) [<a href="https://arxiv.org/abs/2302.04460">Paper</a>] [<a href="https://github.com/weichen-yu/LM-Extraction">Code</a>] ⛏️</summary>
 
 - Empirically investigate multiple natural improvement over the discoverable extraction attack (Carlini et al, 2021) where the target model is prompted with training prefixes. The authors consider sampling strategies, look-ahead, and ensemble over different window sizes as methods for improving the suffix generation step. For suffix ranking, they consider different scoring rules (incl. zlib).
 - In summary, using weighted average (ensemble) over the next-token probabilities from different prefix windows yields the largest improvement. The best suffix ranking is to further bias high-confident tokens. Overall, there is a large gap between the baseline and the best approach.
@@ -708,7 +717,7 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 <details><summary>Counterfactual Memorization in Neural Language Models (2023) [<a href="https://arxiv.org/abs/2112.12938">Paper</a>] ⛏️ 📝</summary>
 
-- Define *counterfactual memorization* of a sample $**x**$ as **expected “performance” gain from having $x$ in the training set**. The expectation is over models which are trained on a random partition of the training set, i.e., about one half contains $x$ (IN data/models) and the other does not (OUT data/models). Performance is measured by the model’s accuracy to produce $x$ itself given a prefix. The authors also extend this definition to *counterfactual influence* which measures the performance on a validation sample $x'$ instead of $x$.
+- Define *counterfactual memorization* of a sample **$x$** as **expected “performance” gain from having $x$ in the training set**. The expectation is over models which are trained on a random partition of the training set, i.e., about one half contains $x$ (IN data/models) and the other does not (OUT data/models). Performance is measured by the model’s accuracy to produce $x$ itself given a prefix. The authors also extend this definition to *counterfactual influence* which measures the performance on a validation sample $x'$ instead of $x$.
 - Easy samples or samples with many near duplicates have low memorization because they are likely contained in both IN and OUT sets. Very hard samples also have low memorization because even IN models cannot learn them well.
 - The authors use 400 models of decoder-only T5 with 112M parameters. However, they find that 96 models would also be sufficient to give a similar result.
 </details>
@@ -1098,6 +1107,19 @@ Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *strin
 
 </details>
 
+<details><summary>Universal Adversarial Triggers Are Not Universal (2024) [<a href="https://arxiv.org/abs/2404.16020">Paper</a>] 📦</summary>
+
+- Reproduce universal and transferable GCG (optimized 3 suffixes on Vicuna-7B, Vicuna-7B/13B, or Vicuna-7B/13B + Guanaco-7B/13B; use 25 targets from AdvBench, keep 25 for evaluation). The attack does not transfer well to any open-source model. **Figure 1**:
+
+![Untitled](figures/1.png)
+
+- Also study robustness to adversarial suffixes and safety against harmful instructions on two different alignment fine-tuning methods: preference optimization (APO) and fine-tuning (AFT). The result shows that APO models (Gemma, Llama-2, Starling) are much more robust to both white-box and transfer attacks.
+- APO vs AFT might not be the main factor to robustness difference. There are other confounders, e.g., training/fine-tuning data, similarity between models (shared base models).
+
+![Untitled](figures/2.png)
+
+</details>
+
 
 ### Poisoning & Backdoor
 
@@ -1465,8 +1487,12 @@ DP-ICL (in-context learning) by aggregating multiple model responses, adding noi
 
 </details>
 
-<details><summary>Are Chatbots Ready for Privacy-Sensitive Applications? An Investigation into Input Regurgitation and Prompt-Induced Sanitization (2023) [<a href="https://arxiv.org/abs/2305.15008">Paper</a>]</summary>
+<details><summary>Are Chatbots Ready for Privacy-Sensitive Applications? An Investigation into Input Regurgitation and Prompt-Induced Sanitization (2023) [<a href="https://arxiv.org/abs/2305.15008">Paper</a>] 👤</summary>
 
+- “…we find that when ChatGPT is prompted to summarize cover letters of a 100 candidates, it would retain personally identifiable information (PII) verbatim in 57.4% of cases, and we find this retention to be non-uniform between different subgroups of people, based on attributes such as gender identity.”
+- “**Prompt-Induced Sanitization:** We examine the effect that directly instructing ChatGPT has on the output while complying with HIPAA or GDPR (through the input prompt).”
+- “prompt-induced sanitization **does not** offer a guaranteed solution for privacy protection, but rather serves as an experimental venue to evaluate ChatGPT’s comprehension of HIPAA & GDPR regulations and its proficiency in maintaining confidentiality and anonymizing responses.”
+- “Our proposed approach of adding safety prompts to anonymize responses can help organizations comply with these regulations.”
 </details>
 
 <details><summary>Recovering from Privacy-Preserving Masking with Large Language Models (2023) [<a href="https://arxiv.org/abs/2309.08628">Paper</a>]</summary>
