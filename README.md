@@ -437,6 +437,16 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 - They also try adversarial training using their AdvPrompter because generation is fast. The defense works well against new attacks from AdvPrompter — I doubt it withstands white-box GCG.
 </details>
 
+<details><summary>Uncovering Safety Risks in Open-source LLMs through Concept Activation Vector (2024) [<a href="https://arxiv.org/abs/2404.12038">Paper</a>]</summary>
+
+- “…we introduce a LLM attack method utilizing concept-based model explanation, where **we extract safety concept activation vectors (SCAVs) from LLMs' activation space**, **enabling efficient attacks on well-aligned LLMs like LLaMA-2, achieving near 100% attack success rate** as if LLMs are completely unaligned. This suggests that LLMs, even after thorough safety alignment, could still pose potential risks to society upon public release. To evaluate the harmfulness of outputs resulting with various attack methods, we propose a comprehensive evaluation method that reduces the potential inaccuracies of existing evaluations, and further validate that our method causes more harmful content. Additionally, we discover that the SCAVs show some transferability across different open-source LLMs.”
+</details>
+
+<details><summary>Don't Say No: Jailbreaking LLM by Suppressing Refusal (2024) [<a href="https://arxiv.org/abs/2404.16369">Paper</a>]</summary>
+
+- “we introduce the DSN (Don't Say No) attack, which prompts LLMs to not only generate affirmative responses but also novelly enhance the objective to suppress refusals. In addition, another challenge lies in jailbreak attacks is the evaluation, as it is difficult to directly and accurately assess the harmfulness of the attack. The existing evaluation such as refusal keyword matching has its own limitation as it reveals numerous false positive and false negative instances. To overcome this challenge, we propose an ensemble evaluation pipeline incorporating Natural Language Inference (NLI) contradiction assessment and two external LLM evaluators. Extensive experiments demonstrate the potency of the DSN and the effectiveness of ensemble evaluation compared to baseline methods.”
+</details>
+
 
 ### Privacy
 
@@ -1111,12 +1121,12 @@ Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *strin
 
 - Reproduce universal and transferable GCG (optimized 3 suffixes on Vicuna-7B, Vicuna-7B/13B, or Vicuna-7B/13B + Guanaco-7B/13B; use 25 targets from AdvBench, keep 25 for evaluation). The attack does not transfer well to any open-source model. **Figure 1**:
 
-![Untitled](figures/1.png)
+    ![Untitled](figures/1.png)
 
 - Also study robustness to adversarial suffixes and safety against harmful instructions on two different alignment fine-tuning methods: preference optimization (APO) and fine-tuning (AFT). The result shows that APO models (Gemma, Llama-2, Starling) are much more robust to both white-box and transfer attacks.
 - APO vs AFT might not be the main factor to robustness difference. There are other confounders, e.g., training/fine-tuning data, similarity between models (shared base models).
 
-![Untitled](figures/2.png)
+    ![Untitled](figures/2.png)
 
 </details>
 
@@ -1167,6 +1177,11 @@ Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *strin
 
 “To assess the red-teaming of RLHF against human preference data poisoning, we propose RankPoison, a poisoning attack method on candidates' selection of preference rank flipping to reach certain malicious behaviors (e.g., generating longer sequences, which can increase the computational cost)… we also successfully implement a backdoor attack where LLMs can generate longer answers under questions with the trigger word.”
 
+</details>
+
+<details><summary>Competition Report: Finding Universal Jailbreak Backdoors in Aligned LLMs (2024) [<a href="https://arxiv.org/abs/2404.14461">Paper</a>]</summary>
+
+- “Our competition, co-located at IEEE SaTML 2024, challenged participants to find universal backdoors in several large language models. This report summarizes the key findings and promising ideas for future research.”
 </details>
 
 
@@ -1402,6 +1417,11 @@ efficiency of sample utilization. Extensive experiments on five datasets from th
 
 <details><summary>Text-CRS: A Generalized Certified Robustness Framework against Textual Adversarial Attacks (2023) [<a href="https://arxiv.org/abs/2307.16630">Paper</a>]</summary>
 
+</details>
+
+<details><summary>Advancing the Robustness of Large Language Models through Self-Denoised Smoothing (2024) [<a href="https://arxiv.org/abs/2404.12274">Paper</a>]</summary>
+
+- “…we propose to leverage the multitasking nature of LLMs to **first denoise the noisy inputs and then to make predictions based on these denoised versions**. We call this procedure self-denoised smoothing. Unlike previous denoised smoothing techniques in computer vision, which require training a separate model to enhance the robustness of LLMs, our method offers significantly better efficiency and flexibility. Our experimental results indicate that our method surpasses existing methods in both empirical and certified robustness in defending against adversarial attacks for both downstream tasks and human alignments (i.e., jailbreak attacks).”
 </details>
 
 
@@ -1890,6 +1910,13 @@ Dataset with LLM-generated code with vulnerability classification.
 
 </details>
 
+<details><summary>CyberSecEval 2: A Wide-Ranging Cybersecurity Evaluation Suite for Large Language Models (2024) [<a href="https://arxiv.org/abs/2404.13161">Paper</a>] 💽</summary>
+
+
+“We introduce two new areas for testing: **prompt injection** and **code interpreter abuse**. We evaluated multiple state-of-the-art (SOTA) LLMs, including GPT-4, Mistral, Meta Llama 3 70B-Instruct, and Code Llama. Our results show that conditioning away risk of attack remains an unsolved problem; for example, all tested models showed between 26% and 41% successful prompt injection tests. We further introduce the safety-utility tradeoff: conditioning an LLM to reject unsafe prompts can cause the LLM to falsely reject answering benign prompts, which lowers utility. We propose quantifying this tradeoff using False Refusal Rate (FRR).”
+
+</details>
+
 <details><summary>A Survey on Large Language Model (LLM) Security and Privacy: The Good, the Bad, and the Ugly (2023) [<a href="https://arxiv.org/abs/2312.02003">Paper</a>] 🔭</summary>
 
 
@@ -2104,6 +2131,11 @@ We investigate a scenario in which we want to solve a sequence of programming pr
 
 <details><summary>Prompting4Debugging: Red-Teaming Text-to-Image Diffusion Models by Finding Problematic Prompts (2023) [<a href="https://arxiv.org/abs/2309.06135">Paper</a>] 👁️ 🏭 (auto red-team)</summary>
 
+</details>
+
+<details><summary>LLM Evaluators Recognize and Favor Their Own Generations (2024) [<a href="https://arxiv.org/abs/2404.13076">Paper</a>]</summary>
+
+- “In this paper, we investigate if self-recognition capability contributes to self-preference. We discover that, out of the box, LLMs such as GPT-4 and Llama 2 have non-trivial accuracy at distinguishing themselves from other LLMs and humans. By fine-tuning LLMs, we discover a linear correlation between self-recognition capability and the strength of self-preference bias; using controlled experiments, we show that the causal explanation resists straightforward confounders. We discuss how self-recognition can interfere with unbiased evaluations and AI safety more generally.”
 </details>
 
 

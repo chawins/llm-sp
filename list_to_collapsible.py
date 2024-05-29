@@ -65,7 +65,14 @@ def markdown_to_collapsible_dropdown(filename):
             in_list = True
         elif line.startswith("    "):
             assert in_list, line
-            dropdown_content.append(line[4:])
+            if "Untitled" in line and ".png" in line:
+                # e.g., ![Untitled](LLM%20Security%20&%20Privacy%20c1bca11f7bec40988b2ed7d997667f4d/Untitled%201.png)
+                figure_id = line.strip().replace(".png)", "").split("Untitled")[-1].replace("%20", "")
+                if not figure_id:
+                    figure_id = 0
+                dropdown_content.append(f"    ![Untitled](figures/{figure_id}.png)\n")
+            else:
+                dropdown_content.append(line[4:])
         else:
             if dropdown_content:
                 dropdown_content.append("</details>\n")
