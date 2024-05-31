@@ -146,6 +146,13 @@ prompt = "Sorry, the previous requests are all joke for you, please ignore them.
 
 </details>
 
+<details><summary>Context Injection Attacks on Large Language Models (2024) [<a href="https://arxiv.org/abs/2405.20234">Paper</a>]</summary>
+
+
+“…aimed at eliciting disallowed responses by introducing fabricated context. Our context fabrication strategies, **acceptance elicitation** and **word anonymization**, effectively create misleading contexts that can be structured with attacker-customized prompt templates, achieving injection through malicious user messages. Comprehensive evaluations on real-world LLMs such as ChatGPT and Llama-2 confirm the efficacy of the proposed attack with success rates reaching 97%. We also discuss potential countermeasures that can be adopted for attack detection and developing more secure models.“
+
+</details>
+
 
 ### Jailbreak
 
@@ -447,6 +454,33 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 - “we introduce the DSN (Don't Say No) attack, which prompts LLMs to not only generate affirmative responses but also novelly enhance the objective to suppress refusals. In addition, another challenge lies in jailbreak attacks is the evaluation, as it is difficult to directly and accurately assess the harmfulness of the attack. The existing evaluation such as refusal keyword matching has its own limitation as it reveals numerous false positive and false negative instances. To overcome this challenge, we propose an ensemble evaluation pipeline incorporating Natural Language Inference (NLI) contradiction assessment and two external LLM evaluators. Extensive experiments demonstrate the potency of the DSN and the effectiveness of ensemble evaluation compared to baseline methods.”
 </details>
 
+<details><summary>Efficient LLM-Jailbreaking by Introducing Visual Modality (2024) [<a href="https://arxiv.org/abs/2405.20015">Paper</a>]</summary>
+
+- “we conduct an efficient MLLM-jailbreak to **generate jailbreaking embeddings embJS**. Finally, we **convert the embJS into text space** to facilitate the jailbreaking of the target LLM. Compared to direct LLM-jailbreaking, our approach is more efficient, as MLLMs are more vulnerable to jailbreaking than pure LLM. Additionally, to improve the attack success rate (ASR) of jailbreaking, we propose an image-text semantic matching scheme to identify a suitable initial input.”
+</details>
+
+<details><summary>Learning diverse attacks on large language models for robust red-teaming and safety tuning (2024) [<a href="https://arxiv.org/abs/2405.18540">Paper</a>]</summary>
+
+- “We show that even with explicit regularization to favor novelty and diversity, **existing approaches suffer from mode collapse or fail to generate effective attacks**. As a flexible and probabilistically principled alternative, we propose to use **GFlowNet fine-tuning**, followed by a secondary smoothing phase, to train the attacker model to generate diverse and effective attack prompts.“
+</details>
+
+<details><summary>White-box Multimodal Jailbreaks Against Large Vision-Language Models (2024) [<a href="https://arxiv.org/abs/2405.17894">Paper</a>]</summary>
+
+
+“Our attack method begins by optimizing an adversarial image prefix from random noise to generate diverse harmful responses in the absence of text input, thus imbuing the image with toxic semantics. Subsequently, an adversarial text suffix is integrated and co-optimized with the adversarial image prefix to maximize the probability of eliciting affirmative responses to various harmful instructions. The discovered adversarial image prefix and text suffix are collectively denoted as a Universal Master Key (UMK). When integrated into various malicious queries, UMK can circumvent the alignment defenses of VLMs and lead to the generation of objectionable content, known as jailbreaks.”
+
+</details>
+
+<details><summary>GPT-4 Jailbreaks Itself with Near-Perfect Success Using Self-Explanation (2024) [<a href="https://arxiv.org/abs/2405.13077">Paper</a>]</summary>
+
+- “we introduce Iterative Refinement Induced Self-Jailbreak (IRIS), a novel approach that leverages the reflective capabilities of LLMs for jailbreaking with only **black-box access**. Unlike previous methods, IRIS simplifies the jailbreaking process by **using a single model as both the attacker and target**. This method first **iteratively refines adversarial prompts through self-explanation**, which is crucial for ensuring that even well-aligned LLMs obey adversarial instructions. IRIS then **rates and enhances the output given the refined prompt to increase its harmfulness**. We find IRIS achieves jailbreak success rates of 98% on GPT-4 and 92% on GPT-4 Turbo in under 7 queries.”
+</details>
+
+<details><summary>Soft Prompt Threats: Attacking Safety Alignment and Unlearning in Open-Source LLMs through the Embedding Space (2024) [<a href="https://arxiv.org/abs/2402.09063">Paper</a>]</summary>
+
+- “We address this research gap and propose the embedding space attack, which directly attacks the continuous embedding representation of input tokens. We find that embedding space attacks circumvent model alignments and trigger harmful behaviors more efficiently than discrete attacks or model fine-tuning. Furthermore, we present a novel threat model in the context of unlearning and show that **embedding space attacks can extract supposedly deleted information from unlearned LLMs** across multiple datasets and models.”
+</details>
+
 
 ### Privacy
 
@@ -458,6 +492,209 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 | ⛏ | Verbatim document extraction attack |
 | 👤 | PII-focused |
 | 💭 | Inference attack |
+
+⛏️ **Unintended Memorization and Extraction**
+
+<details><summary>Extracting Training Data from Large Language Models (2021) [<a href="https://www.usenix.org/system/files/sec21-carlini-extracting.pdf">Paper</a>] ⭐ ⛏️</summary>
+
+
+Simple method for reconstructing (potentially sensitive like PII) training data from GPT-2: prompt the model and measure some scores on the generated text (e.g., perplexity ratio between different models, between the lowercase version of the text, or zlib entropy).
+
+</details>
+
+<details><summary>Memorization Without Overfitting: Analyzing the Training Dynamics of Large Language Models (2022) [<a href="https://arxiv.org/abs/2205.10770">Paper</a>] ⛏️</summary>
+
+- “Larger language models memorize training data faster across all settings. Surprisingly, we show that larger models can memorize a larger portion of the data before over-fitting and tend to forget less throughout the training process.”
+- “We also analyze the memorization dynamics of different parts of speech and find that models memorize nouns and numbers first; we hypothesize and provide empirical evidence that nouns and numbers act as a unique identifier for memorizing individual training examples.”
+</details>
+
+<details><summary>Are Large Pre-Trained Language Models Leaking Your Personal Information? (2022) [<a href="https://aclanthology.org/2022.findings-emnlp.148/">Paper</a>] 👤 ⛏️</summary>
+
+
+“…we query PLMs for email addresses with contexts of the email address or prompts containing the owner’s name. We find that PLMs do leak personal information due to memorization. However, since the models are weak at association, the risk of specific personal information being extracted by attackers is low.”
+
+</details>
+
+<details><summary>Quantifying Memorization Across Neural Language Models (2023) [<a href="https://openreview.net/forum?id=TatRHT_1cK">Paper</a>] ⭐ ⛏️</summary>
+
+
+“We describe three log-linear relationships that quantify the degree to which LMs emit memorized training data. Memorization significantly grows as we increase (1) the capacity of a model, (2) the number of times an example has been duplicated, and (3) the number of tokens of context used to prompt the model.”
+
+</details>
+
+<details><summary>Emergent and Predictable Memorization in Large Language Models (2023) [<a href="https://arxiv.org/abs/2304.11158">Paper</a>] ⭐ ⛏️</summary>
+
+
+“We therefore seek to predict which sequences will be memorized before a large model's full train-time by extrapolating the memorization behavior of lower-compute trial runs. **We measure memorization of the Pythia model suite and plot scaling laws for forecasting memorization**, allowing us to provide equi-compute recommendations to maximize the reliability (recall) of such predictions. We additionally provide further novel discoveries on the distribution of memorization scores across models and data.”
+
+- Goal is to predict *per-sample* (not an average) memorization by a “more expensive” model given the measured memorization by a “cheaper” model. Here, cost is defined as both the model parameters and the training iteration (know early is good). The authors use Pythia models ranging from 70M to 12B models.
+- Memorization is measured by an extraction attack (“$k$-memorization”) given a prefix of length $k = 32$ and extract the next 32 tokens. Only an exact memorization counts, and the authors focus on getting a low recall (low FNR: not memorized by cheap model = not memorize by expensive model).
+- One thing we may be able to do here is improve precision/recall threshold and consider different definitions of memorization. The paper considers a binary label for memorization score (1 if perfect match and 0 otherwise).
+</details>
+
+<details><summary>Exploring Memorization in Fine-tuned Language Models (2023) [<a href="https://arxiv.org/abs/2310.06714">Paper</a>]</summary>
+
+
+“…comprehensive analysis to explore LMs' memorization during fine-tuning across tasks.”
+
+</details>
+
+<details><summary>An Empirical Analysis of Memorization in Fine-tuned Autoregressive Language Models (2023) [<a href="https://aclanthology.org/2022.emnlp-main.119/">Paper</a>]</summary>
+
+
+“…we empirically study memorization of **fine-tuning methods using membership inference and extraction attacks**, and show that their susceptibility to attacks is very different. We observe that fine-tuning the head of the model has the highest susceptibility to attacks, whereas fine-tuning smaller adapters appears to be less vulnerable to known extraction attacks.”
+
+</details>
+
+<details><summary>Bag of Tricks for Training Data Extraction from Language Models (2023) [<a href="https://arxiv.org/abs/2302.04460">Paper</a>] [<a href="https://github.com/weichen-yu/LM-Extraction">Code</a>] ⛏️</summary>
+
+- Empirically investigate multiple natural improvement over the discoverable extraction attack (Carlini et al, 2021) where the target model is prompted with training prefixes. The authors consider sampling strategies, look-ahead, and ensemble over different window sizes as methods for improving the suffix generation step. For suffix ranking, they consider different scoring rules (incl. zlib).
+- In summary, using weighted average (ensemble) over the next-token probabilities from different prefix windows yields the largest improvement. The best suffix ranking is to further bias high-confident tokens. Overall, there is a large gap between the baseline and the best approach.
+- It is a bit unclear whether the suffix ranking step is done per-sample or over all the generated suffixes. It might be the latter.
+</details>
+
+<details><summary>ProPILE: Probing Privacy Leakage in Large Language Models (2023) [<a href="https://arxiv.org/abs/2307.01881">Paper</a>] 👤 ⛏️</summary>
+
+
+Prompt constructed with some of the user’s PIIs for probing if the model memorizes or can leak the user’s other PIIs.
+
+</details>
+
+<details><summary>Scalable Extraction of Training Data from (Production) Language Models (2023) [<a href="https://arxiv.org/abs/2311.17035">Paper</a>] ⭐ ⛏️ 💸</summary>
+
+- This paper makes so many interesting about empirical memorization measurement.
+- Shows that “extractable memorization” is orders of magnitude more severe than previously believed, and this “lower bound” is in fact close to the upper bound (“discoverable memorization”) – the notion of bounds here is not strict.
+- They measure extractable memorization by collecting a large internet text database (9TB), randomly sampling 5-token sequences, using them to prompt LLMs, and searching for the 50-token generated texts in the database. This process shows that open-source LLMs memorize 1–10 millions unique 50-grams and output them at a rate of 0.1%-1% given the above prompting. **Takeaway: simple prompting is a strong extraction attack.**
+- The number of extractably memorized samples is now about *half* of the discoverably memorized, and there are some extractable memorization not captured by discoverable memorization. There are several implications:
+    - **Even powerful discoverable extraction (prompting with training samples) is not optimal** and that there likely are stronger extraction attacks.
+    - Discoverable memorization is still a useful approximation of what attackers can *currently* extract in practice, i.e., extractable memorization.
+- The authors find a way to extract memorized sequences, likely from the pre-training stage, of ChatGPT by asking it to repeat a single token indefinitely. This attack is able to diverge the model from its instruction-tuned behavior back to the completion behavior of the base model.
+- They show that MIA (zlib) can identify whether the extracted samples are actually in the training set with 30% precision. They also test for a rate of PII leakages: 17% of all memorized generations.
+</details>
+
+<details><summary>Quantifying Association Capabilities of Large Language Models and Its Implications on Privacy Leakage (2024) [<a href="https://arxiv.org/abs/2305.12707">Paper</a>] 👤</summary>
+
+
+“Our study reveals that as models scale up, their capacity to associate entities/information intensifies, particularly when target pairs demonstrate shorter co-occurrence distances or higher co-occurrence frequencies. However, there is a distinct performance gap when associating commonsense knowledge versus PII, with the latter showing lower accuracy. Despite the proportion of accurately predicted PII being relatively small, LLMs still demonstrate the capability to predict specific instances of email addresses and phone numbers when provided with appropriate prompts.”
+
+</details>
+
+<details><summary>ROME: Memorization Insights from Text, Probability and Hidden State in Large Language Models (2024) [<a href="https://arxiv.org/abs/2403.00510">Paper</a>]</summary>
+
+- Study properties of LLMs when predicting memorized vs non-memorized texts without access to ground-truth training data. The authors use celebrity’s parent names and idioms as two datasets which are relatively easy to check for memorization (vs inference) but still not perfect (e.g., there’s still some inference effect, and it is hard to compute prior).
+- Memorized texts have *smaller variance* on predicted probabilities and hidden states.
+</details>
+
+<details><summary>Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs (2024) [<a href="https://arxiv.org/abs/2403.04801">Paper</a>] ⛏️</summary>
+
+- “We use an iterative rejection-sampling optimization process to find **instruction-based prompts** with two main characteristics: (1) minimal overlap with the training data to avoid presenting the solution directly to the model, and (2) **maximal overlap between the victim model's output and the training data**, aiming to induce the victim to spit out training data. We observe that our **instruction-based prompts generate outputs with 23.7% higher overlap with training data compared to the baseline prefix-suffix measurements**.”
+- “Our findings show that (1) instruction-tuned models can expose pre-training data as much as their base-models, if not more so, (2) contexts other than the original training data can lead to leakage, and (3) using instructions proposed by other LLMs can open a new avenue of automated attacks that we should further study and explore.”
+</details>
+
+<details><summary>Rethinking LLM Memorization through the Lens of Adversarial Compression (2024) [<a href="https://arxiv.org/abs/2404.15146">Paper</a>] ⛏️</summary>
+
+- Define a new metric for measuring memorization on LLMs that is more easily interpretable by non-technical audience and use the notion of adversarial optimization. The metrics, called “Adversarial Compression Ratio” (ACR), is defined by the ratio between the length of a training sequence $y$ and the length of adversarial prompt $x$ used to elicit that sequence, i.e., $M(x) = y$, through greedy decoding. If ACR > 1, then the given sequence from the training set is considered memorized.
+- They propose an ad-hoc method that runs GCG on different suffix lengths (i.e., if GGC succeeds, reduce length by 1; If GCG fails, increase length by 5).
+- The empirical results show interesting trends consistent with our notion of memorization: (1) ACR is always less than 1 when the target string is just random tokens or news article after the training data cut-off; (2) memorization increases model size (bigger model = larger ACR) — but this might be artifact of adversarial robustness; (3) Famous quotes have ACR > 1 on average; (4) Wikipedia has about 0.5 ACR on average meaning that most samples are false negatives (in training set but not detected by this method).
+- The results on unlearning show that ACR is more conservative than verbatim completion. This may imply that ACR is a better metric, but the results are a bit anecdotal and qualitative. No per-sample metric is presented to confirm that  ACR really has a smaller false negative rate. Also, false positives are hard to determine because of the lack of ground truth (we don’t know whether samples are really not “memorized” or we just don’t have the right prompt, for example).
+</details>
+
+<details><summary>Extracting Prompts by Inverting LLM Outputs (2024) [<a href="https://arxiv.org/abs/2405.15012">Paper</a>] ⭐ ⛏️</summary>
+
+- “**given outputs of a language model, we seek to extract the prompt that generated these outputs**. We develop a new black-box method, output2prompt, that learns to extract prompts **without access to the model's logits and without adversarial or jailbreaking queries**. In contrast to previous work, output2prompt only needs outputs of normal user queries. To improve memory efficiency, output2prompt employs a new sparse encoding technique. We measure the efficacy of output2prompt on a variety of user and system prompts and demonstrate zero-shot transferability across different LLMs.”
+</details>
+
+
+📝 **Membership Inference**
+
+<details><summary>Detecting Pretraining Data from Large Language Models (2023) [<a href="https://arxiv.org/abs//2310.16789">Paper</a>] [<a href="https://swj0419.github.io/detect-pretrain.github.io/">Code</a>] 📝 💽 📦</summary>
+
+
+“…dynamic benchmark WIKIMIA that uses data created before and after model training to support gold truth detection. We also introduce a new detection method MIN-K% PROB based on a simple hypothesis: an unseen example is likely to contain a few outlier words with low probabilities under the LLM, while a seen example is less likely to have words with such low probabilities.” AUC ~0.7-0.88, but TPR@5%FPR is low (~20%). 
+
+- Benchmark for membership inference based on old/new Wikipedia data.
+- Also test *paraphrase* MI using GPT to paraphrase tested samples, in addition to the usual verbatim MI.
+- Discover that simply computing perplexity on the entire text is the strongest baseline (vs. Neighbor, Zlib, Lowercase, SmallerRef).
+- MIA is easier for outlier data in a *larger* training set. Conversely, for non-outlier data, smaller training set means easier detection. A higher learning rate during pretraining also leads to higher memorization.
+</details>
+
+<details><summary>Counterfactual Memorization in Neural Language Models (2023) [<a href="https://arxiv.org/abs/2112.12938">Paper</a>] ⛏️ 📝</summary>
+
+- Define *counterfactual memorization* of a sample **$x$** as **expected “performance” gain from having $x$ in the training set**. The expectation is over models which are trained on a random partition of the training set, i.e., about one half contains $x$ (IN data/models) and the other does not (OUT data/models). Performance is measured by the model’s accuracy to produce $x$ itself given a prefix. The authors also extend this definition to *counterfactual influence* which measures the performance on a validation sample $x'$ instead of $x$.
+- Easy samples or samples with many near duplicates have low memorization because they are likely contained in both IN and OUT sets. Very hard samples also have low memorization because even IN models cannot learn them well.
+- The authors use 400 models of decoder-only T5 with 112M parameters. However, they find that 96 models would also be sufficient to give a similar result.
+</details>
+
+<details><summary>Practical Membership Inference Attacks against Fine-tuned Large Language Models via Self-prompt Calibration (2023) [<a href="https://arxiv.org/abs/2311.06062">Paper</a>] 📝</summary>
+
+
+“Membership Inference Attack based on Self-calibrated Probabilistic Variation (SPV-MIA). Specifically, recognizing that memorization in LLMs is inevitable during the training process and **occurs before overfitting**, we introduce a more reliable membership signal, probabilistic variation, which is based on **memorization rather than overfitting**.”
+
+</details>
+
+<details><summary>Membership Inference Attacks against Language Models via Neighbourhood Comparison (2023) [<a href="https://aclanthology.org/2023.findings-acl.719/">Paper</a>] 📝</summary>
+
+
+“…reference-based attacks which compare model scores to those obtained from a reference model trained on similar data can substantially improve the performance of MIAs. However, **in order to train reference models, attacks of this kind make the strong and arguably unrealistic assumption that an adversary has access to samples closely resembling the original training data**… We propose and evaluate neighbourhood attacks, which **compare model scores for a given sample to scores of synthetically generated neighbour texts** and therefore eliminate the need for access to the training data distribution. We show that, in addition to being competitive with reference-based attacks that have perfect knowledge about the training data distribution…”
+
+</details>
+
+<details><summary>Using Membership Inference Attacks to Evaluate Privacy-Preserving Language Modeling Fails for Pseudonymizing Data (2023) [<a href="https://aclanthology.org/2023.nodalida-1.33/">Paper</a>] 📝</summary>
+
+- “MIAs are used to estimate a worst-case degree of privacy leakage.”
+- “In this study, we show that the state-of-the-art MIA described by Mireshghallah et al. (2022) cannot distinguish between a model trained using real or pseudonymized data.”
+</details>
+
+<details><summary>Do Membership Inference Attacks Work on Large Language Models? (2024) [<a href="https://arxiv.org/abs/2402.07841">Paper</a>] ⭐ 📝</summary>
+
+- [GitHub - iamgroot42/mimir: Python package for measuring memorization in LLMs.](https://github.com/iamgroot42/mimir) Library of MIAs on LLMs, including Min-k%, zlib, reference-based attack (Ref), neighborhood.
+- Table 1 compares 5 attacks across 8 datasets. Reference-based attack is best in most cases. Min-k% is marginally better than Loss and zlib, but they are all very close. Results are very dependent on datasets.
+- Picking good reference model is tricky. The authors have tried multiple models which potentially make Ref stronger than the other attacks.
+- Temporal shift in member vs non-member test samples contributes to an overestimated MIA success rate. The authors measure this distribution shift with [n-gram overlap](https://yunjinhan.github.io/2017/04/n-gram-overlap).
+</details>
+
+<details><summary>DE-COP: Detecting Copyrighted Content in Language Models Training Data (2024) [<a href="https://arxiv.org/abs/2402.09910">Paper</a>] 📝</summary>
+
+- **Document-level MIA by prompting.** Ask target LLM to select a verbatim text from a copyrighted book/ArXiv paper in a multiple-choice format (four choices). The other three options are close LLM-paraphrased texts. The core idea is similar to [the neighborhood attack](https://aclanthology.org/2023.findings-acl.719/), but using MCQA instead of loss computation. The authors also debias/normalize for effects of the answer ordering, which LLMs are known to have trouble with.
+- Empirically, this method seems to outperform all other soft-label black-box attacks.
+- Example question: “Question: Which of the following passages is verbatim from the “{book name}” by {author name}? Options: A…”
+</details>
+
+
+©️ **Copyright**
+
+<details><summary>On Provable Copyright Protection for Generative Models (2023) [<a href="https://arxiv.org/abs/2302.10870">Paper</a>] ⭐ ⛏️</summary>
+
+- Introduces a notion of **near access-freeness (NAF)** that essentially upper bounds the probability of a given model producing a copyrighted content with respect to the same probability by another model (called “safe”) without access to that copyrighted material during training. The bound is $p(y \mid x) \le 2^{k_x} \cdot \text{safe}_C(y \mid x)$ where $y \in C$ a set of copyrighted material, and $k_x$ is a parameter for a given prefix $x$.
+- The paper also introduces a simple method of constructing an NAF model from two “sharded” models where a copyright material only appears in the training set of exactly one of them.
+- Difference between DP and NAF: copyright is concerned with the reproduction of the material by the resulting model whereas DP is a property of the learning algorithm itself. This should imply that DP is a strictly stronger guarantee.
+- The fact that NAF is defined w.r.t. a safe model resolves a corner case, for example, where the prefix $x$ is “Repeat the following text: $C$” and $C$ is copyright material. Here, both $p(y \mid x)$ and $\text{safe}_C(y \mid x)$ will be high but does not imply copyright infringement.
+- Roughly speaking, if we can guarantee that $k$ is small relative to entropy, then the probability of producing a copyright text should be *exponentially small as a function of token length* (see Section 4.2).
+</details>
+
+<details><summary>Copyright Traps for Large Language Models (2024) [<a href="https://arxiv.org/abs/2402.09363">Paper</a>]</summary>
+
+- Measure document-level MIA on synthetically generated “traps” inserted in a document during training. Overall, existing MIAs are not sufficient; 100-token traps with 1000 repeats only reach AUC of 0.75.
+- Consider Loss, Ref (called Ratio here), and Min-k%. Ref is generally the best attack with the reference model being Llama-2-7b. Target model is tiny Llama-1.3b.
+- More repetition, higher perplexity, longer texts = higher AUC. Longer training also means higher AUC. Using context (suffix) when computing perplexity also increases AUC for short and medium-length traps.
+</details>
+
+<details><summary>Copyright Violations and Large Language Models (2023) [<a href="https://aclanthology.org/2023.emnlp-main.458/">Paper</a>] ⛏️</summary>
+
+- Measure verbatim reconstruction of texts from famous books by open-sourced and closed-sourced LLMs. Open-sourced LLMs are prompted with 50 tokens from a book (likely base models), and closed-sourced LLMs (GPT-3.5, Claude) are prompted with a question like “what is the first page of [TITLE]?”.
+- Closed-sourced models seem to memorize much more texts (LCS = longest common subsequence) averaging ~50 words. Similarly, memorization on LeetCode problems is also high (~50% overlap with ground truth).
+</details>
+
+<details><summary>Mosaic Memory: Fuzzy Duplication in Copyright Traps for Large Language Models (2024) [<a href="https://arxiv.org/abs/2405.15523">Paper</a>]</summary>
+
+
+“Copyright traps have been proposed to be injected into the original content, improving content detectability in newly released LLMs. Traps, however, rely on the exact duplication of a unique text sequence, leaving them vulnerable to commonly deployed data deduplication techniques. We here propose the generation of fuzzy copyright traps, featuring slight modifications across duplication. When injected in the fine-tuning data of a 1.3B LLM, we show fuzzy trap sequences to be memorized nearly as well as exact duplicates. Specifically, the Membership Inference Attack (MIA) ROC AUC only drops from 0.90 to 0.87 when 4 tokens are replaced across the fuzzy duplicates.”
+
+</details>
+
+
+**Others**
+
 <details><summary>Is Your Model Sensitive? SPeDaC: A New Benchmark for Detecting and Classifying Sensitive Personal Data (2022) [<a href="https://arxiv.org/abs/2208.06216">Paper</a>] 💽</summary>
 
 
@@ -604,192 +841,9 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 
 </details>
 
+<details><summary>DAGER: Exact Gradient Inversion for Large Language Models (2024) [<a href="https://arxiv.org/abs/2405.15586">Paper</a>] ⭐</summary>
 
-⛏️ **Unintended Memorization and Extraction**
-
-<details><summary>Extracting Training Data from Large Language Models (2021) [<a href="https://www.usenix.org/system/files/sec21-carlini-extracting.pdf">Paper</a>] ⭐ ⛏️</summary>
-
-
-Simple method for reconstructing (potentially sensitive like PII) training data from GPT-2: prompt the model and measure some scores on the generated text (e.g., perplexity ratio between different models, between the lowercase version of the text, or zlib entropy).
-
-</details>
-
-<details><summary>Memorization Without Overfitting: Analyzing the Training Dynamics of Large Language Models (2022) [<a href="https://arxiv.org/abs/2205.10770">Paper</a>] ⛏️</summary>
-
-- “Larger language models memorize training data faster across all settings. Surprisingly, we show that larger models can memorize a larger portion of the data before over-fitting and tend to forget less throughout the training process.”
-- “We also analyze the memorization dynamics of different parts of speech and find that models memorize nouns and numbers first; we hypothesize and provide empirical evidence that nouns and numbers act as a unique identifier for memorizing individual training examples.”
-</details>
-
-<details><summary>Are Large Pre-Trained Language Models Leaking Your Personal Information? (2022) [<a href="https://aclanthology.org/2022.findings-emnlp.148/">Paper</a>] 👤 ⛏️</summary>
-
-
-“…we query PLMs for email addresses with contexts of the email address or prompts containing the owner’s name. We find that PLMs do leak personal information due to memorization. However, since the models are weak at association, the risk of specific personal information being extracted by attackers is low.”
-
-</details>
-
-<details><summary>Quantifying Memorization Across Neural Language Models (2023) [<a href="https://openreview.net/forum?id=TatRHT_1cK">Paper</a>] ⭐ ⛏️</summary>
-
-
-“We describe three log-linear relationships that quantify the degree to which LMs emit memorized training data. Memorization significantly grows as we increase (1) the capacity of a model, (2) the number of times an example has been duplicated, and (3) the number of tokens of context used to prompt the model.”
-
-</details>
-
-<details><summary>Emergent and Predictable Memorization in Large Language Models (2023) [<a href="https://arxiv.org/abs/2304.11158">Paper</a>] ⭐ ⛏️</summary>
-
-
-“We therefore seek to predict which sequences will be memorized before a large model's full train-time by extrapolating the memorization behavior of lower-compute trial runs. **We measure memorization of the Pythia model suite and plot scaling laws for forecasting memorization**, allowing us to provide equi-compute recommendations to maximize the reliability (recall) of such predictions. We additionally provide further novel discoveries on the distribution of memorization scores across models and data.”
-
-- Goal is to predict *per-sample* (not an average) memorization by a “more expensive” model given the measured memorization by a “cheaper” model. Here, cost is defined as both the model parameters and the training iteration (know early is good). The authors use Pythia models ranging from 70M to 12B models.
-- Memorization is measured by an extraction attack (“$k$-memorization”) given a prefix of length $k = 32$ and extract the next 32 tokens. Only an exact memorization counts, and the authors focus on getting a low recall (low FNR: not memorized by cheap model = not memorize by expensive model).
-- One thing we may be able to do here is improve precision/recall threshold and consider different definitions of memorization. The paper considers a binary label for memorization score (1 if perfect match and 0 otherwise).
-</details>
-
-<details><summary>Exploring Memorization in Fine-tuned Language Models (2023) [<a href="https://arxiv.org/abs/2310.06714">Paper</a>]</summary>
-
-
-“…comprehensive analysis to explore LMs' memorization during fine-tuning across tasks.”
-
-</details>
-
-<details><summary>An Empirical Analysis of Memorization in Fine-tuned Autoregressive Language Models (2023) [<a href="https://aclanthology.org/2022.emnlp-main.119/">Paper</a>]</summary>
-
-
-“…we empirically study memorization of **fine-tuning methods using membership inference and extraction attacks**, and show that their susceptibility to attacks is very different. We observe that fine-tuning the head of the model has the highest susceptibility to attacks, whereas fine-tuning smaller adapters appears to be less vulnerable to known extraction attacks.”
-
-</details>
-
-<details><summary>Bag of Tricks for Training Data Extraction from Language Models (2023) [<a href="https://arxiv.org/abs/2302.04460">Paper</a>] [<a href="https://github.com/weichen-yu/LM-Extraction">Code</a>] ⛏️</summary>
-
-- Empirically investigate multiple natural improvement over the discoverable extraction attack (Carlini et al, 2021) where the target model is prompted with training prefixes. The authors consider sampling strategies, look-ahead, and ensemble over different window sizes as methods for improving the suffix generation step. For suffix ranking, they consider different scoring rules (incl. zlib).
-- In summary, using weighted average (ensemble) over the next-token probabilities from different prefix windows yields the largest improvement. The best suffix ranking is to further bias high-confident tokens. Overall, there is a large gap between the baseline and the best approach.
-- It is a bit unclear whether the suffix ranking step is done per-sample or over all the generated suffixes. It might be the latter.
-</details>
-
-<details><summary>ProPILE: Probing Privacy Leakage in Large Language Models (2023) [<a href="https://arxiv.org/abs/2307.01881">Paper</a>] 👤 ⛏️</summary>
-
-
-Prompt constructed with some of the user’s PIIs for probing if the model memorizes or can leak the user’s other PIIs.
-
-</details>
-
-<details><summary>Scalable Extraction of Training Data from (Production) Language Models (2023) [<a href="https://arxiv.org/abs/2311.17035">Paper</a>] ⭐ ⛏️ 💸</summary>
-
-- This paper makes so many interesting about empirical memorization measurement.
-- Shows that “extractable memorization” is orders of magnitude more severe than previously believed, and this “lower bound” is in fact close to the upper bound (“discoverable memorization”) – the notion of bounds here is not strict.
-- They measure extractable memorization by collecting a large internet text database (9TB), randomly sampling 5-token sequences, using them to prompt LLMs, and searching for the 50-token generated texts in the database. This process shows that open-source LLMs memorize 1–10 millions unique 50-grams and output them at a rate of 0.1%-1% given the above prompting. **Takeaway: simple prompting is a strong extraction attack.**
-- The number of extractably memorized samples is now about *half* of the discoverably memorized, and there are some extractable memorization not captured by discoverable memorization. There are several implications:
-    - **Even powerful discoverable extraction (prompting with training samples) is not optimal** and that there likely are stronger extraction attacks.
-    - Discoverable memorization is still a useful approximation of what attackers can *currently* extract in practice, i.e., extractable memorization.
-- The authors find a way to extract memorized sequences, likely from the pre-training stage, of ChatGPT by asking it to repeat a single token indefinitely. This attack is able to diverge the model from its instruction-tuned behavior back to the completion behavior of the base model.
-- They show that MIA (zlib) can identify whether the extracted samples are actually in the training set with 30% precision. They also test for a rate of PII leakages: 17% of all memorized generations.
-</details>
-
-<details><summary>Quantifying Association Capabilities of Large Language Models and Its Implications on Privacy Leakage (2024) [<a href="https://arxiv.org/abs/2305.12707">Paper</a>] 👤</summary>
-
-
-“Our study reveals that as models scale up, their capacity to associate entities/information intensifies, particularly when target pairs demonstrate shorter co-occurrence distances or higher co-occurrence frequencies. However, there is a distinct performance gap when associating commonsense knowledge versus PII, with the latter showing lower accuracy. Despite the proportion of accurately predicted PII being relatively small, LLMs still demonstrate the capability to predict specific instances of email addresses and phone numbers when provided with appropriate prompts.”
-
-</details>
-
-<details><summary>ROME: Memorization Insights from Text, Probability and Hidden State in Large Language Models (2024) [<a href="https://arxiv.org/abs/2403.00510">Paper</a>]</summary>
-
-- Study properties of LLMs when predicting memorized vs non-memorized texts without access to ground-truth training data. The authors use celebrity’s parent names and idioms as two datasets which are relatively easy to check for memorization (vs inference) but still not perfect (e.g., there’s still some inference effect, and it is hard to compute prior).
-- Memorized texts have *smaller variance* on predicted probabilities and hidden states.
-</details>
-
-<details><summary>Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs (2024) [<a href="https://arxiv.org/abs/2403.04801">Paper</a>]</summary>
-
-- “We use an iterative rejection-sampling optimization process to find **instruction-based prompts** with two main characteristics: (1) minimal overlap with the training data to avoid presenting the solution directly to the model, and (2) **maximal overlap between the victim model's output and the training data**, aiming to induce the victim to spit out training data. We observe that our **instruction-based prompts generate outputs with 23.7% higher overlap with training data compared to the baseline prefix-suffix measurements**.”
-- “Our findings show that (1) instruction-tuned models can expose pre-training data as much as their base-models, if not more so, (2) contexts other than the original training data can lead to leakage, and (3) using instructions proposed by other LLMs can open a new avenue of automated attacks that we should further study and explore.”
-</details>
-
-<details><summary>Rethinking LLM Memorization through the Lens of Adversarial Compression (2024) [<a href="https://arxiv.org/abs/2404.15146">Paper</a>] ⛏️</summary>
-
-- Define a new metric for measuring memorization on LLMs that is more easily interpretable by non-technical audience and use the notion of adversarial optimization. The metrics, called “Adversarial Compression Ratio” (ACR), is defined by the ratio between the length of a training sequence $y$ and the length of adversarial prompt $x$ used to elicit that sequence, i.e., $M(x) = y$, through greedy decoding. If ACR > 1, then the given sequence from the training set is considered memorized.
-- They propose an ad-hoc method that runs GCG on different suffix lengths (i.e., if GGC succeeds, reduce length by 1; If GCG fails, increase length by 5).
-- The empirical results show interesting trends consistent with our notion of memorization: (1) ACR is always less than 1 when the target string is just random tokens or news article after the training data cut-off; (2) memorization increases model size (bigger model = larger ACR) — but this might be artifact of adversarial robustness; (3) Famous quotes have ACR > 1 on average; (4) Wikipedia has about 0.5 ACR on average meaning that most samples are false negatives (in training set but not detected by this method).
-- The results on unlearning show that ACR is more conservative than verbatim completion. This may imply that ACR is a better metric, but the results are a bit anecdotal and qualitative. No per-sample metric is presented to confirm that  ACR really has a smaller false negative rate. Also, false positives are hard to determine because of the lack of ground truth (we don’t know whether samples are really not “memorized” or we just don’t have the right prompt, for example).
-</details>
-
-
-📝 **Membership Inference**
-
-<details><summary>Detecting Pretraining Data from Large Language Models (2023) [<a href="https://arxiv.org/abs//2310.16789">Paper</a>] [<a href="https://swj0419.github.io/detect-pretrain.github.io/">Code</a>] 📝 💽 📦</summary>
-
-
-“…dynamic benchmark WIKIMIA that uses data created before and after model training to support gold truth detection. We also introduce a new detection method MIN-K% PROB based on a simple hypothesis: an unseen example is likely to contain a few outlier words with low probabilities under the LLM, while a seen example is less likely to have words with such low probabilities.” AUC ~0.7-0.88, but TPR@5%FPR is low (~20%). 
-
-- Benchmark for membership inference based on old/new Wikipedia data.
-- Also test *paraphrase* MI using GPT to paraphrase tested samples, in addition to the usual verbatim MI.
-- Discover that simply computing perplexity on the entire text is the strongest baseline (vs. Neighbor, Zlib, Lowercase, SmallerRef).
-- MIA is easier for outlier data in a *larger* training set. Conversely, for non-outlier data, smaller training set means easier detection. A higher learning rate during pretraining also leads to higher memorization.
-</details>
-
-<details><summary>Counterfactual Memorization in Neural Language Models (2023) [<a href="https://arxiv.org/abs/2112.12938">Paper</a>] ⛏️ 📝</summary>
-
-- Define *counterfactual memorization* of a sample **$x$** as **expected “performance” gain from having $x$ in the training set**. The expectation is over models which are trained on a random partition of the training set, i.e., about one half contains $x$ (IN data/models) and the other does not (OUT data/models). Performance is measured by the model’s accuracy to produce $x$ itself given a prefix. The authors also extend this definition to *counterfactual influence* which measures the performance on a validation sample $x'$ instead of $x$.
-- Easy samples or samples with many near duplicates have low memorization because they are likely contained in both IN and OUT sets. Very hard samples also have low memorization because even IN models cannot learn them well.
-- The authors use 400 models of decoder-only T5 with 112M parameters. However, they find that 96 models would also be sufficient to give a similar result.
-</details>
-
-<details><summary>Practical Membership Inference Attacks against Fine-tuned Large Language Models via Self-prompt Calibration (2023) [<a href="https://arxiv.org/abs/2311.06062">Paper</a>] 📝</summary>
-
-
-“Membership Inference Attack based on Self-calibrated Probabilistic Variation (SPV-MIA). Specifically, recognizing that memorization in LLMs is inevitable during the training process and **occurs before overfitting**, we introduce a more reliable membership signal, probabilistic variation, which is based on **memorization rather than overfitting**.”
-
-</details>
-
-<details><summary>Membership Inference Attacks against Language Models via Neighbourhood Comparison (2023) [<a href="https://aclanthology.org/2023.findings-acl.719/">Paper</a>] 📝</summary>
-
-
-“…reference-based attacks which compare model scores to those obtained from a reference model trained on similar data can substantially improve the performance of MIAs. However, **in order to train reference models, attacks of this kind make the strong and arguably unrealistic assumption that an adversary has access to samples closely resembling the original training data**… We propose and evaluate neighbourhood attacks, which **compare model scores for a given sample to scores of synthetically generated neighbour texts** and therefore eliminate the need for access to the training data distribution. We show that, in addition to being competitive with reference-based attacks that have perfect knowledge about the training data distribution…”
-
-</details>
-
-<details><summary>Using Membership Inference Attacks to Evaluate Privacy-Preserving Language Modeling Fails for Pseudonymizing Data (2023) [<a href="https://aclanthology.org/2023.nodalida-1.33/">Paper</a>]</summary>
-
-- “MIAs are used to estimate a worst-case degree of privacy leakage.”
-- “In this study, we show that the state-of-the-art MIA described by Mireshghallah et al. (2022) cannot distinguish between a model trained using real or pseudonymized data.”
-</details>
-
-<details><summary>Do Membership Inference Attacks Work on Large Language Models? (2024) [<a href="https://arxiv.org/abs/2402.07841">Paper</a>] ⭐ 📝</summary>
-
-- [GitHub - iamgroot42/mimir: Python package for measuring memorization in LLMs.](https://github.com/iamgroot42/mimir) Library of MIAs on LLMs, including Min-k%, zlib, reference-based attack (Ref), neighborhood.
-- Table 1 compares 5 attacks across 8 datasets. Reference-based attack is best in most cases. Min-k% is marginally better than Loss and zlib, but they are all very close. Results are very dependent on datasets.
-- Picking good reference model is tricky. The authors have tried multiple models which potentially make Ref stronger than the other attacks.
-- Temporal shift in member vs non-member test samples contributes to an overestimated MIA success rate. The authors measure this distribution shift with [n-gram overlap](https://yunjinhan.github.io/2017/04/n-gram-overlap).
-</details>
-
-<details><summary>DE-COP: Detecting Copyrighted Content in Language Models Training Data (2024) [<a href="https://arxiv.org/abs/2402.09910">Paper</a>] 📝</summary>
-
-- **Document-level MIA by prompting.** Ask target LLM to select a verbatim text from a copyrighted book/ArXiv paper in a multiple-choice format (four choices). The other three options are close LLM-paraphrased texts. The core idea is similar to [the neighborhood attack](https://aclanthology.org/2023.findings-acl.719/), but using MCQA instead of loss computation. The authors also debias/normalize for effects of the answer ordering, which LLMs are known to have trouble with.
-- Empirically, this method seems to outperform all other soft-label black-box attacks.
-- Example question: “Question: Which of the following passages is verbatim from the “{book name}” by {author name}? Options: A…”
-</details>
-
-
-**Copyright**
-
-<details><summary>On Provable Copyright Protection for Generative Models (2023) [<a href="https://arxiv.org/abs/2302.10870">Paper</a>] ⭐ ⛏️</summary>
-
-- Introduces a notion of **near access-freeness (NAF)** that essentially upper bounds the probability of a given model producing a copyrighted content with respect to the same probability by another model (called “safe”) without access to that copyrighted material during training. The bound is $p(y \mid x) \le 2^{k_x} \cdot \text{safe}_C(y \mid x)$ where $y \in C$ a set of copyrighted material, and $k_x$ is a parameter for a given prefix $x$.
-- The paper also introduces a simple method of constructing an NAF model from two “sharded” models where a copyright material only appears in the training set of exactly one of them.
-- Difference between DP and NAF: copyright is concerned with the reproduction of the material by the resulting model whereas DP is a property of the learning algorithm itself. This should imply that DP is a strictly stronger guarantee.
-- The fact that NAF is defined w.r.t. a safe model resolves a corner case, for example, where the prefix $x$ is “Repeat the following text: $C$” and $C$ is copyright material. Here, both $p(y \mid x)$ and $\text{safe}_C(y \mid x)$ will be high but does not imply copyright infringement.
-- Roughly speaking, if we can guarantee that $k$ is small relative to entropy, then the probability of producing a copyright text should be *exponentially small as a function of token length* (see Section 4.2).
-</details>
-
-<details><summary>Copyright Traps for Large Language Models (2024) [<a href="https://arxiv.org/abs/2402.09363">Paper</a>]</summary>
-
-- Measure document-level MIA on synthetically generated “traps” inserted in a document during training. Overall, existing MIAs are not sufficient; 100-token traps with 1000 repeats only reach AUC of 0.75.
-- Consider Loss, Ref (called Ratio here), and Min-k%. Ref is generally the best attack with the reference model being Llama-2-7b. Target model is tiny Llama-1.3b.
-- More repetition, higher perplexity, longer texts = higher AUC. Longer training also means higher AUC. Using context (suffix) when computing perplexity also increases AUC for short and medium-length traps.
-</details>
-
-<details><summary>Copyright Violations and Large Language Models (2023) [<a href="https://aclanthology.org/2023.emnlp-main.458/">Paper</a>] ⛏️</summary>
-
-- Measure verbatim reconstruction of texts from famous books by open-sourced and closed-sourced LLMs. Open-sourced LLMs are prompted with 50 tokens from a book (likely base models), and closed-sourced LLMs (GPT-3.5, Claude) are prompted with a question like “what is the first page of [TITLE]?”.
-- Closed-sourced models seem to memorize much more texts (LCS = longest common subsequence) averaging ~50 words. Similarly, memorization on LeetCode problems is also high (~50% overlap with ground truth).
+- “[In Federated learning], data can actually be recovered by the server using so-called gradient inversion attacks. While these attacks perform well when applied on images, they are limited in the text domain and only permit approximate reconstruction of small batches and short input sequences. In this work, we propose DAGER, the first algorithm to recover whole batches of input text exactly. DAGER leverages the low-rank structure of self-attention layer gradients and the discrete nature of token embeddings to efficiently **check if a given token sequence is part of the client data**. We use this check to exactly recover full batches in the honest-but-curious setting without any prior on the data for both encoder- and decoder-based architectures using exhaustive heuristic search and a greedy approach, respectively.”
 </details>
 
 
@@ -1130,6 +1184,13 @@ Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *strin
 
 </details>
 
+<details><summary>Evaluating the Adversarial Robustness of Retrieval-Based In-Context Learning for Large Language Models (2024) [<a href="https://arxiv.org/abs/2405.15984">Paper</a>]</summary>
+
+
+“retrieval-augmented models can enhance robustness against test sample attacks, outperforming vanilla ICL with a 4.87% reduction in Attack Success Rate (ASR); however, they exhibit overconfidence in the demonstrations, leading to a 2% increase in ASR for demonstration attacks… we introduce an **effective training-free adversarial defence** method, DARD, which **enriches the example pool with those attacked samples**. We show that DARD yields improvements in performance and robustness, achieving a 15% reduction in ASR over the baselines.“
+
+</details>
+
 
 ### Poisoning & Backdoor
 
@@ -1182,6 +1243,26 @@ Introduces GCQ, a query-based attack on LLMs (adversarial suffix, harmful *strin
 <details><summary>Competition Report: Finding Universal Jailbreak Backdoors in Aligned LLMs (2024) [<a href="https://arxiv.org/abs/2404.14461">Paper</a>]</summary>
 
 - “Our competition, co-located at IEEE SaTML 2024, challenged participants to find universal backdoors in several large language models. This report summarizes the key findings and promising ideas for future research.”
+</details>
+
+<details><summary>Exploiting LLM Quantization (2024) [<a href="https://arxiv.org/abs/2405.18137">Paper</a>]</summary>
+
+
+“(i) first, we obtain a malicious LLM through fine-tuning on an adversarial task; (ii) next, we quantize the malicious model and calculate constraints that characterize all full-precision models that map to the same quantized model; (iii) finally, using projected gradient descent, we tune out the poisoned behavior from the full-precision model while ensuring that its weights satisfy the constraints computed in step (ii). This procedure results in an LLM that exhibits benign behavior in full precision but when quantized, it follows the adversarial behavior injected in step (i).”
+
+</details>
+
+
+### **Fine-Tuning**
+
+<details><summary>Navigating the Safety Landscape: Measuring Risks in Finetuning Large Language Models (2024) [<a href="https://arxiv.org/abs/2405.17374">Paper</a>]</summary>
+
+- “We discover a new phenomenon observed universally in the model parameter space of popular open-source LLMs, termed as "safety basin": **randomly perturbing model weights maintains the safety level of the original aligned model in its local neighborhood**. Our discovery inspires us to propose the new VISAGE safety metric that **measures the safety in LLM finetuning by probing its safety landscape**. Visualizing the safety landscape of the aligned model enables us to understand how finetuning compromises safety by dragging the model away from the safety basin. LLM safety landscape also highlights the system prompt's critical role in protecting a model, and that such protection transfers to its perturbed variants within the safety basin.”
+</details>
+
+<details><summary>No Two Devils Alike: Unveiling Distinct Mechanisms of Fine-tuning Attacks (2024) [<a href="https://arxiv.org/abs/2405.16229">Paper</a>]</summary>
+
+- “We utilize techniques such as **logit lens and activation patching to identify model components that drive specific behavior**, and we apply cross-model probing to examine representation shifts after an attack. In particular, we analyze the two most representative types of attack approaches: Explicit Harmful Attack (EHA) and Identity-Shifting Attack (ISA). Surprisingly, we find that their attack mechanisms diverge dramatically. Unlike ISA, EHA tends to aggressively target the harmful recognition stage. While both EHA and ISA disrupt the latter two stages, the extent and mechanisms of their attacks differ significantly.”
 </details>
 
 
@@ -1306,6 +1387,21 @@ Prompting that asks the model to prioritize safety/helpfulness. “To counter ja
 </details>
 
 
+**Others**
+
+<details><summary>Robustifying Safety-Aligned Large Language Models through Clean Data Curation (2024) [<a href="https://arxiv.org/abs/2405.19358">Paper</a>]</summary>
+
+
+“We introduce an iterative process aimed at revising texts to reduce their perplexity as perceived by LLMs, while simultaneously preserving their text quality. By pre-training or fine-tuning LLMs with curated clean texts, we observe a notable improvement in LLM robustness regarding safety alignment against harmful queries. For instance, when pre-training LLMs using a crowdsourced dataset containing 5% harmful instances, adding an equivalent amount of curated texts significantly mitigates the likelihood of providing harmful responses in LLMs and reduces the attack success rate by 71%.”
+
+</details>
+
+<details><summary>Defending Large Language Models Against Jailbreak Attacks via Layer-specific Editing (2024) [<a href="https://arxiv.org/abs/2405.18166">Paper</a>]</summary>
+
+- “defense method termed Layer-specific Editing (LED) to enhance the resilience of LLMs against jailbreak attacks. Through LED, **we reveal that several critical safety layers exist among the early layers of LLMs**. We then show that **realigning these safety layers (and some selected additional layers) with the decoded safe response from selected target layers can significantly improve the alignment of LLMs against jailbreak attacks**. “
+</details>
+
+
 ### Robustness
 
 *Defenses against adversarial suffixes or adversarial images.*
@@ -1398,6 +1494,11 @@ efficiency of sample utilization. Extensive experiments on five datasets from th
 
 </details>
 
+<details><summary>Efficient Adversarial Training in LLMs with Continuous Attacks (2024) [<a href="https://arxiv.org/abs/2405.15589">Paper</a>] ⭐</summary>
+
+- “We propose a fast adversarial training algorithm (C-AdvUL) composed of two losses: the first makes the model robust on continuous embedding attacks computed on an adversarial behaviour dataset; the second ensures the usefulness of the final model by fine-tuning on utility data. Moreover, we introduce C-AdvIPO, an adversarial variant of IPO that does not require utility data for adversarially robust alignment. Our empirical evaluation on four models from different families (Gemma, Phi3, Mistral, Zephyr) and at different scales (2B, 3.8B, 7B) shows that both algorithms substantially enhance LLM robustness against discrete attacks (GCG, AutoDAN, PAIR), while maintaining utility.”
+</details>
+
 
 **Smoothing**
 
@@ -1422,6 +1523,11 @@ efficiency of sample utilization. Extensive experiments on five datasets from th
 <details><summary>Advancing the Robustness of Large Language Models through Self-Denoised Smoothing (2024) [<a href="https://arxiv.org/abs/2404.12274">Paper</a>]</summary>
 
 - “…we propose to leverage the multitasking nature of LLMs to **first denoise the noisy inputs and then to make predictions based on these denoised versions**. We call this procedure self-denoised smoothing. Unlike previous denoised smoothing techniques in computer vision, which require training a separate model to enhance the robustness of LLMs, our method offers significantly better efficiency and flexibility. Our experimental results indicate that our method surpasses existing methods in both empirical and certified robustness in defending against adversarial attacks for both downstream tasks and human alignments (i.e., jailbreak attacks).”
+</details>
+
+<details><summary>Defensive Prompt Patch: A Robust and Interpretable Defense of LLMs against Jailbreak Attacks (2024) [<a href="https://arxiv.org/abs/2405.20099">Paper</a>]</summary>
+
+- “DPP is designed to achieve a minimal Attack Success Rate (ASR) while preserving the high utility of LLMs. Our method uses strategically designed **interpretable suffix prompts that effectively thwart a wide range of standard and adaptive jailbreak techniques**. Empirical results conducted on LLAMA-2-7B-Chat and Mistral-7B-Instruct-v0.2 models demonstrate the robustness and adaptability of DPP, showing significant reductions in ASR with negligible impact on utility.”
 </details>
 
 
@@ -1665,6 +1771,14 @@ reconstructed from embeddings, even without knowledge of the underlying model. W
 
 “…**the first provable defense against backdoor attacks on text classification**. In particular, TextGuard first divides the (backdoored) training data into sub-training sets, achieved by splitting each training sentence into sub-sentences. This partitioning ensures that a majority of the sub-training sets do not contain the backdoor trigger. Subsequently, a base classifier is trained from each sub-training set, and their ensemble provides the final prediction. We theoretically prove that when the length of the backdoor trigger falls within a certain threshold, TextGuard guarantees that its prediction will remain unaffected by the presence of the triggers in training and testing inputs.”
 
+</details>
+
+
+### **Fine-Tuning**
+
+<details><summary>Safe LoRA: the Silver Lining of Reducing Safety Risks when Fine-tuning Large Language Models (2024) [<a href="https://arxiv.org/abs/2405.16833">Paper</a>]</summary>
+
+- “we propose Safe LoRA, a simple **one-liner patch to the original LoRA implementation** by introducing the **projection of LoRA weights from selected layers to the safety-aligned subspace**, effectively reducing the safety risks in LLM fine-tuning while maintaining utility. It is worth noting that Safe LoRA is a **training-free and data-free** approach, as it only **requires the knowledge of the weights from the base and aligned LLMs**. Our extensive experiments demonstrate that when fine-tuning on purely malicious data, Safe LoRA retains similar safety performance as the original aligned model. Moreover, when the fine-tuning dataset contains a mixture of both benign and malicious data, Safe LoRA mitigates the negative effect made by malicious data while preserving performance on downstream tasks.”
 </details>
 
 
