@@ -481,6 +481,11 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 - “We address this research gap and propose the embedding space attack, which directly attacks the continuous embedding representation of input tokens. We find that embedding space attacks circumvent model alignments and trigger harmful behaviors more efficiently than discrete attacks or model fine-tuning. Furthermore, we present a novel threat model in the context of unlearning and show that **embedding space attacks can extract supposedly deleted information from unlearned LLMs** across multiple datasets and models.”
 </details>
 
+<details><summary> Adversarial Tuning: Defending Against Jailbreak Attacks for LLMs (2024) [<a href="[https://arxiv.org/abs/2402.09063](https://www.researchgate.net/publication/381283534_Adversarial_Tuning_Defending_Against_Jailbreak_Attacks_for_LLMs)">Paper</a>]</summary>
+
+- “We propose a two-stage adversarial tuning framework, which generates adversarial prompts to explore worst-case scenarios by optimizing datasets containing pairs of adversarial prompts and their responses. In the first stage, we introduce the hierarchical meta-universal adversarial prompt learning to efficiently and effectively generate token-level adversarial prompts. In the second stage, we propose that automatic adversarial prompt learning iteratively refine semantic-level adversarial prompts, further enhancing defense capabilities. ”
+</details>
+
 
 ### Privacy
 
