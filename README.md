@@ -1338,18 +1338,21 @@ This position paper advocates for a combination of “neural” and “symbolic�
 
 </details>
 
+<details><summary>Toxicity Detection for Free (2024) [<a href="https://arxiv.org/abs/2405.18822">Paper</a>] ⭐ 🔍</summary>
+
+- “state-of-the-art toxicity detectors have low TPRs at low FPR, incurring high costs in real-world applications where toxic examples are rare. In this paper, we explore **Moderation Using LLM Introspection (MULI)**, which detects toxic prompts using the information extracted directly from LLMs themselves. We found **significant gaps between benign and toxic prompts in the distribution of alternative refusal responses and in the distribution of the first response token's logits**… ****We build a more robust detector using a sparse logistic regression model on the first response token logits, which greatly exceeds SOTA detectors under multiple metrics.”
+</details>
+
 
 **Rejection**
 
 <details><summary>Adaptation with Self-Evaluation to Improve Selective Prediction in LLMs (2023) [<a href="https://arxiv.org/abs/2310.11689">Paper</a>]</summary>
 
-
-Selective prediction (”I don’t know” option with confidence score) for LLMs via “self-evaluation.”
-
+- Selective prediction (”I don’t know” option with confidence score) for LLMs via “self-evaluation.”
 </details>
 
 
-**Instruction Priority/Hierarchy**
+**Instruction priority / hierarchy**
 
 <details><summary>Defending Large Language Models Against Jailbreaking Attacks Through Goal Prioritization (2023) [<a href="https://arxiv.org/abs/2311.09096">Paper</a>] 💸</summary>
 
@@ -1387,18 +1390,35 @@ Prompting that asks the model to prioritize safety/helpfulness. “To counter ja
 </details>
 
 
-**Others**
+**Adversarial training / Robust alignment**
 
 <details><summary>Robustifying Safety-Aligned Large Language Models through Clean Data Curation (2024) [<a href="https://arxiv.org/abs/2405.19358">Paper</a>]</summary>
 
-
-“We introduce an iterative process aimed at revising texts to reduce their perplexity as perceived by LLMs, while simultaneously preserving their text quality. By pre-training or fine-tuning LLMs with curated clean texts, we observe a notable improvement in LLM robustness regarding safety alignment against harmful queries. For instance, when pre-training LLMs using a crowdsourced dataset containing 5% harmful instances, adding an equivalent amount of curated texts significantly mitigates the likelihood of providing harmful responses in LLMs and reduces the attack success rate by 71%.”
-
+- “We introduce an iterative process aimed at revising texts to reduce their perplexity as perceived by LLMs, while simultaneously preserving their text quality. By pre-training or fine-tuning LLMs with curated clean texts, we observe a notable improvement in LLM robustness regarding safety alignment against harmful queries. For instance, when pre-training LLMs using a crowdsourced dataset containing 5% harmful instances, adding an equivalent amount of curated texts significantly mitigates the likelihood of providing harmful responses in LLMs and reduces the attack success rate by 71%.”
 </details>
+
+<details><summary>Adversarial Tuning: Defending Against Jailbreak Attacks for LLMs (2024) [<a href="https://arxiv.org/abs/2406.06622">Paper</a>]</summary>
+
+- “We propose a two-stage adversarial tuning framework, which generates adversarial prompts to explore worst-case scenarios by optimizing datasets containing pairs of adversarial prompts and their responses. In the first stage, we introduce the **hierarchical meta-universal adversarial prompt learning** to efficiently and effectively generate **token-level** adversarial prompts. In the second stage, we propose that automatic adversarial prompt learning iteratively refine semantic-level adversarial prompts, further enhancing defense capabilities.”
+</details>
+
+<details><summary>Safety Alignment Should Be Made More Than Just a Few Tokens Deep (2024) [<a href="https://arxiv.org/abs/2406.05946">Paper</a>]</summary>
+
+- “**safety alignment can take shortcuts, wherein the alignment adapts a model's generative distribution primarily over only its very first few output tokens**. We refer to this issue as shallow safety alignment. In this paper, we present case studies to explain why shallow safety alignment can exist and provide evidence that current aligned LLMs are subject to this issue. We also show how these findings help explain multiple recently discovered vulnerabilities in LLMs, including the susceptibility to adversarial suffix attacks, prefilling attacks, decoding parameter attacks, and fine-tuning attacks. …we show that **deepening the safety alignment beyond just the first few tokens can often meaningfully improve robustness against some common exploits**. Finally, we design a regularized finetuning objective that makes the safety alignment more persistent against fine-tuning attacks by constraining updates on initial tokens.”
+</details>
+
+
+**Interpretability-guided defenses** 
 
 <details><summary>Defending Large Language Models Against Jailbreak Attacks via Layer-specific Editing (2024) [<a href="https://arxiv.org/abs/2405.18166">Paper</a>]</summary>
 
 - “defense method termed Layer-specific Editing (LED) to enhance the resilience of LLMs against jailbreak attacks. Through LED, **we reveal that several critical safety layers exist among the early layers of LLMs**. We then show that **realigning these safety layers (and some selected additional layers) with the decoded safe response from selected target layers can significantly improve the alignment of LLMs against jailbreak attacks**. “
+</details>
+
+<details><summary>Improving Alignment and Robustness with Circuit Breakers (2024) [<a href="https://arxiv.org/abs/2406.04313">Paper</a>]</summary>
+
+- “As an alternative to refusal training and adversarial training, circuit-breaking **directly controls the representations that are responsible for harmful outputs** in the first place. Our technique can be applied to **both text-only and multimodal language models** to prevent the generation of harmful outputs **without sacrificing utility**—even in the presence of powerful **unseen attacks.**”
+- The technique is based on [Representation Engineering paper](https://arxiv.org/abs/2310.01405).
 </details>
 
 
