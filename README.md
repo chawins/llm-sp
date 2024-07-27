@@ -476,9 +476,14 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 - “we introduce Iterative Refinement Induced Self-Jailbreak (IRIS), a novel approach that leverages the reflective capabilities of LLMs for jailbreaking with only **black-box access**. Unlike previous methods, IRIS simplifies the jailbreaking process by **using a single model as both the attacker and target**. This method first **iteratively refines adversarial prompts through self-explanation**, which is crucial for ensuring that even well-aligned LLMs obey adversarial instructions. IRIS then **rates and enhances the output given the refined prompt to increase its harmfulness**. We find IRIS achieves jailbreak success rates of 98% on GPT-4 and 92% on GPT-4 Turbo in under 7 queries.”
 </details>
 
-<details><summary>Soft Prompt Threats: Attacking Safety Alignment and Unlearning in Open-Source LLMs through the Embedding Space (2024) [<a href="https://arxiv.org/abs/2402.09063">Paper</a>]</summary>
+<details><summary>Soft Prompt Threats: Attacking Safety Alignment and Unlearning in Open-Source LLMs through the Embedding Space (2024) [<a href="https://arxiv.org/abs/2402.09063">Paper</a>] **❓**</summary>
 
 - “We address this research gap and propose the embedding space attack, which directly attacks the continuous embedding representation of input tokens. We find that embedding space attacks circumvent model alignments and trigger harmful behaviors more efficiently than discrete attacks or model fine-tuning. Furthermore, we present a novel threat model in the context of unlearning and show that **embedding space attacks can extract supposedly deleted information from unlearned LLMs** across multiple datasets and models.”
+</details>
+
+<details><summary>Uncovering Safety Risks of Large Language Models through Concept Activation Vector (2024) [<a href="https://arxiv.org/abs/2404.12038">Paper</a>]</summary>
+
+- SCAV attack applies the idea of Concept Activation Vector (CAV) to guide jailbreak attacks (soft prompt and hard prompt, i.e., GCG).
 </details>
 
 
@@ -491,7 +496,7 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 | 👤 | PII-focused |
 | 💭 | Inference attack |
 
-⛏️ **Unintended Memorization and Extraction**
+⛏️  **Extraction Attack**
 
 <details><summary>Extracting Training Data from Large Language Models (2021) [<a href="https://www.usenix.org/system/files/sec21-carlini-extracting.pdf">Paper</a>] ⭐</summary>
 
@@ -589,7 +594,7 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 - “Our findings show that (1) instruction-tuned models can expose pre-training data as much as their base-models, if not more so, (2) contexts other than the original training data can lead to leakage, and (3) using instructions proposed by other LLMs can open a new avenue of automated attacks that we should further study and explore.”
 </details>
 
-<details><summary>Rethinking LLM Memorization through the Lens of Adversarial Compression (2024) [<a href="https://arxiv.org/abs/2404.15146">Paper</a>]</summary>
+<details><summary>Rethinking LLM Memorization through the Lens of Adversarial Compression (2024) [<a href="https://arxiv.org/abs/2404.15146">Paper</a>] **❓**</summary>
 
 - Define a new metric for measuring memorization on LLMs that is more easily interpretable by non-technical audience and use the notion of adversarial optimization. The metrics, called “Adversarial Compression Ratio” (ACR), is defined by the ratio between the length of a training sequence $y$ and the length of adversarial prompt $x$ used to elicit that sequence, i.e., $M(x) = y$, through greedy decoding. If ACR > 1, then the given sequence from the training set is considered memorized.
 - They propose an ad-hoc method that runs GCG on different suffix lengths (i.e., if GGC succeeds, reduce length by 1; If GCG fails, increase length by 5).
@@ -600,6 +605,18 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 <details><summary>Extracting Prompts by Inverting LLM Outputs (2024) [<a href="https://arxiv.org/abs/2405.15012">Paper</a>] ⭐</summary>
 
 - “**given outputs of a language model, we seek to extract the prompt that generated these outputs**. We develop a new black-box method, output2prompt, that learns to extract prompts **without access to the model's logits and without adversarial or jailbreaking queries**. In contrast to previous work, output2prompt only needs outputs of normal user queries. To improve memory efficiency, output2prompt employs a new sparse encoding technique. We measure the efficacy of output2prompt on a variety of user and system prompts and demonstrate zero-shot transferability across different LLMs.”
+</details>
+
+<details><summary>Towards More Realistic Extraction Attacks: An Adversarial Perspective (2024) [<a href="https://arxiv.org/abs/2407.02596">Paper</a>]</summary>
+
+- Show that the training data extraction rate (discoverable memorization) can increase significantly when the attacker also has access to various checkpoints of the target model and can prompt the model multiple times with prompts of different lengths.
+- The metric counts an attack as successful if any checkpoint of the model generates the training suffix given any of the prompts. However, the authors do not discuss how the real-world attacker may be able to identify the true suffix from many different generations.
+- The authors also advocate for approximate memorization instead of verbatim, similar to [Ippolito et al. (2023)](https://aclanthology.org/2023.inlg-main.3/).
+</details>
+
+<details><summary>PII-Compass: Guiding LLM training data extraction prompts towards the target PII via grounding (2024) [<a href="https://arxiv.org/abs/2407.02943">Paper</a>] 👤</summary>
+
+- “Improve the extractability of PII by over ten-fold by grounding the prefix of the manually constructed extraction prompt with in-domain data.”
 </details>
 
 
@@ -694,6 +711,23 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 “Copyright traps have been proposed to be injected into the original content, improving content detectability in newly released LLMs. Traps, however, rely on the exact duplication of a unique text sequence, leaving them vulnerable to commonly deployed data deduplication techniques. We here propose the generation of fuzzy copyright traps, featuring slight modifications across duplication. When injected in the fine-tuning data of a 1.3B LLM, we show fuzzy trap sequences to be memorized nearly as well as exact duplicates. Specifically, the Membership Inference Attack (MIA) ROC AUC only drops from 0.90 to 0.87 when 4 tokens are replaced across the fuzzy duplicates.”
 
+</details>
+
+<details><summary>SHIELD: Evaluation and Defense Strategies for Copyright Compliance in LLM Text Generation (2024) [<a href="https://arxiv.org/abs/2406.12975">Paper</a>] 💽 💸</summary>
+
+- Provide datasets with best-selling copyrighted and non-copyrighted books, books that are copyrighted in some countries, Spotify streaming records lyrics (copyrighted), and Best English Poems (not copyrighted). 5 subsets = 500 samples in total.
+- Evaluate Claude, GPT, Gemini, Llama, and Mistral on these datasets using (1) directly asking with title and authors, (2) 50-token prefix prompting, and (3) jailbreaking + asking. Directly asking yields the highest copyrighted text generation on average; Jailbreaking leads to high success rate on just a few samples, and prefix prompting performs the worst since all of these models are instruction-tuned.
+- “GPT-4o model is aware of the copyright status of the text and is able to generate text accordingly.” “The Claude-3 model is overprotective” (by far the highest refusal rate on non-copyrighted texts). “Gemini 1.5 Pro model is not able to distinguish between the copyrighted text and the public domain text.” Llama-3-8B leaks a bit but not too much (> Llama-2-7B and Mistral).
+- Propose SHIELD defense which works by (1) detecting copyrighted content in model’s output, (2) verifying it with internet search, and (3) few-shot prompting to let the model refuse or answer as appropriate (summary and QA are ok, but not verbatim). Defense seems very effective and is better than [MemFree](https://aclanthology.org/2023.inlg-main.3/).
+</details>
+
+<details><summary>CopyBench: Measuring Literal and Non-Literal Reproduction of Copyright-Protected Text in Language Model Generation (2024) [<a href="https://arxiv.org/abs/2407.07087">Paper</a>] 💽 💸</summary>
+
+- Propose a benchmark for evaluating literal (not exactly verbatim) copying and non-literal copying of LLMs, both closed-source and open-source.
+- Literal copying is evaluated only on 16 full-length copyrighted books compiled from multiple prior works (758 random prefixes in total). The prefix and the suffix are 200 and 50 words, respectively.
+- For non-literal copying, the authors measure (1) event and (2) character copying, which also counts as copyright infringement in some prior court cases, though the bar is much less clear than literal copying. This procedure starts by collecting 118 book summaries, extracting 20 “significant events” from the summary using GPT-4o along with characters. The target model is then prompted for creative writing starting with 1 of the 20 extracted events.
+- The literal copying is measured with a ROUGE-L score greater than 0.8 (not actually verbatim).
+- Llama-3-70B has the highest copying rate (10% literal & 15% character). Larger models copy more than smaller ones (copying by 7B vs 70B increases by one order of magnitude). Instruction tuning reduces the copy rate significantly but is still non-zero. MemFree reduces literal copying but has no effect on non-literal as expected.
 </details>
 
 
@@ -854,10 +888,11 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 - “In this work, we focus on the emerging privacy threat LLMs pose – the ability to accurately infer personal information from online texts.”
 - “(i) we construct a simulation framework for the popular social media platform Reddit using LLM agents seeded with synthetic personal profiles; (ii) using this framework, we generate SynthPAI, a diverse synthetic dataset of over 7800 comments manually labeled for personal attributes.”
+    
+    [https://lh7-us.googleusercontent.com/docsz/AD_4nXfYqVNs4Ys2z0tT7L7-ZFP-JR4m5FusZO3WIAxjWxha3B8s5r2jZp0RJVQHtky-Rwjp1Ts74I5_wIA4BJDvkDxMM6Te8wJr6U048GyH2yOPrSXtrUxfW6KYkJgABWbA0RWx9Y4KFsgO8vImCIJC1qZe67Al?key=tnvND9ISaZ8tyyKRiQLqgQ](https://lh7-us.googleusercontent.com/docsz/AD_4nXfYqVNs4Ys2z0tT7L7-ZFP-JR4m5FusZO3WIAxjWxha3B8s5r2jZp0RJVQHtky-Rwjp1Ts74I5_wIA4BJDvkDxMM6Te8wJr6U048GyH2yOPrSXtrUxfW6KYkJgABWbA0RWx9Y4KFsgO8vImCIJC1qZe67Al?key=tnvND9ISaZ8tyyKRiQLqgQ)
+    
 </details>
 
-
-[https://lh7-us.googleusercontent.com/docsz/AD_4nXfYqVNs4Ys2z0tT7L7-ZFP-JR4m5FusZO3WIAxjWxha3B8s5r2jZp0RJVQHtky-Rwjp1Ts74I5_wIA4BJDvkDxMM6Te8wJr6U048GyH2yOPrSXtrUxfW6KYkJgABWbA0RWx9Y4KFsgO8vImCIJC1qZe67Al?key=tnvND9ISaZ8tyyKRiQLqgQ](https://lh7-us.googleusercontent.com/docsz/AD_4nXfYqVNs4Ys2z0tT7L7-ZFP-JR4m5FusZO3WIAxjWxha3B8s5r2jZp0RJVQHtky-Rwjp1Ts74I5_wIA4BJDvkDxMM6Te8wJr6U048GyH2yOPrSXtrUxfW6KYkJgABWbA0RWx9Y4KFsgO8vImCIJC1qZe67Al?key=tnvND9ISaZ8tyyKRiQLqgQ)
 
 ### Adversarial Attacks
 
@@ -1784,20 +1819,26 @@ reconstructed from embeddings, even without knowledge of the underlying model. W
 </details>
 
 
-**Unlearning (post-training intervention)**
+**❓ Unlearning (post-training intervention)**
 
-<details><summary>Knowledge Unlearning for Mitigating Privacy Risks in Language Models (2023) [<a href="https://aclanthology.org/2023.acl-long.805/">Paper</a>]</summary>
+<details><summary>Knowledge Unlearning for Mitigating Privacy Risks in Language Models (2023) [<a href="https://aclanthology.org/2023.acl-long.805/">Paper</a>] **❓**</summary>
 
 
 “We show that simply performing gradient ascent on target token sequences is effective at forgetting them with little to no degradation of general language modeling performances for larger-sized LMs… We also find that sequential unlearning is better than trying to unlearn all the data at once and that unlearning is highly dependent on which kind of data (domain) is forgotten.”
 
 </details>
 
-<details><summary>DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models (2023) [<a href="https://arxiv.org/abs/2310.20138">Paper</a>]</summary>
+<details><summary>DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models (2023) [<a href="https://arxiv.org/abs/2310.20138">Paper</a>] **❓**</summary>
 
 
 “In DEPN, we introduce a novel method, termed as **privacy neuron detector,** to locate neurons associated with private information, and then **edit these detected privacy neurons by setting their activations to zero**... Experimental results show that our method can significantly and efficiently reduce the exposure of private data leakage without deteriorating the performance of the model.”
 
+</details>
+
+<details><summary>Eight Methods to Evaluate Robust Unlearning in LLMs (2024) [<a href="https://arxiv.org/abs/2402.16835">Paper</a>] **❓**</summary>
+
+- Propose a checklist of things to consider when evaluating unlearning methods. A lot of them are very similar to existing jailbreak techniques: using another language, use hand-crafted jailbreak prompts, in-context learning, probing intermediate outputs.
+- Simple jailbreak prompt can increase the familiarity score of WHP by 2x (9% -> 18%). At the same time, it also increases the score for the original model, but the gap is slightly smaller with jailbreak (77% -> 66%).
 </details>
 
 
