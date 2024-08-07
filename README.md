@@ -2253,6 +2253,19 @@ We investigate a scenario in which we want to solve a sequence of programming pr
 
 ## Miscellaneous
 
+### Surveys
+
+<details><summary>Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs) (2024) [<a href="https://arxiv.org/abs/2407.14937">Paper</a>] 🔭 </summary>
+
+
+“Creating secure and resilient applications with large language models (LLM) requires anticipating, adjusting to, and countering unforeseen threats. Red-teaming has emerged as a critical technique for identifying vulnerabilities in real-world LLM implementations. This paper presents a detailed threat model and provides a systematization of knowledge (SoK) of red-teaming attacks on LLMs. We develop a taxonomy of attacks based on the stages of the LLM development and deployment process and extract various insights from previous research. In addition, we compile methods for defense and practical red-teaming strategies for practitioners. By delineating prominent attack motifs and shedding light on various entry points, this paper provides a framework for improving the security and robustness of LLM-based systems.
+”
+
+</details>
+
+
+
+
 ### Uncategorized
 
 *I don’t know (yet) where you belong fam.*
