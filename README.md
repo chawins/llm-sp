@@ -893,6 +893,17 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
     
 </details>
 
+<details><summary>ObfuscaTune: Obfuscated Offsite Fine-tuning and Inference of Proprietary LLMs on Private Datasets (2024) [<a href="https://arxiv.org/abs/2407.02960">Paper</a>]</summary>
+
+- “This work addresses the timely yet underexplored problem of performing inference and finetuning of a proprietary LLM owned by a model provider entity on the confidential/private data of another data owner entity, in a way that ensures the confidentiality of both the model and the data. Hereby, the finetuning is conducted offsite, i.e., on the computation infrastructure of a third-party cloud provider. We tackle this problem by proposing ObfuscaTune, a novel, efficient and fully utility-preserving approach that combines a simple yet effective obfuscation technique with an efficient usage of confidential computing (only 5% of the model parameters are placed on TEE). We empirically demonstrate the effectiveness of ObfuscaTune by validating it on GPT-2 models with different sizes on four NLP benchmark datasets. Finally, we compare to a naïve version of our approach to highlight the necessity of using random matrices with low condition numbers in our approach to reduce errors induced by the obfuscation.”
+</details>
+
+<details><summary>IncogniText: Privacy-enhancing Conditional Text Anonymization via LLM-based Private Attribute Randomization (2024) [<a href="https://arxiv.org/abs/2407.02956">Paper</a>]</summary>
+
+- “In this work, we address the problem of text anonymization where the goal is to prevent adversaries from correctly inferring private attributes of the author, while keeping the text utility, i.e., meaning and semantics. We propose IncogniText, a technique that anonymizes the text to mislead a potential adversary into predicting a wrong private attribute value. Our empirical evaluation shows a reduction of private attribute leakage by more than 90%. Finally, we demonstrate the maturity of IncogniText for real-world applications by distilling its anonymization capability into a set of LoRA parameters associated with an on-device model.”
+</details>
+
+
 ### Adversarial Attacks
 
 *The good ol’ adversarial examples (with an exciting touch).*
@@ -2255,15 +2266,10 @@ We investigate a scenario in which we want to solve a sequence of programming pr
 
 ### Surveys
 
-<details><summary>Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs) (2024) [<a href="https://arxiv.org/abs/2407.14937">Paper</a>] 🔭 </summary>
+<details><summary>Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs) (2024) [<a href="https://arxiv.org/abs/2407.14937">Paper</a>] 🔭</summary>
 
-
-“Creating secure and resilient applications with large language models (LLM) requires anticipating, adjusting to, and countering unforeseen threats. Red-teaming has emerged as a critical technique for identifying vulnerabilities in real-world LLM implementations. This paper presents a detailed threat model and provides a systematization of knowledge (SoK) of red-teaming attacks on LLMs. We develop a taxonomy of attacks based on the stages of the LLM development and deployment process and extract various insights from previous research. In addition, we compile methods for defense and practical red-teaming strategies for practitioners. By delineating prominent attack motifs and shedding light on various entry points, this paper provides a framework for improving the security and robustness of LLM-based systems.
-”
-
+- Creating secure and resilient applications with large language models (LLM) requires anticipating, adjusting to, and countering unforeseen threats. Red-teaming has emerged as a critical technique for identifying vulnerabilities in real-world LLM implementations. This paper presents a detailed threat model and provides a systematization of knowledge (SoK) of red-teaming attacks on LLMs. We develop a taxonomy of attacks based on the stages of the LLM development and deployment process and extract various insights from previous research. In addition, we compile methods for defense and practical red-teaming strategies for practitioners. By delineating prominent attack motifs and shedding light on various entry points, this paper provides a framework for improving the security and robustness of LLM-based systems.
 </details>
-
-
 
 
 ### Uncategorized
