@@ -16,7 +16,7 @@
 
 | Symbol | Description |
 | --- | --- |
-| ⭐ | I personally like this paper! (not a measure of any paper’s quality; see interpretation at the end) |
+| ⭐ | I personally like this paper! (not a measure of *any* paper’s quality; see interpretation at the end) |
 | 💽 | Dataset, benchmark, or framework |
 | 📍 | Position paper |
 | 🔭 | Survey paper |
@@ -619,6 +619,18 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 - “Improve the extractability of PII by over ten-fold by grounding the prefix of the manually constructed extraction prompt with in-domain data.”
 </details>
 
+<details><summary>Demystifying Verbatim Memorization in Large Language Models (2024) [<a href="https://arxiv.org/abs/2407.17817">Paper</a>] ⭐ ❓</summary>
+
+- **TL;DR:** Contrary to prior literature, LLM does not memorize training samples in specific weights or embeddings of a specific prompt token. Training tokens can be regurgitated by basic language modeling (template, pattern, etc.) or by learned complex correlation among multiple prior tokens.
+- **Claim.** Samples that are memorized (32 token verbatim) with only *one* repetition (actually < 1 in 5M examples because not the entire training set is checked) is **not an actual memorization**: (1) they are templates, patterns, number or repeating sequences, composition; (2) some of them can be reproduced by a model not trained on that sample.
+- **Main setup.** continue fine-tuning from Pythia and inject samples (canaries) from the internet dated after the Pile cutoff date. The injection frequency is a bit unclear.
+- **Multiple empirical results.** Larger batch size = less memorization (end of Section 4.2). More well-trained models memorized more easily (Section 4.3). Shuffled sequences are harder to memorize (Section 4.4). The authors claim that this represents OOD samples, but it is debatable given the broad definition of OOD.
+- **Causal intervention experiment (Section 4.5).** Some memorized tokens (unsure how many) are not *causally* dependent on a single prompt embedding (tested by replacing embedding from a reference model, one token at a time). Rather, model memorizes with multiple tokens / patterns / non-prompt tokens that itself generates. The longer the model is trained, the less it relies on the prefix to memorize.
+    - “The verbatim memorized sequence might be reconstructed token-by-token, where each token is predicted using different mechanisms depending on the structures involved. This might explain why in-domain sequences are more likely to be memorized.”
+    - “Lastly, models encode abstract states as opposed to token-level information, which might explain why the memorized sequences can be triggered in a context that is different from the one seen in training.”
+- **Extraction on unlearned models.** Propose prompting target model with multiple perturbed prompts: (1) sliding window of the original prefix and (2) synonym substitution. See improvement of 10-15 more extracted tokens.
+</details>
+
 
 📝 **Membership Inference**
 
@@ -679,6 +691,11 @@ Prompt constructed with some of the user’s PIIs for probing if the model memor
 
 - Existing membership inference attacks do not produce a. meaningful results on LLM due to the IN/OUT data contamination problem. This work shows that simple classifiers can outperform sophisticated membership inference attacks WITHOUT access to the target model itself.
 - These classifiers include detecting dates with regex and a classifier based on a bag of words.
+</details>
+
+<details><summary>Con-ReCall: Detecting Pre-training Data in LLMs via Contrastive Decoding (2024) [<a href="https://arxiv.org/abs/2409.03363">Paper</a>]</summary>
+
+- MIA on LLMs. “In this paper, we propose Con-ReCall, a novel approach that leverages the asymmetric distributional shifts induced by member and non-member contexts through contrastive decoding, amplifying subtle differences to enhance membership inference. Extensive empirical evaluations demonstrate that Con-ReCall achieves state-of-the-art performance on the WikiMIA benchmark and is robust against various text manipulation techniques.”
 </details>
 
 
@@ -1610,7 +1627,7 @@ efficiency of sample utilization. Extensive experiments on five datasets from th
 
 ### Privacy
 
-| Symbol | Description |
+| **Symbol** | **Description** |
 | --- | --- |
 | 📝 | Focus on membership inference attack. |
 | ⛏️ | Focus on extraction/reconstruction attack. |
