@@ -6,7 +6,7 @@
 
 **When?** *Updated whenever my willpower reaches a certain threshold (aka pretty frequent).*
 
-**Where?** *[GitHub](https://github.com/chawins/llm-sp) and [Notion](https://www.notion.so/c1bca11f7bec40988b2ed7d997667f4d?pvs=21). Notion is more up-to-date; I periodically transfer the updates to GitHub.*
+**Where?** *[GitHub](https://github.com/chawins/llm-sp) and [Notion](https://chawins.notion.site/llm-sp). Notion is more up-to-date; I periodically transfer the updates to GitHub.*
 
 **Who?** *[Me](https://chawins.github.io/) and you (see [Contribution](https://github.com/chawins/llm-sp?tab=readme-ov-file#contribution) below).*
 
