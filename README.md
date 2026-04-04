@@ -510,6 +510,11 @@ At its core, **GPTFUZZER starts with human-written templates as seeds, then muta
 - “[DROJ] optimizes jailbreak prompts at the embedding level to shift the hidden representations of harmful queries towards directions that are more likely to elicit affirmative responses from the model.”
 </details>
 
+<details><summary>Jailbreaking LLMs' Safeguard with Universal Magic Words for Text Embedding Models (2025) [<a href=”https://arxiv.org/abs/2501.18280”>Paper</a>]</summary>
+
+- Finds that text embedding models concentrate outputs on a narrow band of the hypersphere. Exploits this **bias direction** to discover universal magic word suffixes that manipulate embedding similarity between arbitrary text pairs, bypassing embedding-based LLM safety guardrails. Covers brute-force, black-box, and white-box gradient attacks (single-epoch convergence). Tested on JailbreakBench against ChatGPT, DeepSeek, Qwen, and others. Also proposes a training-free **debiasing defense**.
+</details>
+
 
 ### Privacy
 
