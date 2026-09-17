@@ -1476,6 +1476,11 @@ This position paper advocates for a combination of “neural” and “symbolic�
 - “state-of-the-art toxicity detectors have low TPRs at low FPR, incurring high costs in real-world applications where toxic examples are rare. In this paper, we explore **Moderation Using LLM Introspection (MULI)**, which detects toxic prompts using the information extracted directly from LLMs themselves. We found **significant gaps between benign and toxic prompts in the distribution of alternative refusal responses and in the distribution of the first response token's logits**… ****We build a more robust detector using a sparse logistic regression model on the first response token logits, which greatly exceeds SOTA detectors under multiple metrics.”
 </details>
 
+<details><summary>Exploring and Developing a Pre-Model Safeguard with Draft Models (2026) [<a href="https://dl.acm.org/doi/10.1145/3786335.3813133">Paper</a>] [<a href="https://github.com/purseclab/jailbreak-defense">Code</a>] 🔍</summary>
+
+- Measures how well jailbreak prompts transfer from large target LLMs to the small draft models used in speculative decoding, and builds a **pre-model safeguard** on top of that finding: the draft model, paired with an existing guard, screens the prompt *before* the target LLM is invoked, so a jailbreak is caught without paying for a full generation of the large model. Reports attack/defense success rates, false negatives on benign prompts, and the added latency.
+</details>
+
 
 **Rejection**
 
